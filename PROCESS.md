@@ -3,7 +3,7 @@
 Everything below happened in one Claude session on Election Day (US), before any polls closed. Times are UTC unless stated.
 
 ## 0. The ask
-the owner asked for an unbiased opinion and prediction on the midterms, state by state with visuals, both chambers, with explicit skepticism of polling. Follow-ups during the run: use connectors where needed; use Opus agents for the research; use Tavily or Nimble where needed; use my computer for the handover; include everything from research to end product.
+The owner asked for an unbiased opinion and prediction on the midterms, state by state with visuals, both chambers, with explicit skepticism of polling. Follow-ups during the run: use connectors where needed; use Opus agents for the research; use Tavily or Nimble where needed; use my computer for the handover; include everything from research to end product.
 
 Two clarifying questions were asked and answered (AskUserQuestion): the page is a pre-election read-through first and an IST night tracker below; every competitive House district is listed under its state. One design question: the owner delegated the direction choice ("your choice").
 
@@ -22,7 +22,7 @@ Claude in Chrome could not open Polymarket or Kalshi (the extension's site permi
 
 ## 4. Design (Impeccable flow, the owner's design ethos)
 - `design/PRODUCT.md` written after the question round (platform, users, product truth, evidence on hand, absences not to fabricate).
-- Concept seed rolled (`design/impeccable/roll.json`, seed reference `seed:407918f8e0300e09`). The roll ran degraded (no network for the catalog challengers) and assigned candidate 4 of the seven grounded directions: 1 Almanac of American Politics page, 2 the Cook/Sabato ratings ramp table, 3 broadcast big board, 4 **optical-scan ballot**, 5 canvass tally sheet, 6 Congressional Record, 7 hex cartogram. Mode: Read, with an Operate section. The decision was offered to the owner via the structured question tool (the decision page cannot be served from the sandbox); he delegated it, and the assigned direction was built.
+- Concept seed rolled (`design/impeccable/roll.json`, seed reference `seed:407918f8e0300e09`). The roll ran degraded (no network for the catalog challengers) and assigned candidate 4 of the seven grounded directions: 1 Almanac of American Politics page, 2 the Cook/Sabato ratings ramp table, 3 broadcast big board, 4 **optical-scan ballot**, 5 canvass tally sheet, 6 Congressional Record, 7 hex cartogram. Mode: Read, with an Operate section. The decision was offered to the owner via the structured question tool (the decision page cannot be served from the sandbox); the owner delegated it, and the assigned direction was built.
 - Direction contract: `design/brief.md` and `design/surfaces/index-html.md` (THESIS, OWN-WORLD, STORY, FIRST VIEWPORT, FORM, FINISH).
 - Data palette validated with the dataviz skill's CVD validator in both themes: D `#2E64B8`, R `#C2362C`, I `#2F9E6E` (light); `#5B8EDC`, `#E0614F`, `#45B98A` (dark). Results in `design/palette-validation.md`.
 - Build: code-led, eight source parts concatenated by `build.js`; inline SVG charts, no libraries; three theme states handled at the token level.

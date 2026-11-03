@@ -1,24 +1,30 @@
 # Night update plan (agreed with the owner, 3 Nov 2026 19:30 IST)
 
-Each wakeup is a one-shot `send_later` into this session. The FIRST thing every run does is schedule the next one, so a failed run does not end the chain.
+Each wakeup is a one-shot `send_later` into this session. Every run: work out the phase FIRST (clock + conditions below), then schedule the next wakeup for that phase, then do the update. Scheduling early means a failed run does not end the chain.
+
+## Clock
+The container runs on UTC. Get IST with `TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M'` and use that exact zero-padded form for every `at`. IST = UTC + 5:30; the IST date changes at 18:30 UTC. Poll closings and calls reported in ET: IST = ET + 10:30 (ET is UTC-5 after 1 Nov).
 
 ## Phases (all times IST)
-| Phase | When | Interval |
-|---|---|---|
-| A, pre-close | now until 04:30 Wed 4 Nov (first polls close) | 30 min |
-| B, counting | 04:30 Wed until high confidence: AP has called control of BOTH chambers and every Senate race except Alaska (RCV 18 Nov) is called | 5 min |
-| C, settling | after B, until finalization: every Senate race except AK called and at least 90% of the competitive House districts in `HSE` called (or 48 h after C began, whichever first) | 30 min |
-| C2 | the 12 hours after finalization | 30 min |
-| D, tail | the next 3 days | twice a day, 09:10 and 21:10 IST |
-| End | after D | no further wakeups |
+"Callable Senate races" = every race in `SEN` EXCEPT any an outlet reports as going to a runoff (Georgia: runoff 1 Dec if nobody reaches 50%) or to a ranked-choice tabulation (Alaska, 18 Nov; Maine if no one passes 50%). Those are logged as "runoff" / "RCV pending" entries in `LIVE`, not waited for.
 
-Safety cap: if phase B has run 18 hours, move to C anyway and log why.
+| Phase | Starts | Ends when | Interval |
+|---|---|---|---|
+| A, pre-close | now | 04:30 Wed 4 Nov (first polls close) | 30 min |
+| B, counting | 04:30 Wed | AP (or the outlet of record) has called control of both chambers AND every callable Senate race is called. Hard cap: 18 h after B began | 5 min |
+| C, settling | end of B | every callable Senate race called AND at least 90% of `HSE` districts called; or 48 h after C began (the fallback also counts as finalization) | 30 min |
+| C2 | finalization | 12 h after finalization | 30 min |
+| D, tail | end of C2 | 3 days after D began | twice a day, 09:10 and 21:10 IST |
+| End | after D | | no further wakeups |
 
 ## Each run
-1. Read the `state` line below; schedule the next wakeup for the current phase.
-2. Look for new AP calls (Senate races in `SEN`, House districts in `HSE`, chamber control) and notable sourced developments. Search with Nimble (Tavily if it is not rate-limited). No Firecrawl. Only enter a call that names its caller (AP, or DDHQ/NBC if AP has not called, labelled as such).
-3. If something new: add `RES_SEN` / `RES_HSE` / `RES_HOUSE_TOTAL` / `RES_CONTROL` / `LIVE` entries in `src/07-data.js` (IST timestamps), `node build.js`, republish `index.html` to the artifact, commit and push (this also redeploys `docs/` on Pages). If nothing new, do not push.
-4. Update the `state` line if the phase changed.
+1. Read the `state` line at the bottom; decide the phase; schedule the next wakeup.
+2. Look for new calls (Senate races in `SEN`, districts in `HSE`, chamber control, the House tally) and notable sourced developments. Search with Nimble (Tavily if it is not rate-limited). No Firecrawl. Enter a call only when it names its caller: AP first; DDHQ or NBC if AP has not called, with `by` saying so.
+3. Before adding a race, grep `src/07-data.js` for its key. One line per race. The only allowed overwrite is upgrading a DDHQ/NBC call to AP: edit that line in place, keep the original time in `n` (e.g. `n:"DDHQ called 06:50; AP 07:20"`). A retracted call: delete the line and add a `LIVE` entry saying who retracted it and when; never silently remove.
+4. Add `RES_SEN` / `RES_HSE` / `RES_HOUSE_TOTAL` / `RES_CONTROL` / `LIVE` entries in `src/07-data.js`, plus one row per call in `research/results.md`.
+5. Run `node build.js`. If it exits non-zero, nothing was written: fix the entry it names; never publish, commit or push a failed build.
+6. On success: republish `index.html` to the artifact, commit and push (this redeploys `docs/` on GitHub Pages). If nothing changed, do not push.
+7. Update the `state` line if the phase changed.
 
 ## Desk commentary (the owner asked for it, 3 Nov)
 Do not hold back on analysis during the results phase. Alongside the sourced facts, post `LIVE` entries with `by:"Desk"` (they render as labelled opinion) whenever there is something worth saying, for example:

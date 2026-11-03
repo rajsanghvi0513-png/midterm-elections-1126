@@ -12,11 +12,11 @@ static single-file HTML/CSS/JS, published as a claude.ai artifact (the artifact 
 
 ## Users
 
-the owner (one reader), a data/business analyst by trade, following the 2026 US midterms from India on election night (US evening = IST early morning, 4 Nov). He asked for an unbiased read and a prediction, state by state, for both the Senate and the House, with visuals. He is explicitly skeptical of polling ("they have got it wrong a lot recently"). [confirmed via question round, 3 Nov 2026] He will use the page both as a pre-election read-through and as a live night tracker, analysis first, tracker below; he wants every competitive House district listed under its state, not just summaries.
+The owner (one reader), a data/business analyst by trade, following the 2026 US midterms from India on election night (US evening = IST early morning, 4 Nov). They asked for an unbiased read and a prediction, state by state, for both the Senate and the House, with visuals. They are explicitly skeptical of polling ("they have got it wrong a lot recently"). [confirmed via question round, 3 Nov 2026] They will use the page both as a pre-election read-through and as a live night tracker, analysis first, tracker below; they want every competitive House district listed under its state, not just summaries.
 
 ## Product Purpose
 
-An election-night desk: a single page that states the bottom line and the author's call, shows why (fundamentals, special-election record, markets, ratings), lays out every Senate seat and every competitive House district by state, and then gives an IST-ordered watch list for the night. Success: the owner can tell within a minute what each side needs, can check any state in two scrolls, and can judge for himself how much weight to put on polls vs other signals.
+An election-night desk: a single page that states the bottom line and the author's call, shows why (fundamentals, special-election record, markets, ratings), lays out every Senate seat and every competitive House district by state, and then gives an IST-ordered watch list for the night. Success: the owner can tell within a minute what each side needs, can check any state in two scrolls, and can judge for themselves how much weight to put on polls vs other signals.
 
 ## Positioning
 

@@ -1,6 +1,6 @@
 # Handover brief for Claude Code: Midterm Desk 2026
 
-You are taking over an election-night analysis page built earlier today (3 Nov 2026, before US polls closed) in a Claude session. The owner is the owner, in India (IST = US Eastern + 10 h 30 m). Read this file, then `CLAUDE.md` (editing rules), then `PROCESS.md` (how it was built) before touching anything.
+You are taking over an election-night analysis page built earlier today (3 Nov 2026, before US polls closed) in a Claude session. The owner is in India (IST = US Eastern + 10 h 30 m). Read this file, then `CLAUDE.md` (editing rules), then `PROCESS.md` (how it was built) before touching anything.
 
 ## What exists
 - `index.html`: the published page (version 2, post-review), live at https://claude.ai/artifact/L7BHse5WdMQHM1YFFDhvBV. Generated from `src/` by `node build.js`; never edit it directly.

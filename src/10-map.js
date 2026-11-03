@@ -10,7 +10,8 @@ const fmtAt=a=>{const m=/^(\d{4})-(\d\d)-(\d\d)\s+(\d\d:\d\d)/.exec(a||"");retur
 const IND={NE:"Dan Osborn"};
 const ok=w=>w==="D"||w==="R"||w==="I";
 const normW=r=>r&&ok(String(r.w||"").trim().toUpperCase())?String(r.w).trim().toUpperCase():null;
-const RS=(typeof RES_SEN!=="undefined"&&RES_SEN)||{}, RH=(typeof RES_HSE!=="undefined"&&RES_HSE)||{};
+// Results come pre-validated from 08-render.js, so the map, log and tables always agree.
+const R_=window.__RES||{},RS=R_.RS||{},RH=R_.RH||{},RHT=R_.RHT||null,RC=R_.RC||{};
 const senBy=Object.fromEntries(SEN.map(s=>[s.st,s]));
 const winName=(s,w)=>w==="D"?s.d:w==="R"?s.r:(IND[s.st]||"Independent");
 const RATE={TU:"Toss-up",LnD:"Lean D",LnR:"Lean R",LkD:"Likely D",LkR:"Likely R",TD:"Tilt D",TR:"Tilt R",SD:"Solid D",SR:"Solid R",nf:"nf"};
@@ -18,12 +19,17 @@ const rcls=t=>{t=t||"";if(/nf/.test(t))return"";if(/Toss/.test(t))return"t";if(/
 const chip=t=>t&&t!=="nf"?`<span class="chip ${rcls(t)}">${esc(t)}</span>`:`<span class="muted">nf</span>`;
 function desk(p,isI){if(isI)return{label:"Lean R (Osborn "+pct(p)+")",cls:"r",fill:1};if(p>=0.85)return{label:p>=0.97?"Safe D":"Likely D",cls:"d",fill:2};if(p>=0.60)return{label:"Lean D",cls:"d",fill:1};if(p>=0.40)return{label:p>=0.5?"Toss-up, tilt D":"Toss-up, tilt R",cls:"t",fill:0};if(p>=0.15)return{label:"Lean R",cls:"r",fill:1};return{label:p>=0.03?"Likely R":"Safe R",cls:"r",fill:2};}
 const oval=(fill,cls)=>`<svg class="oval xs col-${cls}" viewBox="0 0 24 14" aria-hidden="true"><use href="#ov${fill}"/></svg>`;
-const STNAME={};
+const STNAME={};for(const g of USGEO.objects.states.geometries){const st=FIPS_ST[g.id];if(st)STNAME[st]=g.properties.name;}
 
 // ===================== LIVE UPDATES =====================
 (function live(){
   const list=$("#live-list");if(!list)return;
-  const items=(typeof LIVE!=="undefined"?LIVE:[]).map(e=>Object.assign({kind:"entry"},e));
+  const AT_OK=a=>/^\d{4}-\d\d-\d\d \d\d:\d\d$/.test(String(a||""));
+  const items=(typeof LIVE!=="undefined"?LIVE:[]).filter(e=>{if(e&&AT_OK(e.at)&&e.h)return true;console.warn("Live entry ignored (needs h and at \"YYYY-MM-DD HH:MM\" IST):",e);return false;}).map(e=>Object.assign({kind:"entry"},e));
+  const CH={senate:"Senate",house:"House"};
+  for(const k of["senate","house"]){const c=RC[k];if(!c)continue;
+    items.push({kind:"call",tag:k,at:c.at,h:`${c.w==="D"?"Democrats":"Republicans"} win control of the ${CH[k]}`,t:`${k==="senate"?"The desk had Democrats at about 62% to control the Senate.":"The desk had Democrats at about 92% to win the House, central estimate 236 seats."}${c.n?" "+c.n:""}`,by:c.by||"nf"});}
+  if(RHT)items.push({kind:"entry",tag:"house",at:RHT.at,h:`House tally: ${RHT.d} D, ${RHT.r} R, ${435-RHT.d-RHT.r} not yet called`,t:"218 seats are needed for a majority.",by:RHT.by||"nf"});
   for(const st in RS){const s=senBy[st],w=normW(RS[st]);if(!s||!w||(w==="I"&&!(st in IND)))continue;const r=RS[st];
     items.push({kind:"call",tag:"senate",st,at:r.at||"",h:`${s.name} Senate: ${winName(s,w)} (${w}) wins`,t:`${r.m&&r.m!=="nf"?"Margin "+r.m+" as reported. ":""}The desk had ${desk(s.desk,st in IND).label}${st in IND?"":" ("+pct(s.desk)+" D)"}.${r.n?" "+r.n:""}`,by:r.by||"nf"});}
   const hBy=Object.fromEntries(HSE.map(x=>[x[1],x]));
@@ -68,7 +74,7 @@ const STNAME={};
   const cities=CITIES.map(([name,st,p20,p25,x,y],i)=>({name,st,p20,p25,x,y,rank:i+1}));
   const hseBy={};for(const x of HSE)(hseBy[x[0]]=hseBy[x[0]]||[]).push(x);
   const KIND={LA:"parish",AK:"borough or census area"};
-  const coLabel=c=>{if(c.st==="LA")return c.name+" Parish";if(c.st==="AK")return c.name;if(c.st==="VA"&&+c.id.slice(2)>=500)return c.name+" (independent city)";if(c.st==="DC")return c.name;return c.name+" County";};
+  const coLabel=c=>{if(c.st==="LA")return c.name+" Parish";if(c.st==="AK")return c.name;if(+c.id.slice(2)>=510)return c.name+" (independent city)";if(c.st==="DC")return c.name;return c.name+" County";};
 
   // --- state fill: tint = desk call, deeper tint = solid/likely, full colour = called
   const fillFor=st=>{const s=senBy[st];if(!s)return"var(--map-none)";const w=normW(RS[st]);if(w&&(w!=="I"||st in IND))return`var(--${w.toLowerCase()==="i"?"i":w.toLowerCase()})`;const d=desk(s.desk,st in IND);return d.cls==="t"?"var(--map-toss)":`var(--map-${d.cls}${d.fill===2?"2":"1"})`;};
@@ -147,7 +153,7 @@ const STNAME={};
   function go(v,instant){
     if(v.st&&!stBy[v.st])return;
     if(v.city)view={lvl:"city",st:v.st,city:v.city};else if(v.co)view={lvl:"county",st:v.st,co:v.co};else if(v.st)view={lvl:"state",st:v.st};else view={lvl:"us"};
-    draw();crumbs();legend();panel();
+    $("#tip").classList.remove("show");draw();crumbs();legend();panel();
     if(view.lvl==="us")setVB([0,0,975,610],instant);
     else if(view.lvl==="state")setVB(fit(stBy[view.st].bb,40),instant);
     else if(view.lvl==="county")setVB(fit(counties(view.st).find(x=>x.id===view.co).bb,28),instant);

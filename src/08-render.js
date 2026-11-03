@@ -28,14 +28,21 @@ const RATE_FULL={TU:"Toss-up",LnD:"Lean D",LnR:"Lean R",LkD:"Likely D",LkR:"Like
 const IND={NE:"Dan Osborn"};
 const SENKEYS=new Set(SEN.map(s=>s.st)), HSEKEYS=new Set(HSE.map(x=>x[1]));
 // Entries are typed by hand on the night: normalise the winner and drop anything malformed (logged to the console).
-function cleanRes(obj,known,allowI){const out={};for(const k in (obj||{})){const r=obj[k]||{};const w=String(r.w||"").trim().toUpperCase();
+// AT_OK: IST time must be zero-padded "YYYY-MM-DD HH:MM" or sorting breaks.
+const AT_OK=a=>/^\d{4}-\d\d-\d\d \d\d:\d\d$/.test(String(a||""));
+// Races with no Democrat on the ballot (Nebraska) cannot take w:"D".
+const NO_D=new Set(SEN.filter(s=>/^none\b/i.test(s.d)).map(s=>s.st));
+function cleanRes(obj,known,okW){const out={};for(const k in (obj||{})){const r=obj[k]||{};const w=String(r.w||"").trim().toUpperCase();
   if(!known.has(k)){console.warn("Result ignored, unknown race:",k);continue;}
-  if(!(w==="D"||w==="R"||(w==="I"&&allowI(k)))){console.warn("Result ignored, bad winner:",k,r.w);continue;}
+  if(!okW(k,w)){console.warn("Result ignored, bad winner:",k,r.w);continue;}
+  if(!AT_OK(r.at)){console.warn("Result ignored, time not \"YYYY-MM-DD HH:MM\" IST:",k,r.at);continue;}
   out[k]=Object.assign({},r,{w});}return out;}
-const RS=cleanRes(typeof RES_SEN!=="undefined"&&RES_SEN,SENKEYS,k=>k in IND), RH=cleanRes(typeof RES_HSE!=="undefined"&&RES_HSE,HSEKEYS,()=>false);
+const RS=cleanRes(typeof RES_SEN!=="undefined"&&RES_SEN,SENKEYS,(k,w)=>(w==="D"&&!NO_D.has(k))||w==="R"||(w==="I"&&k in IND)),
+      RH=cleanRes(typeof RES_HSE!=="undefined"&&RES_HSE,HSEKEYS,(k,w)=>w==="D"||w==="R");
 const num=v=>(v!==""&&v!=null&&Number.isFinite(+v))?+v:null;
-const RHT=(()=>{const t=typeof RES_HOUSE_TOTAL!=="undefined"?RES_HOUSE_TOTAL:null;if(!t)return null;const d=num(t.d),r=num(t.r);if(d==null||r==null||d+r>435){console.warn("House total ignored:",t);return null;}return Object.assign({},t,{d,r});})();
-const RC=(()=>{const c=(typeof RES_CONTROL!=="undefined"&&RES_CONTROL)||{},o={};for(const k of["senate","house"]){const v=c[k];if(!v)continue;const w=String(v.w||"").trim().toUpperCase();if(w==="D"||w==="R")o[k]=Object.assign({},v,{w});else console.warn("Control call ignored:",k,v);}return o;})();
+const RHT=(()=>{const t=typeof RES_HOUSE_TOTAL!=="undefined"?RES_HOUSE_TOTAL:null;if(!t)return null;const d=num(t.d),r=num(t.r);if(d==null||r==null||d<0||r<0||d+r>435||!AT_OK(t.at)){console.warn("House total ignored:",t);return null;}return Object.assign({},t,{d,r});})();
+const RC=(()=>{const c=(typeof RES_CONTROL!=="undefined"&&RES_CONTROL)||{},o={};for(const k of["senate","house"]){const v=c[k];if(!v)continue;const w=String(v.w||"").trim().toUpperCase();if((w==="D"||w==="R")&&AT_OK(v.at))o[k]=Object.assign({},v,{w});else console.warn("Control call ignored:",k,v);}return o;})();
+window.__RES={RS,RH,RHT,RC}; // 10-map.js reads the same cleaned results
 const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const fmtAt=a=>{const m=/^(\d{4})-(\d\d)-(\d\d)\s+(\d\d:\d\d)/.exec(a||"");return m&&MON[+m[2]-1]?`${+m[3]} ${MON[+m[2]-1]} ${m[4]} IST`:(a?esc(a)+" (time as entered)":"time nf");};
 const PARTY={D:"Democrat",R:"Republican",I:"Independent"};
