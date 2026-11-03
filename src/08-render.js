@@ -309,13 +309,5 @@ const txt=(x,y,s,cls="",anchor="start",extra="")=>`<text x="${x}" y="${y}" class
   const sl=$("#slotlist");if(sl)sl.innerHTML=slots.map(([t,states])=>`<div><b>${t}</b><span>${esc(states.join(" "))}${(senAt[t]||[]).length?`<br>Senate: ${esc(senAt[t].join(" · "))}`:""}<br><span class="muted">${hseAt[t]||0} House seats</span></span></div>`).join("");
 })();
 
-// ---- rail highlight
-(function rail(){
-  const links=[...document.querySelectorAll(".rail a")];if(!links.length)return;
-  const secs=links.map(a=>document.getElementById(a.getAttribute("href").slice(1)));
-  let ticking=false;
-  function update(){ticking=false;const y=innerHeight*0.35;let cur=0;secs.forEach((el,i)=>{if(el&&el.getBoundingClientRect().top<=y)cur=i;});links.forEach((a,i)=>a.classList.toggle("on",i===cur));}
-  addEventListener("scroll",()=>{if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});update();
-})();
 })();
 </script>

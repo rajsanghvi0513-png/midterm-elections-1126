@@ -159,7 +159,7 @@ const STNAME={};for(const g of USGEO.objects.states.geometries){const st=FIPS_ST
     else if(view.lvl==="county")setVB(fit(counties(view.st).find(x=>x.id===view.co).bb,28),instant);
     else{const c=cities.find(x=>x.st===view.st&&x.name===view.city);setVB(fit([c.x-1,c.y-1,c.x+1,c.y+1],70),instant);}
   }
-  window.__mapGo=v=>{go(v);const m=$("#map");m&&m.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});};
+  window.__mapGo=v=>{if(window.__tab)window.__tab("map");go(v);};
 
   // --- events
   $("#map-pick").innerHTML=`<option value="">United States</option>`+states.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(s=>`<option value="${s.st}">${esc(s.name)}${senBy[s.st]?" (Senate race)":""}</option>`).join("");

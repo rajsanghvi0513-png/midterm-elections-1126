@@ -65,19 +65,11 @@ h1,h2,h3,h4{text-wrap:balance;margin:0}
 p{margin:0}
 b,strong{font-weight:600}
 
-.page{max-width:1160px;margin:0 auto;padding-block:0 112px;
+.page{max-width:1880px;margin:0 auto;padding-block:0 112px;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 @media (min-width:640px){.page{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}}
-@media (min-width:1100px){.page{padding-left:max(84px,env(safe-area-inset-left,0px))}}
+@media (min-width:1100px){.page{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
 
-/* Section rail (wide screens): soft pills, the current section widens */
-.rail{position:fixed;left:max(20px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);display:none;flex-direction:column;gap:12px;z-index:5}
-@media (min-width:1100px){.rail{display:flex}}
-.rail a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink-3);font-size:13px;font-weight:500}
-.rail .mark{display:block;width:14px;height:4px;border-radius:4px;background:var(--line);transition:width .25s cubic-bezier(.16,1,.3,1),background .25s}
-.rail a:hover .mark,.rail a.on .mark{background:var(--ink-2);width:26px}
-.rail .lbl{opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s cubic-bezier(.16,1,.3,1);white-space:nowrap;background:var(--paper);padding:0 6px;border-radius:6px}
-.rail a:hover .lbl,.rail a.on .lbl{opacity:1;transform:none;color:var(--ink)}
 
 /* Masthead */
 .mast{padding:44px 0 20px;display:grid;grid-template-columns:minmax(0,1fr);gap:18px 48px;align-items:end}
@@ -86,7 +78,14 @@ b,strong{font-weight:600}
 .mast .small{font-size:15px}
 .mast .stamp{font-size:14.5px;color:var(--ink-2);line-height:1.55;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius-sm);padding:14px 16px}
 .mast .stamp b{color:var(--ink)}
-.toc{display:flex;flex-wrap:wrap;gap:6px;padding:14px 0 6px;border-top:1px solid var(--hair);font-size:14px;font-weight:500}
+.toc{display:flex;flex-wrap:wrap;gap:6px;padding:12px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);font-size:14px;font-weight:500;position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--paper);margin-bottom:8px}
+.toc a[aria-selected="true"]{color:var(--paper);background:var(--ink);border-color:var(--ink)}
+.toc a[aria-selected="true"]:hover{color:var(--paper)}
+.theme-btn{margin-left:auto;font:inherit;color:var(--ink-2);background:var(--surface);border:1px solid var(--hair);border-radius:999px;padding:5px 12px;cursor:pointer}
+.theme-btn:hover{color:var(--ink);border-color:var(--line)}
+@media (max-width:640px){.theme-btn{flex:none}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+@media (max-width:640px){.toc{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.toc a{flex:none}}
 .toc a{color:var(--ink-2);text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid var(--hair);background:var(--surface);transition:border-color .15s,color .15s}
 .toc a:hover{color:var(--ink);border-color:var(--line)}
 
@@ -268,7 +267,7 @@ details .res-note{font-family:var(--sans);font-size:14.5px;color:var(--ink-2);ma
 .srcs li{break-inside:avoid;margin-bottom:8px}
 @media (max-width:700px){.srcs{columns:1}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-@media print{.rail,.tip{display:none}}
+@media print{.tip{display:none}}
 
 /* results-dependent bits stay hidden until the first result is entered */
 :root:not([data-results="1"]) .res-col,:root:not([data-results="1"]) .res-only{display:none}
@@ -354,19 +353,6 @@ details .res-note{font-family:var(--sans);font-size:14.5px;color:var(--ink-2);ma
     <symbol id="ovx" viewBox="0 0 24 14"><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5 2.5"/></symbol>
   </defs>
 </svg>
-<nav class="rail" aria-label="Sections">
-  <a href="#control"><span class="mark"></span><span class="lbl">Control</span></a>
-  <a href="#results"><span class="mark"></span><span class="lbl">Results</span></a>
-  <a href="#live"><span class="mark"></span><span class="lbl">Live</span></a>
-  <a href="#map"><span class="mark"></span><span class="lbl">Map</span></a>
-  <a href="#call"><span class="mark"></span><span class="lbl">The call</span></a>
-  <a href="#evidence"><span class="mark"></span><span class="lbl">Evidence</span></a>
-  <a href="#senate"><span class="mark"></span><span class="lbl">Senate</span></a>
-  <a href="#house"><span class="mark"></span><span class="lbl">House</span></a>
-  <a href="#stakes"><span class="mark"></span><span class="lbl">Stakes</span></a>
-  <a href="#night"><span class="mark"></span><span class="lbl">The night</span></a>
-  <a href="#sources"><span class="mark"></span><span class="lbl">Sources</span></a>
-</nav>
 <div class="tip" id="tip" role="status" aria-live="polite"></div>
 <main class="page">
 
@@ -377,8 +363,8 @@ details .res-note{font-family:var(--sans);font-size:14.5px;color:var(--ink-2);ma
   </div>
   <p class="stamp" id="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
 </header>
-<nav class="toc" aria-label="Contents">
-  <a href="#control">Control</a><a href="#results">Results</a><a href="#live">Live</a><a href="#map">Map</a><a href="#call">The call</a><a href="#evidence">Evidence</a><a href="#senate">Senate</a><a href="#house">House</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a>
+<nav class="toc" id="tabs" role="tablist" aria-label="Sections">
+  <a href="#control">Control</a><a href="#results">Results</a><a href="#live">Live</a><a href="#map">Map</a><a href="#call">The call</a><a href="#evidence">Evidence</a><a href="#senate">Senate</a><a href="#house">House</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a><button type="button" class="theme-btn" id="theme-btn" aria-label="Switch colour theme">Dark mode</button>
 </nav>
 
 <!-- ================= CONTROL ================= -->
@@ -1293,14 +1279,6 @@ const txt=(x,y,s,cls="",anchor="start",extra="")=>`<text x="${x}" y="${y}" class
   const sl=$("#slotlist");if(sl)sl.innerHTML=slots.map(([t,states])=>`<div><b>${t}</b><span>${esc(states.join(" "))}${(senAt[t]||[]).length?`<br>Senate: ${esc(senAt[t].join(" · "))}`:""}<br><span class="muted">${hseAt[t]||0} House seats</span></span></div>`).join("");
 })();
 
-// ---- rail highlight
-(function rail(){
-  const links=[...document.querySelectorAll(".rail a")];if(!links.length)return;
-  const secs=links.map(a=>document.getElementById(a.getAttribute("href").slice(1)));
-  let ticking=false;
-  function update(){ticking=false;const y=innerHeight*0.35;let cur=0;secs.forEach((el,i)=>{if(el&&el.getBoundingClientRect().top<=y)cur=i;});links.forEach((a,i)=>a.classList.toggle("on",i===cur));}
-  addEventListener("scroll",()=>{if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});update();
-})();
 })();
 </script>
 <script>
@@ -1473,7 +1451,7 @@ const STNAME={};for(const g of USGEO.objects.states.geometries){const st=FIPS_ST
     else if(view.lvl==="county")setVB(fit(counties(view.st).find(x=>x.id===view.co).bb,28),instant);
     else{const c=cities.find(x=>x.st===view.st&&x.name===view.city);setVB(fit([c.x-1,c.y-1,c.x+1,c.y+1],70),instant);}
   }
-  window.__mapGo=v=>{go(v);const m=$("#map");m&&m.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});};
+  window.__mapGo=v=>{if(window.__tab)window.__tab("map");go(v);};
 
   // --- events
   $("#map-pick").innerHTML=`<option value="">United States</option>`+states.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(s=>`<option value="${s.st}">${esc(s.name)}${senBy[s.st]?" (Senate race)":""}</option>`).join("");
@@ -1498,6 +1476,45 @@ const STNAME={};for(const g of USGEO.objects.states.geometries){const st=FIPS_ST
   addEventListener("resize",sizeMarks);
   go({},true);
 })();
+})();
+</script>
+<script>
+// ---- tabs: each contents link shows one group of sections; plain #name routing
+(function(){
+const bar=document.getElementById("tabs");if(!bar)return;
+const links=[...bar.querySelectorAll("a[href^='#']")],ids=links.map(a=>a.getAttribute("href").slice(1));
+const secs=[...document.querySelectorAll("main.page > section")];let cur=ids[0];
+secs.forEach(s=>{if(s.id&&ids.includes(s.id))cur=s.id;s.dataset.tab=cur;s.setAttribute("role","tabpanel");});
+links.forEach(a=>{a.setAttribute("role","tab");a.id="tab-"+a.getAttribute("href").slice(1);});
+function show(id,target){
+  if(!ids.includes(id))id=ids[0];
+  secs.forEach(s=>{s.hidden=s.dataset.tab!==id;});
+  links.forEach(a=>{const on=a.getAttribute("href")==="#"+id;a.setAttribute("aria-selected",on);a.tabIndex=on?0:-1;});
+  const tip=document.getElementById("tip");tip&&tip.classList.remove("show");
+  dispatchEvent(new Event("resize")); // the map sizes its labels against the visible frame
+  if(target){target.scrollIntoView({block:"start"});}
+  else{const top=bar.getBoundingClientRect().top+scrollY;if(scrollY>top)scrollTo(0,top);}
+}
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));
+  if(ids.includes(h)||!h){show(h);return;}
+  const el=document.getElementById(h),sec=el&&el.closest("main.page > section");
+  if(sec){show(sec.dataset.tab,el);}else show(ids[0]);
+}
+window.__tab=id=>{if(location.hash!=="#"+id)history.replaceState(null,"","#"+id);show(id);};
+bar.addEventListener("keydown",e=>{const i=links.indexOf(document.activeElement);if(i<0)return;
+  const j=e.key==="ArrowRight"?(i+1)%links.length:e.key==="ArrowLeft"?(i-1+links.length)%links.length:-1;
+  if(j<0)return;e.preventDefault();links[j].focus();links[j].click();});
+addEventListener("hashchange",route);route();
+
+// ---- theme toggle: light / dark, remembered per browser when storage allows
+const btn=document.getElementById("theme-btn"),root=document.documentElement;
+const sys=()=>matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+const curT=()=>root.getAttribute("data-theme")||sys();
+function label(){const t=curT();btn.textContent=t==="dark"?"Light mode":"Dark mode";btn.setAttribute("aria-pressed",t==="dark");}
+try{const s=localStorage.getItem("md-theme");if(s==="dark"||s==="light")root.setAttribute("data-theme",s);}catch(e){}
+if(btn){label();btn.addEventListener("click",()=>{const n=curT()==="dark"?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("md-theme",n);}catch(e){}label();});
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",label);}
 })();
 </script>
 
