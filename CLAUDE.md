@@ -2,6 +2,8 @@
 
 Election-night analysis page for the 3 November 2026 US midterms (Senate + House), built for the owner, who follows it from India (all times on the page are IST). Published as a claude.ai artifact: https://claude.ai/artifact/L7BHse5WdMQHM1YFFDhvBV (republish by passing that URL to the Artifact tool, or re-upload `index.html` by hand).
 
+Also built to `docs/index.html` (same page with its own HTML skeleton) for GitHub Pages: Settings → Pages → deploy from branch `claude/amazing-cori-qr80tg`, folder `/docs`. Every push of a rebuilt page redeploys it.
+
 ## Layout
 - `src/01-head.html` … `src/08-render.js` are concatenated in order into `index.html` by `node build.js`. Edit the parts, never `index.html` directly.
   - `01-head.html` title, meta, all CSS (design tokens on `:root`, dark mode twice: `prefers-color-scheme` guarded by `:root:not([data-theme="light"])` and `:root[data-theme="dark"]`).
