@@ -8,3 +8,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-03 21:00 | (no calls) | logged Westchester scanner fault (NY-17) and Southwest flooding | NYT live; AP |
 | 2026-11-03 22:00 | (no calls) | logged Florida polling-place moves for flooding and the Broward stall; Desk note on reading the FL margin | CNN live; TIME live |
 | 2026-11-03 23:00 | (no calls) | logged Chester County PA hours extension, Fulton County GA scam texts, FL relocations at 23, and the DCCC watch list | CNN live |
+| 2026-11-04 00:00 | (no calls) | logged Westchester cause (programming error), Detroit turnout and reporting schedule, NC extension request and Tarrant County waits; completed the DCCC list to eight; Desk note | CNN live; ABC News live |
