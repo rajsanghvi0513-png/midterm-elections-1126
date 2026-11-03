@@ -13,7 +13,7 @@ function show(id,target){
   const tip=document.getElementById("tip");tip&&tip.classList.remove("show");
   dispatchEvent(new Event("resize")); // the map sizes its labels against the visible frame
   if(target){target.scrollIntoView({block:"start"});}
-  else{const top=bar.getBoundingClientRect().top+scrollY;if(scrollY>top)scrollTo(0,top);}
+  else{const m=document.querySelector(".mast"),top=m?m.getBoundingClientRect().bottom+scrollY:0;if(scrollY>top)scrollTo({top,behavior:"instant"});}
 }
 function route(){
   const h=decodeURIComponent(location.hash.slice(1));
@@ -24,7 +24,7 @@ function route(){
 window.__tab=id=>{if(location.hash!=="#"+id)history.replaceState(null,"","#"+id);show(id);};
 bar.addEventListener("keydown",e=>{const i=links.indexOf(document.activeElement);if(i<0)return;
   const j=e.key==="ArrowRight"?(i+1)%links.length:e.key==="ArrowLeft"?(i-1+links.length)%links.length:-1;
-  if(j<0)return;e.preventDefault();links[j].focus();links[j].click();});
+  if(j<0)return;e.preventDefault();links[j].click();links[j].focus({preventScroll:true});});
 addEventListener("hashchange",route);route();
 
 // ---- theme toggle: light / dark, remembered per browser when storage allows
