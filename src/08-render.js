@@ -146,7 +146,7 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
     for(const x of r){
       if(x[0]!==last){last=x[0];const n=r.filter(y=>y[0]===x[0]).length;html+=`<tr class="group"><td colspan="9">${NAMES[x[0]]||x[0]} · ${n} seat${n>1?"s":""} · polls close ${SLOT[x[0]]} IST</td></tr>`;}
       const heldTxt={R:"R-held",D:"D-held",I:"Ind.-held",V:"Vacant",N:"New seat"}[x[3]];
-      html+=`<tr><td class="st">${esc(x[1])}<br><span class="muted" style="font-weight:400;font-size:12px">${heldTxt}${x[10]?" · redrawn":""}</span></td><td>${esc(x[2])}</td><td>${nm(x[4])}</td><td>${nm(x[5])}</td><td>${chip(sym(x[6]))}</td><td>${chip(sym(x[7]))}</td><td>${chip(sym(x[8]))}</td><td class="res-col" style="min-width:150px">${(()=>{const res=RH[x[1]];if(!res)return resCell(null);const nmw=res.w==="D"?x[4]:res.w==="R"?x[5]:"";return resCell(res,nmw&&nmw!=="nf"?nmw:"");})()}</td><td class="muted" style="min-width:180px">${esc(x[9])}</td></tr>`;
+      html+=`<tr><td class="st">${esc(x[1])}<br><span class="muted" style="font-weight:400;font-size:var(--fs-xs)">${heldTxt}${x[10]?" · redrawn":""}</span></td><td>${esc(x[2])}</td><td>${nm(x[4])}</td><td>${nm(x[5])}</td><td>${chip(sym(x[6]))}</td><td>${chip(sym(x[7]))}</td><td>${chip(sym(x[8]))}</td><td class="res-col" style="min-width:150px">${(()=>{const res=RH[x[1]];if(!res)return resCell(null);const nmw=res.w==="D"?x[4]:res.w==="R"?x[5]:"";return resCell(res,nmw&&nmw!=="nf"?nmw:"");})()}</td><td class="muted" style="min-width:180px">${esc(x[9])}</td></tr>`;
     }
     tbody.innerHTML=html;
   }
