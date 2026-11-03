@@ -20,4 +20,12 @@ Safety cap: if phase B has run 18 hours, move to C anyway and log why.
 3. If something new: add `RES_SEN` / `RES_HSE` / `RES_HOUSE_TOTAL` / `RES_CONTROL` / `LIVE` entries in `src/07-data.js` (IST timestamps), `node build.js`, republish `index.html` to the artifact, commit and push (this also redeploys `docs/` on Pages). If nothing new, do not push.
 4. Update the `state` line if the phase changed.
 
+## Desk commentary (the owner asked for it, 3 Nov)
+Do not hold back on analysis during the results phase. Alongside the sourced facts, post `LIVE` entries with `by:"Desk"` (they render as labelled opinion) whenever there is something worth saying, for example:
+- what a call or a county swing means against the desk's pre-election call, the raters and the markets (a hit, a miss, by how much);
+- what the early returns imply for races still out (e.g. a Florida margin against Siena's +6 as a polling-error read), always framed as a read, not a call;
+- the running picture: where the desk now thinks each chamber lands, and what would change that;
+- after the night: where the polls, markets and the desk were right or wrong.
+Rules still hold: opinion only in `by:"Desk"` entries, every number in them must come from a sourced entry or the pre-election record, never pre-empt an outlet's call, and never edit or overwrite the pre-election calls.
+
 state: phase=A since=2026-11-03 19:30
