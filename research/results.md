@@ -12,3 +12,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 01:00 | (no calls) | logged Florida turnout vs 2022 by county lean, Byrd on hours, Black early vote in SC and LA; Desk note on Florida | NBC News live |
 | 2026-11-04 02:00 | (no calls) | logged NC extensions (results held to 06:45 IST), Westchester 250k bagged ballots and escort plan, Democratic 230-235 House range; Desk note vs 236 | CNN live; NYT live |
 | 2026-11-04 03:00 | (no calls) | logged DOJ Alaska probe escalation (100+ subpoenas, 20+ target letters); Desk note on a contested AK result | ABC News live |
+| 2026-11-04 04:00 | (no calls) | logged NBC exit poll (Trump 38/62) and Voter Poll issues; Desk read against 2018 | NBC News Exit Poll; BBC live |
