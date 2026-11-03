@@ -134,4 +134,11 @@ const RES_HSE = {
 const RES_HOUSE_TOTAL = null; // e.g. {d:120, r:98, by:"AP", at:"2026-11-04 08:15"}
 // Chamber control calls; null until an outlet calls control.
 const RES_CONTROL = {senate:null, house:null}; // e.g. house:{w:"D", by:"AP", at:"2026-11-04 13:05"}
+// ---------- LIVE UPDATES, newest entries anywhere in the list (the page sorts by time).
+// at: IST "YYYY-MM-DD HH:MM"; tag: "senate" | "house" | "desk" | "night"; h: headline; t: text; by: source (outlet, or "Desk" for opinion);
+// st: optional state code (links the entry to the map). Called races from RES_SEN / RES_HSE are added automatically; do not repeat them here.
+const LIVE = [
+  {at:"2026-11-03 19:00", tag:"night", h:"Live coverage opens", t:"The desk will log calls, counts and notable shifts here through the night. First polls close at 04:30 IST on Wednesday 4 November, in most of Indiana and Kentucky. Every result names the outlet that called it; the pre-election calls on this page stay as written.", by:"Desk"},
+  {at:"2026-11-03 19:00", tag:"house", st:"IN", h:"The first tell: Hamilton County, Indiana", t:"In IN-5 (Spartz), Trump won the county 52-46 and Spartz carried it by 11 in 2024. How much she loses there is the first read on the size of the night.", by:"Desk research (House report, 3 Nov)"}
+];
 </script>

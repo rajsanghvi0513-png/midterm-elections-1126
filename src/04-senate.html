@@ -7,10 +7,10 @@
     <div class="two" style="margin-top:22px">
       <div class="fig">
         <h3>The 35 seats, by the desk's call</h3>
-        <p class="cap">Tile position is rough geography. Fill is the desk's call; the ring colour is the party defending the seat. Hover or tap a tile for the matchup, ratings and market price.</p>
+        <p class="cap">Tile position is rough geography. A tinted tile shows the desk's call; the ring colour is the party defending the seat. A solid tile with a check is a called race, filled in the winner's colour, and its oval stays the desk's pre-election call. Hover or tap a tile for the matchup, ratings and market price.</p>
         <div class="tiles" id="tiles" role="list"></div>
         <div class="legend">
-          <span><svg class="oval xs col-d"><use href="#ov2"/></svg> Solid/Likely D</span><span><svg class="oval xs col-d"><use href="#ov1"/></svg> Lean D</span><span><svg class="oval xs col-t"><use href="#ov0"/></svg> Toss-up (tilt shown in text)</span><span><svg class="oval xs col-r"><use href="#ov1"/></svg> Lean R</span><span><svg class="oval xs col-r"><use href="#ov2"/></svg> Solid/Likely R</span><span><svg class="oval xs col-t"><use href="#ovx"/></svg> No Senate race</span>
+          <span><svg class="oval xs col-d"><use href="#ov2"/></svg> Solid/Likely D</span><span><svg class="oval xs col-d"><use href="#ov1"/></svg> Lean D</span><span><svg class="oval xs col-t"><use href="#ov0"/></svg> Toss-up (tilt shown in text)</span><span><svg class="oval xs col-r"><use href="#ov1"/></svg> Lean R</span><span><svg class="oval xs col-r"><use href="#ov2"/></svg> Solid/Likely R</span><span><svg class="oval xs col-t"><use href="#ovx"/></svg> No Senate race</span><span class="res-only"><span class="lg-called"><svg class="check" viewBox="0 0 12 12"><use href="#chk"/></svg></span> Called (winner's colour)</span>
         </div>
       </div>
       <div class="fig">
@@ -27,7 +27,7 @@
       <label><input type="radio" name="senf" value="r"> R-held</label>
       <label><input type="radio" name="senf" value="d"> D-held</label>
       <label><input type="radio" name="senf" value="split"> Raters disagree</label>
-      <label><input type="radio" name="senf" value="called"> Called</label>
+      <label class="res-only"><input type="radio" name="senf" value="called"> Called</label>
       <span class="count" id="sen-count"></span>
     </div>
     <div class="tbl-wrap"><table class="sortable" id="sen-table"><thead></thead><tbody></tbody></table></div>

@@ -12,6 +12,8 @@
 <nav class="rail" aria-label="Sections">
   <a href="#control"><span class="mark"></span><span class="lbl">Control</span></a>
   <a href="#results"><span class="mark"></span><span class="lbl">Results</span></a>
+  <a href="#live"><span class="mark"></span><span class="lbl">Live</span></a>
+  <a href="#map"><span class="mark"></span><span class="lbl">Map</span></a>
   <a href="#call"><span class="mark"></span><span class="lbl">The call</span></a>
   <a href="#evidence"><span class="mark"></span><span class="lbl">Evidence</span></a>
   <a href="#senate"><span class="mark"></span><span class="lbl">Senate</span></a>
@@ -31,7 +33,7 @@
   <p class="stamp" id="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
 </header>
 <nav class="toc" aria-label="Contents">
-  <a href="#control">Control</a><a href="#results">Results</a><a href="#call">The call</a><a href="#evidence">Evidence and the polls</a><a href="#senate">Senate, seat by seat</a><a href="#house">House, state by state</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a>
+  <a href="#control">Control</a><a href="#results">Results</a><a href="#live">Live</a><a href="#map">Map</a><a href="#call">The call</a><a href="#evidence">Evidence</a><a href="#senate">Senate</a><a href="#house">House</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a>
 </nav>
 
 <!-- ================= CONTROL ================= -->
@@ -85,8 +87,43 @@
     </div>
     <div class="fig" style="margin-top:32px">
       <h3>Who called it right</h3>
-      <p class="cap">Called races only, counted against each source's final pre-election rating. Toss-ups count as no call. House rows cover only the competitive districts listed on this page.</p>
+      <p class="cap">Called races only. The desk and the three raters are scored on their stated final call, so a toss-up (the desk's 40 to 60%, even with a tilt) is no call; Tilt counts as a call. Polymarket is scored on its price, over 50% being a pick. The desk and Polymarket made no House district calls on this page, so they are not scored there; House rows cover only the competitive districts listed here.</p>
       <div class="tbl-wrap hits"><table id="hit-table"><thead></thead><tbody></tbody></table></div>
     </div>
   </div>
 </section>
+
+<!-- ================= LIVE (entries in LIVE, 07-data.js; called races join automatically) ================= -->
+<section class="contest" id="live">
+  <div class="contest-head"><h2>Live updates</h2><span class="sub" id="live-sub">A running log through the count, newest first. Every entry carries its IST time and its source; entries marked Desk are this page's opinion. Calls entered in the Results section appear here automatically. This page is a snapshot: reload it for new entries.</span></div>
+  <div class="contest-body">
+    <div class="filters" id="live-filters" role="group" aria-label="Filter live updates">
+      <label><input type="radio" name="livef" value="all" checked> Everything</label>
+      <label><input type="radio" name="livef" value="call"> Calls</label>
+      <label><input type="radio" name="livef" value="senate"> Senate</label>
+      <label><input type="radio" name="livef" value="house"> House</label>
+      <label><input type="radio" name="livef" value="desk"> Desk</label>
+      <span class="count" id="live-count"></span>
+    </div>
+    <ol class="live" id="live-list"></ol>
+  </div>
+</section>
+
+<!-- ================= MAP (geography in 09-geo.js, built by tools/build-geo.js) ================= -->
+<section class="contest" id="map">
+  <div class="contest-head"><h2>The map, from country to city</h2><span class="sub">Tap a state to see its counties, the races on its ballot and its cities of 100,000 or more; tap a county or a city for its own details.</span></div>
+  <div class="contest-body">
+    <div class="map-bar">
+      <nav class="crumbs" id="map-crumbs" aria-label="Map level"></nav>
+      <label class="map-pick">Go to state <select id="map-pick"></select></label>
+    </div>
+    <div class="map-grid">
+      <div class="map-stage"><svg id="map-svg" viewBox="0 0 975 610" role="img" aria-label="Map of the United States"></svg>
+        <div class="legend" id="map-legend"></div>
+      </div>
+      <aside class="map-panel" id="map-panel" aria-live="polite"></aside>
+    </div>
+    <p class="src">Boundaries: U.S. Census Bureau cartographic boundary files, 2017 edition (via us-atlas 3.0.1), Albers USA projection; Alaska and Hawaii are inset and not to scale. Since 2017 Connecticut has replaced its eight counties with nine planning regions and Alaska has split Valdez-Cordova into two areas; the map keeps the 2017 lines. Cities: every incorporated place with 100,000 or more residents in the Census Bureau's Vintage 2025 estimates (1 July 2025), with its 2020 Census count, read from Wikipedia's sourced table on 3 Nov 2026; a dot marks the city's listed coordinates, not its boundary. Race colours, ratings and close times are the same data as the Senate and House sections. Watch counties are the ones named in the desk's research. Congressional district lines are not drawn: nine states (Texas, North Carolina, Ohio, Florida, Tennessee, Louisiana, Alabama, California and Utah) vote on new lines this year, and this page has no verified boundary file for them. County and city vote counts are not carried on this page.</p>
+  </div>
+</section>
+

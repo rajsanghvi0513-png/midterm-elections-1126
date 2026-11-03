@@ -2,7 +2,7 @@
 // Usage: node tools/results-preview.js [outdir]
 process.chdir(require('path').join(__dirname,'..'));
 const fs=require('fs');const { chromium } = require('playwright');
-const out=process.argv[2]||'shots';fs.mkdirSync(out,{recursive:true});
+const out=process.argv[2]||'shots';fs.mkdirSync(out,{recursive:true});console.log('writing previews to '+require('path').resolve(out));
 const SAMPLE=`const RES_SEN = {NC:{w:"D",m:"+9.8",by:"AP",at:"2026-11-04 06:42"},KS:{w:"R",m:"+1.4",by:"DDHQ",at:"2026-11-04 09:05"},KY:{w:"R",m:"+18",by:"AP",at:"2026-11-04 04:31"},NE:{w:"I",m:"+0.9",by:"AP",at:"2026-11-04 10:12"},GA:{w:"D",m:"+7.1",by:"AP",at:"2026-11-04 07:40"}};
 const RES_HSE = {"PA-7":{w:"D",m:"+2.1",by:"AP",at:"2026-11-04 09:10"},"IN-5":{w:"R",m:"+6",by:"AP",at:"2026-11-04 05:02"},"TX-15":{w:"R",m:"+3.3",by:"DDHQ",at:"2026-11-04 10:40"}};
 const RES_HOUSE_TOTAL = {d:120,r:98,by:"AP",at:"2026-11-04 08:15"};

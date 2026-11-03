@@ -24,12 +24,23 @@ const nm=s=>s==="nf"?`<span class="muted">not found</span>`:esc(s);
 const RATE_FULL={TU:"Toss-up",LnD:"Lean D",LnR:"Lean R",LkD:"Likely D",LkR:"Likely R",TD:"Tilt D",TR:"Tilt R",SD:"Solid D",SR:"Solid R",nf:"nf"};
 
 // ---- results helpers (data in RES_* at the end of 07-data.js)
-const RS=(typeof RES_SEN!=="undefined"&&RES_SEN)||{}, RH=(typeof RES_HSE!=="undefined"&&RES_HSE)||{};
-const RHT=(typeof RES_HOUSE_TOTAL!=="undefined")?RES_HOUSE_TOTAL:null, RC=(typeof RES_CONTROL!=="undefined"&&RES_CONTROL)||{};
+// Independents who can win a seat this cycle, by state. Only these states accept w:"I".
+const IND={NE:"Dan Osborn"};
+const SENKEYS=new Set(SEN.map(s=>s.st)), HSEKEYS=new Set(HSE.map(x=>x[1]));
+// Entries are typed by hand on the night: normalise the winner and drop anything malformed (logged to the console).
+function cleanRes(obj,known,allowI){const out={};for(const k in (obj||{})){const r=obj[k]||{};const w=String(r.w||"").trim().toUpperCase();
+  if(!known.has(k)){console.warn("Result ignored, unknown race:",k);continue;}
+  if(!(w==="D"||w==="R"||(w==="I"&&allowI(k)))){console.warn("Result ignored, bad winner:",k,r.w);continue;}
+  out[k]=Object.assign({},r,{w});}return out;}
+const RS=cleanRes(typeof RES_SEN!=="undefined"&&RES_SEN,SENKEYS,k=>k in IND), RH=cleanRes(typeof RES_HSE!=="undefined"&&RES_HSE,HSEKEYS,()=>false);
+const num=v=>(v!==""&&v!=null&&Number.isFinite(+v))?+v:null;
+const RHT=(()=>{const t=typeof RES_HOUSE_TOTAL!=="undefined"?RES_HOUSE_TOTAL:null;if(!t)return null;const d=num(t.d),r=num(t.r);if(d==null||r==null||d+r>435){console.warn("House total ignored:",t);return null;}return Object.assign({},t,{d,r});})();
+const RC=(()=>{const c=(typeof RES_CONTROL!=="undefined"&&RES_CONTROL)||{},o={};for(const k of["senate","house"]){const v=c[k];if(!v)continue;const w=String(v.w||"").trim().toUpperCase();if(w==="D"||w==="R")o[k]=Object.assign({},v,{w});else console.warn("Control call ignored:",k,v);}return o;})();
 const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-const fmtAt=a=>{const m=/^(\d{4})-(\d\d)-(\d\d)\s+(\d\d:\d\d)/.exec(a||"");return m?`${+m[3]} ${MON[+m[2]-1]} ${m[4]} IST`:esc(a||"time nf");};
+const fmtAt=a=>{const m=/^(\d{4})-(\d\d)-(\d\d)\s+(\d\d:\d\d)/.exec(a||"");return m&&MON[+m[2]-1]?`${+m[3]} ${MON[+m[2]-1]} ${m[4]} IST`:(a?esc(a)+" (time as entered)":"time nf");};
 const PARTY={D:"Democrat",R:"Republican",I:"Independent"};
 const wcls=w=>w==="D"?"d":w==="R"?"r":"i";
+const winnerName=(s,w)=>w==="D"?s.d:w==="R"?s.r:(IND[s.st]||"");
 const chk=`<svg class="check" viewBox="0 0 12 12" aria-hidden="true"><use href="#chk"/></svg>`;
 function resCell(res,winnerName){
   if(!res)return`<span class="res wait">Not called</span>`;
@@ -38,8 +49,11 @@ function resCell(res,winnerName){
 }
 // What each source predicted: "D", "R", "I" or null (toss-up / no rating).
 const ratePick=t=>{const c=rateCls(t);return c==="d"?"D":c==="r"?"R":null;};
+// Polymarket is scored on its price (over 50% is a pick).
 const probPick=(p,isI)=>p===0.5?null:(p>0.5?(isI?"I":"D"):"R");
-const verdict=(pick,res)=>pick==null?`<span class="verdict">Desk: toss-up</span>`:`<span class="verdict">Desk ${pick===res.w?"right":"wrong"}</span>`;
+// The desk is scored on its stated call: its toss-ups (40-60%) are no call, even with a tilt.
+const deskPick=s=>{const isI=s.st in IND;const d=deskInfo(s.desk,isI);return d.cls==="t"?null:(d.cls==="d"?"D":"R");};
+const verdict=(pick,res)=>pick==null?`<span class="verdict">Desk: toss-up, not scored</span>`:`<span class="verdict">Desk ${pick===res.w?"right":"wrong"}</span>`;
 
 // ---- tooltip
 const tip=$("#tip");
@@ -57,13 +71,14 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
     if(!st)return`<div class="tile empty" aria-hidden="true"></div>`;
     const s=senBy[st];
     if(!s)return`<div class="tile" role="listitem" aria-label="${st}, no Senate race">${st}<svg class="oval col-t" viewBox="0 0 24 14" aria-hidden="true"><use href="#ovx"/></svg></div>`;
-    const isI=st==="NE";const d=deskInfo(s.desk,isI);const res=RS[st];
+    const isI=st in IND;const d=deskInfo(s.desk,isI);const res=RS[st];
     const ring=`box-shadow:inset 0 0 0 2px var(--${s.held==="D"?"d":"r"})`;
-    if(res){const c=wcls(res.w);return`<div class="tile race ${c}s called" role="listitem" tabindex="0" data-st="${st}" style="${ring}" aria-label="${esc(s.name)}: called for ${PARTY[res.w]||res.w}; desk had ${d.label}">${chk}${st}${ovalSvg(2,c,"")}</div>`;}
-    const cls=isI?"rl":(d.cls==="d"?(d.fill===2?"ds":"dl"):d.cls==="r"?(d.fill===2?"rs":"rl"):"tt");
-    return`<div class="tile race ${cls}" role="listitem" tabindex="0" data-st="${st}" style="${ring}" aria-label="${esc(s.name)}: ${d.label}">${st}${ovalSvg(d.fill,cls==="tt"?"t":(cls[0]==="d"?"d":"r"),"")}</div>`;
+    // Tint = the desk's call (oval shows solid vs lean). Solid fill + check = a called race; the oval on it stays the desk's call.
+    if(res){const c=wcls(res.w);return`<div class="tile race ${c}s called" role="listitem" tabindex="0" data-st="${st}" aria-label="${esc(s.name)}: called for ${esc(PARTY[res.w])}; desk had ${esc(d.label)}">${chk}${st}${ovalSvg(d.fill,d.cls,"")}</div>`;}
+    const cls=d.cls==="d"?"dl":d.cls==="r"?"rl":"tt";
+    return`<div class="tile race ${cls}" role="listitem" tabindex="0" data-st="${st}" style="${ring}" aria-label="${esc(s.name)}: ${esc(d.label)}">${st}${ovalSvg(d.fill,d.cls,"")}</div>`;
   }).join("");
-  const html=s=>{const isI=s.st==="NE";const d=deskInfo(s.desk,isI);return`<b>${esc(s.name)}</b> · ${esc(s.inc)}<br>${esc(s.d)} (D) v ${esc(s.r)} (R)${s.o?" · "+esc(s.o):""}<br>Cook ${esc(s.cook)} · Sabato ${esc(s.sab)} · IE ${esc(s.ie)}<br>Polls: ${esc(s.poll)}<br>Polymarket ${isI?"Osborn":"D"} ${pct(s.pm)}${s.k?" · Kalshi "+esc(s.k):""}<br>Desk: ${d.label}${isI?"":" ("+pct(s.desk)+" D)"} · closes ${s.ist} IST${RS[s.st]?`<br><b>Called: ${esc(PARTY[RS[s.st].w]||RS[s.st].w)}${RS[s.st].m&&RS[s.st].m!=="nf"?" "+esc(RS[s.st].m):""}</b> · ${esc(RS[s.st].by||"nf")}, ${fmtAt(RS[s.st].at)}`:""}`;};
+  const html=s=>{const isI=s.st in IND;const d=deskInfo(s.desk,isI);return`<b>${esc(s.name)}</b> · ${esc(s.inc)}<br>${esc(s.d)} (D) v ${esc(s.r)} (R)${s.o?" · "+esc(s.o):""}<br>Cook ${esc(s.cook)} · Sabato ${esc(s.sab)} · IE ${esc(s.ie)}<br>Polls: ${esc(s.poll)}<br>Polymarket ${isI?"Osborn":"D"} ${pct(s.pm)}${s.k?" · Kalshi "+esc(s.k):""}<br>Desk: ${d.label}${isI?"":" ("+pct(s.desk)+" D)"} · closes ${s.ist} IST${RS[s.st]?`<br><b>Called: ${esc(winnerName(s,RS[s.st].w))} (${RS[s.st].w})${RS[s.st].m&&RS[s.st].m!=="nf"?" "+esc(RS[s.st].m):""}</b> · ${esc(RS[s.st].by||"nf")}, ${fmtAt(RS[s.st].at)}`:""}`;};
   box.addEventListener("pointermove",e=>{const t=e.target.closest(".tile.race");if(!t)return hideTip();showTip(html(senBy[t.dataset.st]),e.clientX,e.clientY);});
   box.addEventListener("pointerleave",hideTip);
   box.addEventListener("focusin",e=>{const t=e.target.closest(".tile.race");if(!t)return;const b=t.getBoundingClientRect();showTip(html(senBy[t.dataset.st]),b.left+b.width/2,b.top+b.height/2);});
@@ -73,9 +88,9 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
 // ---- Senate table
 (function senTable(){
   const thead=$("#sen-table thead"),tbody=$("#sen-table tbody"),count=$("#sen-count");
-  const cols=[["name","State / seat"],["d","Matchup"],["desk","Desk call"],["res","Result"],["cook","Cook"],["sab","Sabato"],["ie","Inside"],["poll","Final polls"],["pm","Market (D)"],["ist","Closes IST"]];
+  const cols=[["ist","State · closes IST"],["res","Result"],["desk","Desk call"],["d","Matchup"],["cook","Cook · Sabato · Inside"],["poll","Final polls"],["pm","Market (D)"]];
   let sortKey="ist",dir=1,filter="all";
-  thead.innerHTML="<tr>"+cols.map(([k,l])=>`<th${k==="pm"?' class="num"':""}><button type="button" data-k="${k}" ${k===sortKey?'aria-sort="ascending"':'aria-sort="none"'}>${l}<svg class="sort" viewBox="0 0 10 10" aria-hidden="true"><use href="#chev"/></svg></button></th>`).join("")+"</tr>";
+  thead.innerHTML="<tr>"+cols.map(([k,l])=>`<th${k==="pm"?' class="num"':k==="res"?' class="res-col"':""}><button type="button" data-k="${k}" ${k===sortKey?'aria-sort="ascending"':'aria-sort="none"'}>${l}<svg class="sort" viewBox="0 0 10 10" aria-hidden="true"><use href="#chev"/></svg></button></th>`).join("")+"</tr>";
   const comp=/Toss|Lean|Tilt|Likely/;
   function rows(){
     let r=SEN.slice();
@@ -88,8 +103,14 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
   }
   function render(){
     const r=rows();count.textContent=r.length+(r.length===1?" seat":" seats");if(!r.length){tbody.innerHTML=`<tr><td colspan="${cols.length}" class="muted">${filter==="called"?"No Senate race has been called yet.":"No seats match this filter."}</td></tr>`;return;}
-    tbody.innerHTML=r.map(s=>{const isI=s.st==="NE";const d=deskInfo(s.desk,isI);
-      return`<tr><td class="st" style="max-width:210px;white-space:normal">${esc(s.name)}<br><span class="muted" style="font-weight:400;font-size:12px">${s.held}-held${s.open?" · open":""} · ${esc(s.inc)}</span></td><td style="min-width:180px"><b>${esc(s.d)}</b> <span class="muted">(D)</span> v <b>${esc(s.r)}</b> <span class="muted">(R)</span>${s.o?`<br><span class="muted" style="font-size:12px">${esc(s.o)}</span>`:""}${s.note?`<br><span class="muted" style="font-size:12px">${esc(s.note)}</span>`:""}</td><td><span class="call col-${d.cls}">${ovalSvg(d.fill,d.cls,"xs")}<span style="color:var(--ink)">${d.label}</span></span>${isI?"":`<br><span class="muted" style="font-size:12px">${pct(s.desk)} D</span>`}</td><td>${(()=>{const res=RS[s.st];if(!res)return resCell(null);const nmw=res.w==="D"?s.d:res.w==="R"?s.r:(isI?"Dan Osborn":"");return resCell(res,nmw)+verdict(probPick(s.desk,isI),res);})()}</td><td>${chip(s.cook)}</td><td>${chip(s.sab)}</td><td>${chip(s.ie)}</td><td style="min-width:160px">${esc(s.poll)}</td><td class="num">${isI?"Osborn "+pct(s.pm):pct(s.pm)}${s.k?`<br><span class="muted" style="font-size:12px">K: ${esc(s.k)}</span>`:""}</td><td>${esc(s.ist)}<br><span class="muted" style="font-size:12px">${esc(s.et)} ET</span></td></tr>`;}).join("");
+    tbody.innerHTML=r.map(s=>{const isI=s.st in IND;const d=deskInfo(s.desk,isI);const res=RS[s.st];
+      const sub=t=>`<span class="sub-line">${t}</span>`;
+      return`<tr><td class="st">${esc(s.name)}${sub(`closes ${esc(s.ist)} IST · ${esc(s.et)} ET`)}</td>`
+       +`<td class="res-col">${res?resCell(res,winnerName(s,res.w))+verdict(deskPick(s),res):resCell(null)}</td>`
+       +`<td><span class="call col-${d.cls}">${ovalSvg(d.fill,d.cls,"xs")}<span style="color:var(--ink)">${d.label}</span></span>${isI?"":sub(pct(s.desk)+" D")}</td>`
+       +`<td class="matchup"><b>${esc(s.d)}</b> <span class="muted">(D)</span> v <b>${esc(s.r)}</b> <span class="muted">(R)</span>${s.o?sub(esc(s.o)):""}${sub(`${s.held}-held${s.open?" · open":""} · ${esc(s.inc)}`)}${s.note?sub(esc(s.note)):""}</td>`
+       +`<td class="raters">${chip(s.cook)}<br>${chip(s.sab)}<br>${chip(s.ie)}</td><td class="polls">${esc(s.poll)}</td>`
+       +`<td class="num">${isI?"Osborn "+pct(s.pm):pct(s.pm)}${s.k?sub("K: "+esc(s.k)):""}</td></tr>`;}).join("");
   }
   thead.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;if(k===sortKey)dir=-dir;else{sortKey=k;dir=k==="pm"||k==="desk"||k==="res"?-1:1;}thead.querySelectorAll("button").forEach(x=>x.setAttribute("aria-sort",x.dataset.k===sortKey?(dir>0?"ascending":"descending"):"none"));render();});
   $("#sen-filters").addEventListener("change",e=>{filter=e.target.value;render();});
@@ -99,7 +120,7 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
 // ---- House table
 (function hseTable(){
   const thead=$("#hse-table thead"),tbody=$("#hse-table tbody"),count=$("#hse-count");
-  thead.innerHTML=`<tr><th>District</th><th>Incumbent / status</th><th>Democrat</th><th>Republican</th><th>Cook</th><th>Sabato</th><th>Inside</th><th>Result</th><th>Notes</th></tr>`;
+  thead.innerHTML=`<tr><th>District</th><th>Incumbent / status</th><th>Democrat</th><th>Republican</th><th>Cook</th><th>Sabato</th><th>Inside</th><th class="res-col">Result</th><th>Notes</th></tr>`;
   let filter="all";
   const NAMES={AL:"Alabama",AK:"Alaska",AZ:"Arizona",CA:"California",CO:"Colorado",FL:"Florida",IN:"Indiana",IA:"Iowa",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MI:"Michigan",MN:"Minnesota",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",OH:"Ohio",PA:"Pennsylvania",SC:"South Carolina",TN:"Tennessee",TX:"Texas",UT:"Utah",VA:"Virginia",WA:"Washington",WI:"Wisconsin"};
   const sym=t=>RATE_FULL[t]||t;
@@ -118,7 +139,7 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
     for(const x of r){
       if(x[0]!==last){last=x[0];const n=r.filter(y=>y[0]===x[0]).length;html+=`<tr class="group"><td colspan="9">${NAMES[x[0]]||x[0]} · ${n} seat${n>1?"s":""} · polls close ${SLOT[x[0]]} IST</td></tr>`;}
       const heldTxt={R:"R-held",D:"D-held",I:"Ind.-held",V:"Vacant",N:"New seat"}[x[3]];
-      html+=`<tr><td class="st">${esc(x[1])}<br><span class="muted" style="font-weight:400;font-size:12px">${heldTxt}${x[10]?" · redrawn":""}</span></td><td>${esc(x[2])}</td><td>${nm(x[4])}</td><td>${nm(x[5])}</td><td>${chip(sym(x[6]))}</td><td>${chip(sym(x[7]))}</td><td>${chip(sym(x[8]))}</td><td style="min-width:150px">${(()=>{const res=RH[x[1]];if(!res)return resCell(null);const nmw=res.w==="D"?x[4]:res.w==="R"?x[5]:"";return resCell(res,nmw&&nmw!=="nf"?nmw:"");})()}</td><td class="muted" style="min-width:180px">${esc(x[9])||"—"}</td></tr>`;
+      html+=`<tr><td class="st">${esc(x[1])}<br><span class="muted" style="font-weight:400;font-size:12px">${heldTxt}${x[10]?" · redrawn":""}</span></td><td>${esc(x[2])}</td><td>${nm(x[4])}</td><td>${nm(x[5])}</td><td>${chip(sym(x[6]))}</td><td>${chip(sym(x[7]))}</td><td>${chip(sym(x[8]))}</td><td class="res-col" style="min-width:150px">${(()=>{const res=RH[x[1]];if(!res)return resCell(null);const nmw=res.w==="D"?x[4]:res.w==="R"?x[5]:"";return resCell(res,nmw&&nmw!=="nf"?nmw:"");})()}</td><td class="muted" style="min-width:180px">${esc(x[9])}</td></tr>`;
     }
     tbody.innerHTML=html;
   }
@@ -137,10 +158,10 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
   const ctl=(c,label)=>c?`<p class="small" style="margin-top:12px"><span class="res col-${wcls(c.w)}">${ovalSvg(2,wcls(c.w),"xs")}${chk}<span style="color:var(--ink)">${label} control called for the ${c.w==="D"?"Democrats":"Republicans"}</span></span><span class="res-line">by ${esc(c.by||"nf")}, ${fmtAt(c.at)}</span></p>`:"";
   $("#res-senate").innerHTML=`<h3>Senate</h3><p class="cap">Democrats need 51 seats; at 50 Vice-President Vance breaks ties for the Republicans.</p>
     <div class="tally" style="margin-top:14px"><span class="n">${senCalled.length}</span><span class="of">of ${SEN.length} races called · ${left} still open</span></div>
-    ${bar([["Democratic caucus",D0+dWin,"bd"],["Osborn",iWin,"bi"],["Not yet called",left,""],["Republican",R0+rWin,"br"]],100)}
-    <div class="seatkey"><span><b>${D0+dWin} Democratic caucus</b><small>${D0} not up${dWin?` + ${dWin} won`:""}</small></span>${iWin?`<span class="mid"><b>${iWin} Osborn (I)</b><small>caucus unconfirmed</small></span>`:""}<span><b>${R0+rWin} Republican</b><small>${R0} not up${rWin?` + ${rWin} won`:""}</small></span></div>
+    ${bar([["Democratic caucus",D0+dWin,"bd"],["Independent",iWin,"bi"],["Not yet called",left,""],["Republican",R0+rWin,"br"]],100)}
+    <div class="seatkey"><span><b>${D0+dWin} Democratic caucus</b><small>${D0} not up${dWin?` + ${dWin} won`:""}</small></span>${iWin?`<span class="mid"><b>${iWin} Independent</b><small>caucus unconfirmed</small></span>`:""}<span><b>${R0+rWin} Republican</b><small>${R0} not up${rWin?` + ${rWin} won`:""}</small></span></div>
     ${ctl(RC.senate,"Senate")}
-    ${senCalled.length?"":`<p class="empty-note">No Senate race has been called yet. The first polls close at 04:30 IST on Wednesday 4 November (Indiana and eastern Kentucky).</p>`}`;
+    ${senCalled.length?"":`<p class="empty-note">No Senate race has been called yet. The first polls close at 04:30 IST on Wednesday 4 November (most of Indiana and Kentucky).</p>`}`;
   const hCalled=HSE.filter(x=>RH[x[1]]);
   const hD=hCalled.filter(x=>RH[x[1]].w==="D").length, hR=hCalled.filter(x=>RH[x[1]].w==="R").length;
   const flips=hCalled.filter(x=>(x[3]==="D"||x[3]==="R")&&RH[x[1]].w!==x[3]).length;
@@ -154,30 +175,31 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
 
   // Hit rates: each source's final pre-election pick against called results.
   const srcs=[
-    ["Desk (this page)", s=>probPick(s.desk,s.st==="NE"), null],
-    ["Polymarket", s=>probPick(s.pm,s.st==="NE"), null],
+    ["Desk (this page)", deskPick, null],
+    ["Polymarket", s=>probPick(s.pm,s.st in IND), null],
     ["Cook Political Report", s=>ratePick(s.cook), x=>ratePick(RATE_FULL[x[6]])],
     ["Sabato's Crystal Ball", s=>ratePick(s.sab), x=>ratePick(RATE_FULL[x[7]])],
     ["Inside Elections", s=>ratePick(s.ie), x=>ratePick(RATE_FULL[x[8]])]
   ];
   const score=(rows,res,fn)=>{let hit=0,n=0,skip=0;for(const r of rows){const p=fn(r);if(p==null){skip++;continue;}n++;if(p===res(r).w)hit++;}return{hit,n,skip};};
-  const cell=o=>o==null?`<span class="muted">no district calls</span>`:(o.n?`<b>${o.hit}</b> of ${o.n}`:`<span class="muted">none yet</span>`)+(o.skip?`<span class="res-line">${o.skip} toss-up or unrated</span>`:"");
-  $("#hit-table thead").innerHTML=`<tr><th>Source</th><th class="num">Senate</th><th class="num">House districts</th><th class="num">Hit rate</th></tr>`;
+  const cell=o=>o==null?`<span class="muted">not scored</span>`:(o.n?`<b>${o.hit}</b> of ${o.n}`:`<span class="muted">none yet</span>`)+(o.skip?`<span class="res-line">${o.skip} toss-up or unrated</span>`:"");
+  $("#hit-table thead").innerHTML=`<tr><th>Source</th><th class="num">Senate races</th><th class="num">Senate hit rate</th><th class="num">House districts</th></tr>`;
   const total=senCalled.length+hCalled.length;
-  $("#hit-table tbody").innerHTML=total?srcs.map(([name,fs,fh])=>{const a=score(senCalled,s=>RS[s.st],fs);const b=fh?score(hCalled,x=>RH[x[1]],fh):null;const hit=a.hit+(b?b.hit:0),n=a.n+(b?b.n:0);
-    return`<tr${name.startsWith("Desk")?' class="hl"':""}><td class="st">${name}</td><td class="num">${cell(a)}</td><td class="num">${cell(b)}</td><td class="num"><b>${n?Math.round(hit/n*100)+"%":"–"}</b></td></tr>`;}).join("")
+  $("#hit-table tbody").innerHTML=total?srcs.map(([name,fs,fh])=>{const a=score(senCalled,s=>RS[s.st],fs);const b=fh?score(hCalled,x=>RH[x[1]],fh):null;
+    return`<tr${name.startsWith("Desk")?' class="hl"':""}><td class="st">${name}</td><td class="num">${cell(a)}</td><td class="num"><b>${a.n?Math.round(a.hit/a.n*100)+"%":""}</b></td><td class="num">${cell(b)}</td></tr>`;}).join("")
     :`<tr><td colspan="4" class="muted">Hit rates appear here once the first race is called. Five sources will be scored: the desk, Polymarket, Cook, Sabato and Inside Elections.</td></tr>`;
 
   // Deep dives: a dated result line above the analysis, which stays as written.
   document.querySelectorAll("details[data-st]").forEach(dt=>{
-    const lines=dt.dataset.st.split(" ").filter(st=>RS[st]).map(st=>{const s=senBy[st],res=RS[st],isI=st==="NE";const who=res.w==="D"?s.d:res.w==="R"?s.r:(isI?"Dan Osborn":"");
-      return`<b>${esc(s.name)}:</b> ${esc(who)} (${res.w}) won${res.m&&res.m!=="nf"?", "+esc(res.m):""}. Called by ${esc(res.by||"nf")}, ${fmtAt(res.at)}. Desk had ${deskInfo(s.desk,isI).label}${isI?"":" ("+pct(s.desk)+" D)"}.`;});
+    const lines=dt.dataset.st.split(" ").filter(st=>RS[st]).map(st=>{const s=senBy[st],res=RS[st],isI=st in IND;const who=winnerName(s,res.w);
+      return`<b>${esc(s.name)}:</b> ${esc(who)} (${esc(res.w)}) won${res.m&&res.m!=="nf"?", "+esc(res.m):""}. Called by ${esc(res.by||"nf")}, ${fmtAt(res.at)}. Desk had ${deskInfo(s.desk,isI).label}${isI?"":" ("+pct(s.desk)+" D)"}.`;});
     if(lines.length){const p=dt.querySelector(".prose");if(p)p.insertAdjacentHTML("afterbegin",`<p class="res-note">${lines.join("<br>")}</p>`);}
   });
 
   // Masthead: say when the page last took a result, without touching the pre-election wording.
   const ats=[...Object.values(RS),...Object.values(RH),RHT,RC.senate,RC.house].filter(Boolean).map(r=>r.at||"").filter(Boolean).sort();
-  if(ats.length){$("#stamp").insertAdjacentHTML("beforeend",` <b>Results are being added below the Control section; last entry ${fmtAt(ats[ats.length-1])}.</b>`);$("#res-sub").insertAdjacentHTML("beforeend",` Last entry ${fmtAt(ats[ats.length-1])}.`);}
+  document.documentElement.dataset.results=ats.length?"1":"";
+  if(ats.length){$("#stamp").insertAdjacentHTML("afterend",`<p class="stamp-live">The snapshot above stands as written. Results entered since are in the <a href="#results">Results</a> section; last entry ${fmtAt(ats[ats.length-1])}.</p>`);$("#res-sub").insertAdjacentHTML("beforeend",` Last entry ${fmtAt(ats[ats.length-1])}.`);}
 })();
 
 // ---- SVG helpers
