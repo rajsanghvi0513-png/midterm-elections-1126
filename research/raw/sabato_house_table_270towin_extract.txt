@@ -1,0 +1,1369 @@
+var WebFontConfig = WebFontConfig || {};
+WebFontConfig['active'] = function() {
+if ( typeof ( window.jQuery ) !== 'undefined' ) {
+jQuery(window).trigger('liquid_async_fonts_active');
+}
+};
+WebFontConfig['inactive'] = function() {
+if ( typeof ( window.jQuery ) !== 'undefined' ) {
+jQuery(window).trigger('liquid_async_fonts_inactive');
+}
+};
+
+
+
+THE FINAL 2026 RATINGS: Democrats Favored to Capture House, Senate, and Gubernatorial Majorities - Sabato's Crystal Ball
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/#article","isPartOf":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/"},"author":{"name":"Kyle Kondik and J. Miles Coleman","@id":"https:\/\/centerforpolitics.org\/crystalball\/#\/schema\/person\/2dc2447fb5ea9e5820966bab2f00c991"},"headline":"THE FINAL 2026 RATINGS: Democrats Favored to Capture House, Senate, and Gubernatorial Majorities","datePublished":"2026-11-02T16:27:09+00:00","dateModified":"2026-11-02T18:06:41+00:00","mainEntityOfPage":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/"},"wordCount":1822,"image":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/#primaryimage"},"thumbnailUrl":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/uploads\/2026\/11\/110226housefix.png","articleSection":["2026 Governor","2026 House","2026 Senate"],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/","url":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/","name":"THE FINAL 2026 RATINGS: Democrats Favored to Capture House, Senate, and Gubernatorial Majorities - Sabato's Crystal Ball","isPartOf":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/#website"},"primaryImageOfPage":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/#primaryimage"},"image":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/#primaryimage"},"thumbnailUrl":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/uploads\/2026\/11\/110226housefix.png","datePublished":"2026-11-02T16:27:09+00:00","dateModified":"2026-11-02T18:06:41+00:00","author":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/#\/schema\/person\/2dc2447fb5ea9e5820966bab2f00c991"},"breadcrumb":{"@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/#primaryimage","url":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/uploads\/2026\/11\/110226housefix.png","contentUrl":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/uploads\/2026\/11\/110226housefix.png","width":600,"height":1083},{"@type":"BreadcrumbList","@id":"https:\/\/centerforpolitics.org\/crystalball\/2026finalratings\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/centerforpolitics.org\/crystalball\/"},{"@type":"ListItem","position":2,"name":"THE FINAL 2026 RATINGS: Democrats Favored to Capture House, Senate, and Gubernatorial Majorities"}]},{"@type":"WebSite","@id":"https:\/\/centerforpolitics.org\/crystalball\/#website","url":"https:\/\/centerforpolitics.org\/crystalball\/","name":"Sabato's Crystal Ball","description":"Sabato's Crystal Ball","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/centerforpolitics.org\/crystalball\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Person","@id":"https:\/\/centerforpolitics.org\/crystalball\/#\/schema\/person\/2dc2447fb5ea9e5820966bab2f00c991","name":"Kyle Kondik and J. Miles Coleman","url":"https:\/\/centerforpolitics.org\/crystalball\/author\/kyle-kondik-and-j-miles-coleman\/"}]}
+
+
+
+
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+
+ -->
+ -->
+ -->
+ -->
+
+
+.lqd-6ae8d29049004{
+position: fixed;
+left: 0;
+bottom: 0;
+right: 0;
+margin: 0;
+padding: 1em 1.41575em;
+background-color: #3d9cd2;
+color: #fff;
+z-index: 9998;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+a{color:#fff}
+}.lqd-6ae8d29049004.err{
+background-color: #d63939;
+}
+/*# sourceURL=liquid-base-inline-css */
+
+ -->
+ -->
+
+
+.main-footer{background-color: #1A1D21;}@media (max-width: 1024px){.main-footer{}}@media (max-width: 767px){.main-footer{}}
+@media (max-width: 1024px){}@media (max-width: 767px){}
+/*# sourceURL=elementor-frontend-inline-css */
+
+
+.nginx-cache-btn.nginx-cache-off a { background-color: #d63638 !important; }
+.nginx-cache-btn.nginx-cache-on a { background-color: green !important; }
+/*# sourceURL=tnc_custom_css-inline-css */
+
+ -->
+ -->
+ -->
+
+
+ -->
+ -->
+
+
+
+
+
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8291JFCXS4');
+document.documentElement.className += " js";
+
+
+
+
+
+
+
+
+
+
+window.liquidParams = {
+currentZIndex: 10,
+lazyLoadOffset: 500,
+ccOuterSize: 35,
+ccActiveCircleBg: 1,
+ccActiveCircleBc: 1,
+};
+window.liquidIsElementor = true;
+
+
+
+.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+background-image: none !important;
+}
+@media screen and (max-height: 1024px) {
+.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+background-image: none !important;
+}
+}
+@media screen and (max-height: 640px) {
+.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+background-image: none !important;
+}
+}
+
+
+
+
+
+body{--lqd-cc-active-bw:1px;}.titlebar-inner h1{}.titlebar-inner p{font-size:24px;line-height:36px;}.titlebar-inner{padding-top:220px;padding-bottom:155px;}.titlebar{background-image:url( https://centerforpolitics.org/crystalball/wp-content/uploads/2024/03/Research-CFP-Header-BG.jpg);background-repeat:no-repeat;background-size:cover;background-position:center bottom;}body.category .titlebar{background-image:url( https://centerforpolitics.org/crystalball/wp-content/uploads/2024/03/Research-CFP-Header-BG.jpg);background-repeat:no-repeat;background-size:cover;background-position:center center;}@media screen and (min-width: 992px){body.has-sidebar #lqd-contents-wrap{padding-top:25px;}}@media screen and (max-width: 1024px){[data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul .nav-item-children > li > a, [data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul > li > a, [data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul.nav.main-nav .nav-item-children > li > a, [data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul.nav.main-nav > li > a, [data-mobile-nav-style=modern] .lqd-mobile-sec .submenu-expander, [data-mobile-nav-style=modern] .lqd-mobile-sec .megamenu .ld-fancy-heading > *, [data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse .nav-trigger{color:rgb(190, 95, 0);}[data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse .nav-trigger .bar{background-color:rgb(190, 95, 0);}[data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul .nav-item-children > li > a:hover, [data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul > li > a:hover, [data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul.nav.main-nav .nav-item-children > li > a:hover, [data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse ul.nav.main-nav > li > a:hover{color:rgb(190, 95, 0);}[data-mobile-nav-style=modern] .lqd-mobile-sec .navbar-collapse .nav-trigger .bars{border-color:rgba( 190, 95, 0, 0.3);}[data-mobile-nav-scheme=dark] .lqd-mobile-sec .submenu-expander{background-color:rgba( 190, 95, 0, 0.05);}}.titlebar-inner p {
+opacity: .9;
+}
+.lqd-post-cover h1.entry-title {
+margin-bottom: 0.65em;
+}
+.lqd-blog-post-style-1 .entry-meta a, .lqd-blog-post-style-1 .entry-meta time, .lqd-blog-post-style-2 .entry-meta a, .lqd-blog-post-style-2 .entry-meta time, .lqd-blog-post-style-5 .entry-meta a, .lqd-blog-post-style-5 .entry-meta time {
+font-size: 13px;
+}
+.lqd-blog-post-style-1 .entry-meta .byline figure, .lqd-blog-post-style-2 .entry-meta .byline figure {
+width: 0px;
+margin-inline-end: 0px;
+}
+.lqd-lp-author figure {
+width: 20px;
+border: 0.5px solid #bababa;
+}
+.nav-trigger.style-1 .bar {
+width: 35px;
+height: 2px;
+margin-bottom: 7px;
+}
+.lqd-lp-author h3 {
+font-size: 13px !important;
+color: #e57200;
+letter-spacing: 0.6px !important;
+}
+.elementor-25569 .elementor-element.elementor-element-cf9bd6e .main-nav > li > a {
+font-family: 'franklin-gothic-condensed' !important;
+}
+.elementor-25580 .elementor-element.elementor-element-f86ee58 .reset-ul > li > a {
+font-family: 'franklin-gothic-condensed' !important;
+}
+.elementor-25580 .elementor-element.elementor-element-6f86603a .reset-ul > li > a {
+font-family: 'franklin-gothic-condensed' !important;
+}
+.titlebar-col {
+width: 80%;
+}
+#lqd-site-content {
+z-index: 3;
+padding-bottom: 50px;
+}
+.elementor-widget-ld_button .btn {
+display: none !important;
+}
+#lqd-contents-wrap>.lqd-lp-grid {
+padding-top: 0px;
+padding-bottom: 45px;
+margin-top: -50px;
+}
+.lqd-lp-style-22 .lqd-lp-excerpt, .lqd-lp-style-22 .lqd-lp-header {
+font-family: 'franklin-gothic-condensed';
+}
+.lqd-lp-date {
+color: rgba(0, 0, 0, .9);
+font-family: 'franklin-gothic-condensed';
+margin-top: -5px;
+color: #e57200;
+}
+.lqd-module-search-slide-top p {
+font-size: 18px;
+color: #333333;
+}
+.lqd-lp-meta {
+font-size: 12px;
+padding-bottom: 15px;
+}
+.mx-auto {
+color: #fff;
+font-family: 'franklin-gothic-condensed';
+font-size: 22px;
+}
+.lqd-lp-cat-solid-colored a {
+border-radius: 0em;
+}
+.lqd-lp-title a {
+color: #1f375f;
+}
+.lqd-lp-title a:hover {
+color: #E57200;
+}
+.lqd-lp-column:not(:last-child) .lqd-lp-style-7 {
+padding-bottom: 30px;
+border-bottom: 1px dashed #cecece;
+}
+.container {
+width: 1200px;
+}
+.lqd-lp-excerpt.mb-5 {
+font-family: 'franklin-gothic-condensed';
+}
+.lqd-module-search-slide-top .ld-search-form input {
+border-bottom: 2px solid #e57200;
+font-size: 58px;
+font-weight: 500;
+color: #0A1432;
+font-family: 'franklin-gothic-condensed';
+letter-spacing: 0px;
+}
+.titlebar-inner h1, .titlebar-inner p {
+color: #fff;
+}
+.titlebar {
+margin-top: -165px;
+}
+.lqd-blog-post-style-1 .lqd-post-cover-overlay, .lqd-blog-post-style-2 .lqd-post-cover-overlay {
+background-image: url(https://centerforpolitics.org/crystalball/wp-content/uploads/2024/03/Research-CFP-Header-BG.jpg);
+}
+.lqd-blog-post-style-1 .lqd-post-header, .lqd-blog-post-style-2 .lqd-post-header {
+padding-top: 220px;
+padding-bottom: 100px;
+}
+.titlebar-inner {
+margin-bottom: 60px;
+}
+.lqd-post-cover.overflow-hidden::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: -10%;
+width: 120%;
+background: white;
+height: 180px;
+z-index: 2;
+border-radius: 80% 80% 0 0;
+transform: scaleY(200%);
+}
+.lqd-post-cover.overflow-hidden {
+padding-bottom: 200px;
+margin-bottom: -140px;
+}
+body.single-post .lqd-post-content {
+z-index:2;
+}
+.titlebar-inner::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: -10%;
+width: 120%;
+background: white;
+height: 140px;
+z-index: 2;
+border-radius: 80% 80% 0 0;
+transform: scaleY(200%);
+}
+.titlebar-inner {
+padding-bottom: 280px;
+margin-bottom: -60px;
+}
+body.titlebar-inner {
+z-index:2;
+}
+table td, table th {
+padding: 30px !important;
+font-family: 'franklin-gothic-condensed';
+}
+table tr {
+border: 1px solid #dedede;
+}
+.lqd-blog-post-style-1 .related-posts {
+margin-bottom: 0px;
+}
+.tribe-events .tribe-events-c-events-bar .tribe-common-form-control-text__input {
+font-family: 'franklin-gothic-condensed';
+font-size: 18px;
+}
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-c-btn-border-small, .tribe-common--breakpoint-medium.tribe-common a.tribe-common-c-btn-border-small {
+font-family: 'franklin-gothic-condensed';
+}
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-h6--min-medium {
+font-size: 22px !important;
+font-family: 'franklin-gothic-condensed';
+font-weight: 600;
+color: #e57202;
+}
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+padding-top: 60px;
+}
+.tribe-events .tribe-events-c-events-bar .tribe-common-form-control-text__input {
+font-family: "franklin-gothic-condensed" !important;
+font-size: 18px !important;
+}
+.tribe-events .tribe-events-c-view-selector__list-item--active .tribe-events-c-view-selector__list-item-text {
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-size: 16px;
+}
+.tribe-common p {
+font-size: 17px;
+}
+.tribe-events .tribe-events-c-view-selector__list-item-text {
+font-family: "franklin-gothic-condensed", sans-serif;
+font-size: 16px;
+}
+.tribe-events .tribe-events-c-search__button, .tribe-events button.tribe-events-c-search__button {
+background-color: #1f375f !important;
+border-radius: 0px !important;
+font-weight: 500 !important;
+font-size: 16px !important;
+}
+.lqd-blog-post-style-2 .lqd-post-header {
+max-width: 1200px !important;
+}
+.lqd-blog-post-style-2 .lqd-post-cover-overlay {
+background-color: rgb(9 20 50 / 80%);
+}
+.lqd-blog-post-style-2 .lqd-post-cover {
+margin-top: -150px;
+}
+.lqd-blog-post-style-2 .lqd-post-header {
+padding-top: 220px;
+padding-bottom: 100px;
+min-height: 50vh;
+}
+.lqd-blog-post-style-1 h1.entry-title, .lqd-blog-post-style-2 h1.entry-title {
+font-size: 54px;
+}
+.lqd-blog-post-style-2 .entry-meta a, .lqd-blog-post-style-2 .entry-meta time, .lqd-blog-post-style-5 .entry-meta a, .lqd-blog-post-style-5 .entry-meta time {
+font-size: 15px;
+font-family: 'franklin-gothic-condensed';
+}
+.main-header {
+background-color: transparent;
+}
+.tribe-common--breakpoint-full.tribe-events .tribe-events-c-top-bar__datepicker-desktop {
+font-size: 22px;
+}
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-c-btn-border-small, .tribe-common--breakpoint-medium.tribe-common a.tribe-common-c-btn-border-small {
+font-size: 22px;
+}
+.tribe-common a:not(.tribe-common-anchor--unstyle), .tribe-common a:not(.tribe-common-anchor--unstyle):active, .tribe-common a:not(.tribe-common-anchor--unstyle):focus, .tribe-common a:not(.tribe-common-anchor--unstyle):hover, .tribe-common a:not(.tribe-common-anchor--unstyle):visited {
+color: #1f375f;
+font-family: 'franklin-gothic-condensed';
+font-size: 28px;
+line-height: 36px;
+}
+.yt-uix-button-subscribe-branded, .yt-uix-button-subscribe-branded[disabled], .yt-uix-button-subscribe-branded[disabled]:hover, .yt-uix-button-subscribe-branded[disabled]:active, .yt-uix-button-subscribe-branded[disabled]:focus {
+color: #fefefe;
+background-color: #e57202 !important;
+}
+.yottie-widget-video-info-title {
+line-height: 22px;
+font-weight: 500;
+font-size: 17px;
+}
+.lqd-menu-items-block .submenu-expander {
+margin-top: -40px;
+}
+.main-nav.lqd-menu-items-block .nav-item-children {
+padding-bottom: 40px;
+}
+.tribe-events .tribe-events-c-search__button, .tribe-events button.tribe-events-c-search__button {
+background-color: #091432;
+border-radius: 0px;
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-weight: 500;
+font-size: 17px;
+}
+.tribe-events .tribe-events-c-search__button:hover, .tribe-events button.tribe-events-c-search__button:hover {
+background-color: #E57200;
+border-radius: 0px;
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-weight: 500;
+font-size: 17px;
+}
+.tribe-events .tribe-events-calendar-latest-past__event-date-tag-datetime {
+height: inherit;
+background-color: #eeeff0;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.tribe-events .tribe-events-c-events-bar .tribe-common-form-control-text__input {
+font-family: 'franklin-gothic-condensed';
+font-size: 17px;
+}
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-b2 {
+font-size: 17px;
+font-family: 'franklin-gothic-condensed';
+}
+.tribe-events .tribe-events-calendar-latest-past__event-title-link {
+color: #091432;
+font-family: "franklin-gothic-condensed", sans-serif;
+}
+.tribe-common--breakpoint-full.tribe-events .tribe-events-c-top-bar__datepicker-desktop {
+font-family: 'franklin-gothic-condensed';
+}
+.tribe-events .tribe-events-c-view-selector__list-item-text {
+color: var(--tec-color-text-primary);
+font-family: "franklin-gothic-condensed", sans-serif;
+font-size: 17px;
+}
+.with_frm_style .frm_primary_label {
+font-size: 17px !important;
+color: #3f4b5b;
+font-family: "franklin-gothic-condensed", sans-serif;
+}
+.lqd-lp-meta-solid {
+background-color: #091432;
+}
+.elementor-25569 .elementor-element.elementor-element-4ff743e0 .main-nav > li > a {
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-size: 17px;
+font-weight: 500;
+}
+.elementor-27 .elementor-element.elementor-element-78cb4eb .lqd-lp-title {
+font-size: 19px !important;
+font-family: "franklin-gothic-condensed", sans-serif !important;
+}
+.elementor-6451 .elementor-element.elementor-element-0985dbb .nav-item-children > li > a {
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-size: 15px !important;
+}
+.lqd-blog-post-style-1 .lqd-post-header, .lqd-blog-post-style-2 .lqd-post-header {
+max-width: 1200px !important;
+}
+.lqd-submenu-cover .main-nav>.menu-item-has-children:not(.megamenu)>.nav-item-children {
+padding-top: 50px;
+}
+.elementor-6451 .elementor-element.elementor-element-ac80db3 .ld-module-sd > .nav-trigger {
+color: #e57202;
+}
+.nav-trigger .bar {
+background-color: #e57202;
+transition: all .3s;
+}
+b, strong {
+font-weight: 500;
+}
+.elementor-6452 .elementor-element.elementor-element-9ff5567 .reset-ul > li > a {
+font-family: 'franklin-gothic-condensed' !important;
+}
+.elementor-6452 .elementor-element.elementor-element-16b6eed .reset-ul > li > a {
+font-family: 'franklin-gothic-condensed' !important;
+}
+dl, ol, ul {
+font-family: 'franklin-gothic-condensed' !important;
+}
+.lqd-lp-style-21 {
+font-size: 13px;
+}
+.btn-txt {
+font-family: "franklin-gothic-condensed", sans-serif;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-weight: 600 !important;
+letter-spacing: 0px !important;
+}
+.lqd-slsh p {
+color: #FFFFFF;
+font-size: 15px;
+line-height: 22px;
+opacity: 0.99 !important;
+}
+.lqd-slsh-item h2, .lqd-slsh-item p {
+opacity: .99 !important;
+}
+.lqd-vslider-ext .ld-fancy-heading p {
+font-weight: 400 !important;
+}
+.elementor-6451 .elementor-element.elementor-element-0985dbb .main-nav > li > a {
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-size: 17px !important;
+font-weight: 500;
+letter-spacing: 0.3px;
+}
+.nav-trigger .txt {
+font-family: 'franklin-gothic-condensed', sans-serif;
+font-size: 17px;
+font-weight: 400;
+}
+.lqd-lp-style-22 .lqd-lp-excerpt, .lqd-lp-style-22 .lqd-lp-header {
+max-width: 95%;
+}
+.elementor-27 .elementor-element.elementor-element-e6bcb63 .accordion-title a {
+font-family: "franklin-gothic-condensed", sans-serif !important;
+font-size: 23px !important;
+}
+.is-stuck {
+background-color: #fff;
+}
+.accordion-sm .accordion-title a {
+padding-top: 0.25em;
+padding-bottom: 0.25em;
+color: #d16702;
+}
+.elementor-6452 .elementor-element.elementor-element-ad1cceb .ld-fh-element {
+letter-spacing: 0.3px !important;
+}
+.lqd-lp-column:not(:last-child) .lqd-lp-style-22, .lqd-lp-style-22:not(:last-child):not(:only-of-type) {
+padding-bottom: 0.4em;
+border-bottom: none;
+}
+.main-nav>li>a .link-icon .icon-ion-ios-arrow-down {
+display: none;
+}
+p {
+font-family: "franklin-gothic-condensed", sans-serif;
+}
+.lqd-lp-style-14 .lqd-lp-contents {
+padding-bottom: 15px;
+}
+.lqd-lp-title a {
+text-transform: none;
+}
+.elementor-kit-15 a {
+font-family: "franklin-gothic-condensed", sans-serif;
+}
+.iconbox-side>h3:last-child, .ld-flipbox-inner :last-child, .lqd-lp-excerpt p:last-child {
+font-family: 'franklin-gothic-condensed';
+}
+a {
+color: #e57200;
+}
+@media only screen and (max-width: 1250px) {
+.elementor-25569 .elementor-element.elementor-element-cf9bd6e .main-nav > li > a {
+font-size: 14px !important;
+padding-left: 12px;
+padding-right: 12px;
+}
+}
+@media only screen and (max-width: 1199px) {
+.container {
+width: auto;
+}
+.elementor-25654 .elementor-element.elementor-element-5472581 .lqd-lp-column {
+padding-inline-start: 40px;
+padding-inline-end: 40px;
+}
+}
+@media only screen and (max-width: 450px) {
+.titlebar-inner h1 {
+font-size: 52px;
+line-height: 48px;
+}
+}
+@media only screen and (max-width: 767px) {
+.elementor-6451 .elementor-element.elementor-element-262e104 .module-logo {
+padding-top: 5px !important;
+padding-bottom: 5px !important;
+}
+}
+@media screen and (max-width: 479px) {
+.lqd-blog-post .lqd-post-header h1.entry-title {
+font-size: clamp(32px,20vmax,40px);
+line-height: 1.1em;
+}
+.lqd-post-cover.overflow-hidden::after {
+transform: scaleY(120%);
+}
+}
+
+
+
+window.liquidBreakpoints = {"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}};
+function getLiquidActiveBreakpoint() {
+const mms = [ {
+mm: window.matchMedia( "(min-width: 1201px)" ),
+breakpointKey: "desktop"
+} ];
+Object.entries( window.liquidBreakpoints ).forEach( ( [ breakpointKey, { direction, is_enabled, value } ] ) => {
+if ( !is_enabled ) return;
+mms.push( {
+mm: window.matchMedia( `(${ direction }-width: ${ value }px)` ),
+breakpointKey
+} );
+} );
+return mms.filter( ( { mm } ) => mm.matches )?.at( -1 )?.breakpointKey || "desktop";
+}
+document.body.setAttribute("data-elementor-device-mode", getLiquidActiveBreakpoint());
+
+Skip links Skip to primary navigation Skip to content
+
+
+
+
+
+
+
+
+
+
+    		
+
+
+
+
+
+
+
+
+ li > a"}'>Subscribe
+President
+Senate
+House
+Governor
+Rating Changes
+Archives
+About
+Center for Politics
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", "wrapperClass": "ld-module-sd ld-module-sd-hover ld-module-sd-right" }'>
+
+
+.elementor-25711 .elementor-element.elementor-element-49ff1e6a{--display:flex;--min-height:100vh;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:flex-start;--align-items:stretch;--gap:0px 0px;--row-gap:0px;--column-gap:0px;--overlay-opacity:0.95;--padding-top:100px;--padding-bottom:100px;--padding-left:135px;--padding-right:135px;}.elementor-25711 .elementor-element.elementor-element-49ff1e6a:not(.elementor-motion-effects-element-type-background), .elementor-25711 .elementor-element.elementor-element-49ff1e6a > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#F9DCBF3B;background-image:url("https://centerforpolitics.org/crystalball/wp-content/uploads/2024/03/UVACFP_CarouselV2_F.png");}.elementor-25711 .elementor-element.elementor-element-49ff1e6a::before, .elementor-25711 .elementor-element.elementor-element-49ff1e6a > .elementor-background-video-container::before, .elementor-25711 .elementor-element.elementor-element-49ff1e6a > .e-con-inner > .elementor-background-video-container::before, .elementor-25711 .elementor-element.elementor-element-49ff1e6a > .elementor-background-slideshow::before, .elementor-25711 .elementor-element.elementor-element-49ff1e6a > .e-con-inner > .elementor-background-slideshow::before, .elementor-25711 .elementor-element.elementor-element-49ff1e6a > .elementor-motion-effects-container > .elementor-motion-effects-layer::before{background-color:transparent;--background-overlay:'';background-image:linear-gradient(180deg, #FFFFFF 0%, #F9E9D9 100%);}.elementor-25711 .elementor-element.elementor-element-36624d64{--display:flex;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:flex-start;--align-items:flex-start;--flex-wrap:wrap;--align-content:flex-start;--margin-top:14px;--margin-bottom:0px;--margin-left:0px;--margin-right:0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa{width:100%;max-width:100%;--lqd-menu-items-top-padding:30px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:30px;--lqd-menu-items-left-padding:0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa > .elementor-widget-container{padding:40px 0px 0px 0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li > a{font-size:20px;line-height:0px;word-spacing:0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li > a > .link-icon{font-size:0.7em;}.is-stuck .elementor-25711 .elementor-element.elementor-element-2adccfaa{--lqd-menu-items-top-padding:0px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:60px;--lqd-menu-items-left-padding:0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .nav-item-children > li > a{font-size:18px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li > a, .navbar-fullscreen .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li > a{color:#232D4B;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li:hover > a, .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.is-active > a, .navbar-fullscreen .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li > a:hover{color:#E57200;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.is-active > a, .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.current_page_item > a, .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.current-menu-item > a, .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.current-menu-ancestor > a, .navbar-fullscreen .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.is-active > a, .navbar-fullscreen .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.current_page_item > a, .navbar-fullscreen .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.current-menu-item > a, .navbar-fullscreen .elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li.current-menu-ancestor > a{color:#E57200;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav .nav-item-children > li > a{color:#232D4B;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav .nav-item-children > li > a:hover{color:#E57200;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav .nav-item-children:before{background:#02010100;}@media(max-width:1024px){.elementor-25711 .elementor-element.elementor-element-49ff1e6a{--padding-top:100px;--padding-bottom:50px;--padding-left:50px;--padding-right:50px;}}@media(max-width:767px){.elementor-25711 .elementor-element.elementor-element-49ff1e6a{--flex-direction:column;--container-widget-width:100%;--container-widget-height:initial;--container-widget-flex-grow:0;--container-widget-align-self:initial;--flex-wrap-mobile:wrap;--justify-content:space-between;--padding-top:55px;--padding-bottom:35px;--padding-left:35px;--padding-right:35px;}.elementor-25711 .elementor-element.elementor-element-36624d64{--width:100%;--flex-direction:row;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--justify-content:flex-start;--align-items:flex-start;}.elementor-25711 .elementor-element.elementor-element-36624d64.e-con{--order:-99999 /* order start hack */;}.elementor-25711 .elementor-element.elementor-element-2adccfaa{width:100%;max-width:100%;--lqd-menu-items-top-padding:0px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:42px;--lqd-menu-items-left-padding:0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa > .elementor-widget-container{padding:60px 0px 0px 0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .main-nav > li > a{font-size:18px;line-height:0;}.is-stuck .elementor-25711 .elementor-element.elementor-element-2adccfaa{--lqd-menu-items-top-padding:0px;--lqd-menu-items-right-padding:0px;--lqd-menu-items-bottom-padding:45px;--lqd-menu-items-left-padding:0px;}.elementor-25711 .elementor-element.elementor-element-2adccfaa .nav-item-children > li > a{font-size:16px;line-height:0.5em;}}		
+
+
+
+
+
+
+Subscribe
+President
+Senate
+House
+Governor
+Rating Changes
+Archives
+About
+Center for Politics
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+Search Sabato's Crystal Ball
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE FINAL 2026 RATINGS: Democrats Favored to Capture House, Senate, and Gubernatorial Majorities
+
+
+
+
+
+Author
+
+
+Kyle Kondik and J. Miles Coleman		
+
+
+
+
+Published on:
+
+November 2, 2026		
+
+
+Published in:
+2026 Governor	
+	
+
+
+
+
+FINAL RATINGS TOTALS:
+HOUSE: 239 at least Leans Democratic, 196 at least Leans Republican (D+24)
+SENATE: 53 at least Leans Democratic, 47 at least Leans Republican (D+6) 
+GOVERNORS: 28 at least Leans Democratic, 22 at least Leans Republican (D+4)
+Table 1: Final Crystal Ball House ratings
+
+Map 1: Final Crystal Ball Senate ratings
+
+Map 2: Final Crystal Ball gubernatorial ratings
+
+Table 2: House rating changes
+
+Table 3: Senate rating changes
+
+
+
+Senator
+Old Rating
+New Rating
+
+
+IA Open (Ernst, R)
+Toss-up
+Leans Republican
+
+
+Roger Marshall (R-KS)
+Toss-up
+Leans Democratic
+
+
+LA Open (Cassidy, R)
+Likely Republican
+Leans Republican
+
+
+Susan Collins (R-ME)
+Toss-up
+Leans Democratic
+
+
+Jon Husted (R-OH)
+Toss-up
+Leans Democratic
+
+
+TX Open (Cornyn, R)
+Toss-up
+Leans Democratic
+
+
+
+Table 4: Gubernatorial rating changes
+
+
+
+Governor
+Old Rating
+New Rating
+
+
+AK Open (Dunleavy, R)
+Leans Democratic
+Likely Democratic
+
+
+GA Open (Kemp, R)
+Toss-up
+Leans Democratic
+
+
+Kelly Ayotte (R-NH)
+Likely Republican
+Leans Republican
+
+
+Joe Lombardo (R-NV)
+Toss-up
+Leans Democratic
+
+
+
+Our final 2026 ratings
+Donald Trump took command of the Republican Party by, at least in part, repudiating the legacy of the last Republican president, George W. Bush.
+Yet now on the eve of his second midterm as president, Trump finds himself in Bush’s shoes. Trump, like Bush in 2006, is an unpopular president presiding over an unpopular war who is staring down the barrel of losing control of both chambers of Congress just two years after his greatest electoral triumph.
+The political environment this year always seemed challenging for Republicans, and there’s been no real signs of recovery at the end of the cycle. The Crystal Ball has reflected this sour environment in our ratings: Since Oct. 1, and not counting our final moves, we moved 66 ratings across House, Senate, and gubernatorial races toward Democrats, with just two toward Republicans (one of which, moving the Minnesota Senate race from Likely Democratic to Leans Democratic, we later reversed).
+Our final ratings of the 2026 midterm show Democrats favored to easily win the House of Representatives.
+The more interesting fight is in the Senate. After exiling Senate Democrats from red states in 2024, capturing all 50 Senate seats in the 25 states that voted for Trump all three times he was on the ballot, Republicans appear to be in serious jeopardy of squandering the Senate edge they just so recently secured.
+At the start of the cycle, we wrote that Democrats netting two Senate seats in 2026 would be a good result for them, narrowing the Senate to a 51-49 Republican edge and teeing up a competitive race for the majority in 2028. Such a result now would be a success not for Democrats, but for Republicans, who now appear to be underdogs in the lion’s share of key races at the center of the Senate map.
+The conversation following Tuesday may be more about Democrats rather than Republicans holding a longer-term edge in the Senate, although this very election cycle should caution any of us about making long-term predictions (just trying to forecast tomorrow is challenging enough).
+In addition to going into the election favored to win the Senate and House, Democrats also have the inside track toward taking a majority of the state governorships, as states that seemed likelier than not to stick with Republicans just a couple of months (or even a couple of weeks) ago now appear likelier to flip to Democrats, such as Georgia, Nevada, and Ohio.
+Let’s go through the final ratings, starting in the Senate.
+The Senate
+Suggesting that Democrats enter Election Day as narrow favorites to flip Senate seats in Kansas, which has the longest streak of electing Republican senators in the country, and Texas, which has the longest streak of electing Republicans in all statewide races, just seems, on a gut level, insane. And perhaps it is.
+But the horrible electoral environment for Republicans paired with the astoundingly weak candidacies of Sen. Roger Marshall (R-KS) and state Attorney General Ken Paxton (R-TX), plus the impressive showings from pastor Adam Hamilton (D) and state Rep. James Talarico (D), makes this a possibility. We have been stunned at how many people we respect think Democrats will win both of these races (this is both from our own discussions and also what we have gleaned from others’ reporting).
+Democrats also appear to have an edge in Ohio. That’s also the case in Maine, where Sen. Susan Collins (R-ME) faces an imperfect challenger, former state Senate Democratic leader Troy Jackson (D), but is hurt by a horrible political environment in a bluish state. This will be difficult for her to overcome.
+We previously moved Alaska and Michigan to Leans Democratic earlier this fall. In recent days, both races have seen late-breaking developments: a New York Times report suggesting that former Rep. Mary Peltola’s (D, AK-AL) campaign was involved in the effort to get the “fake” Dan Sullivan on the state’s ballot, and Rep. Haley Stevens’s (D, MI-11) Sunday endorsement of former Rep. Mike Rogers (R) against former Detroit-area health director Abdul El-Sayed (D), who narrowly defeated Stevens in the August primary. Could these developments matter on the margins? Sure. But both seem like the kind of things that plugged-in politicos are more apt to care about than voters. If late polling is to be believed, the Michigan Senate race no longer seems all that close, but Alaska does seem close.
+The one Toss-up race where we feel the best about Republicans is Iowa, where Rep. Ashley Hinson (R, IA-2) has proved to be a more nimble candidate than many of her fellow Republicans. Yet polls show that race extremely close even as we give Hinson an edge in our ratings. We continue to favor Sen. Darline Graham (R-SC) to defend her brother’s seat, but that is a shaky Leans Republican, much like Iowa is. So 53 is not necessarily the ceiling for Democrats in the Senate. We are also flagging the open seat in Louisiana as just Leans Republican, as we have heard rumblings of real concern about Republican turnout there following a strong showing for Black voters in the early vote.
+While we had moved toward favoring Democrats in the Senate over the past several weeks, we have more Leans Democratic races than we expected we would (as recently as six days ago, we wrote that we thought we would land at a more modest 51 or 52). It wouldn’t take much—some understatement of Republicans in polls combined with strong GOP Election Day turnout—for Republicans to save some of these races, and even their majority. But the bulk of the evidence we have points to the Democrats in the Senate, and not just by a single seat.
+The House
+The main thing we want to convey with our final House ratings is that Democrats appear likelier than not to finish ahead of the 235 seats they won in 2018. We ended up with 239 seats at least leaning to the Democrats.
+For the most part, the seats we have leaning to Democrats are ones that seemed like battlegrounds the whole cycle and are thus highly vulnerable for Republicans in this political climate, and we leaned a number of those races in advance of this final update. We have leaned the bulk of the final Toss-ups to Democrats, with our last batch of Toss-ups breaking 14-3 in favor of Leans Democratic in our final update. As is always the case with individual House races, many of the final Leaners just represent our best educated guesses, with the overall political environment the main explanation for these choices. But local or regional factors are playing a role in certain places.
+Today’s changes also add some additional Republican-held sleepers to watch, including a couple of additional seats in North Carolina, where Republicans appear to be in danger of letting go of the rope in that state’s usual tug of war.
+The Governors
+The last time Democrats held a majority of the nation’s governorships was during a stretch in the late aughts, beginning with the blue wave of 2006, when they captured 28 states, and ending with the red wave of 2010, which left them with just 20. Our ratings suggest they could get to a majority once again, and then some.
+Since late October, the Crystal Ball’s only two gubernatorial Toss-ups have been Georgia and Nevada, and both go to Leans Democratic. In Georgia, Black voters have made up close to 32% of the early electorate, up from 26% in 2024 and 29% in 2022, one of many places on the map where early voting suggests GOP turnout challenges in advance of Tuesday. While Republican businessman Rick Jackson has remained very competitive, for all the millions he has pumped into the race from his own pocket, he has not been able to establish a consistent lead over former Atlanta Mayor Keisha Lance Bottoms (D). State Navigate recently showed Jackson gaining several points from their July poll of the race, though Bottoms still held a 50%-47% advantage. We are moving Nevada to Leans Democratic for a similar reason: according to state political guru Jon Ralston’s early vote blog, the electorate might just be too blue for Gov. Joe Lombardo (R) to hold on.
+As is typically the case, the party changes in the gubernatorial races appear to be concentrated in open seats, with Nevada the only place where an incumbent is an underdog, and that’s probably the shakiest Leans Democratic-rated race on our board. If any incumbent Democrat loses in the general election—outgoing Gov. Dan McKee (D) already lost a primary in Rhode Island—it would be likeliest to be Gov. Tina Kotek (D-OR).
+If there’s a place in our ratings where we might end up being light for Democrats, it might be in this gubernatorial column. Despite leaning several races to Democrats down the stretch, still more Republican incumbents seem very shaky based on late polls, specifically Govs. Greg Abbott (R-TX) and Phil Scott (R-VT) as well as the open seat in Florida, and the Republicans’ best pickup opportunity, Kansas, is no sure thing. We also are adding Gov. Kelly Ayotte (R-NH) to the Leans Republican list; she has been consistently leading but a UNH Survey Center poll had her tied last night. Finally, we are moving the open seat in Alaska from Leans Democratic to Likely Democratic, as Democrats appear to be clearer favorites to win there than in the Senate race.
+P.S. Election night viewing
+The Center for Politics will be hosting an Election Night stream from 7-11 p.m., hosted by Katie Couric, Jim Acosta, and Tara Setmayer, with appearances by the Crystal Ball team and special guests. Kyle Kondik and J. Miles Coleman will be with the CBS News Data Desk in New York City and will be part of the new results-focused “Nerd Show,” starting at 5 p.m. on Election Night.
+Thanks to everyone who has sent us information or helped us make sense of this cycle, and to our readers for following along with us.
+
+	
+
+
+Share On		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Previous Article
+
+
+
+
+
+
+
+Previous Article			
+The Importance of Not Being Hated: Strong Disapproval of Trump and the Midterms
+
+
+
+View All Articles
+
+
+
+
+
+
+Related Articles
+
+
+
+
+
+October 31, 2026
+
+2026 Senate
+
+
+
+
+
+The Importance of Not Being Hated: Strong Disapproval of Trump and the Midterms
+
+
+
+The intensity of presidential disapproval presents a real challenge to Republican Senate candidates
+
+
+
+
+
+
+
+
+
+October 31, 2026
+
+2026 Senate
+
+
+
+
+
+What It Would Take for a Democrat to Win Texas
+
+
+
+Where to watch to see if Democrats can score a breakthrough in the Lone Star State
+
+
+
+
+
+
+
+
+
+October 30, 2026
+
+2026 Senate
+
+
+
+
+
+A Rating Change Appetizer: Senate Changes in Louisiana and Minnesota
+
+
+
+A couple of changes before our final ratings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																								
+
+
+
+
+
+
+
+
+ Politics Is A Good Thing.		
+
+
+
+
+
+
+
+ SUBSCRIBE TO CRYSTAL BALL		
+
+
+
+
+
+
+
+
+Crystal Ball Footer Subscription
+
+
+
+
+
+
+
+Add Your Email Address
+*
+
+
+
+
+
+
+If you are human, leave this field blank.			
+
+
+
+SUBSCRIBE
+
+
+
+
+
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crystal Ball Home																							
+
+
+
+
+Subscribe																							
+
+
+
+
+President																							
+
+
+
+
+Senate																							
+
+
+
+
+House																							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Governor																							
+
+
+
+
+Rating Changes																							
+
+
+
+
+Archives																							
+
+
+
+
+About																							
+
+
+
+
+Center for Politics																							
+
+
+
+
+
+
+
+
+
+
+ Call the Center		
+
+
+
+
+
+ 434-243-8468		
+
+
+
+
+
+ Get in Touch		
+
+
+
+
+
+ [email protected]		
+
+
+
+
+
+
+
+
+
+
+															
+
+
+
+
+
+
+ © 2026. By the Rector and Visitors of the University of Virginia. All rights reserved.		
+
+
+
+
+
+
+
+
+
+
+
+ 465 Crestwood Drive, Charlottesville, VA 22903   |   Terms of Service  |  Privacy Policy  |  Website by Jonas Marketing		
+
+
+
+
+
+
+
+
+
+( function() {
+const style = document.createElement( 'style' );
+style.appendChild( document.createTextNode( '#frm_field_15_container {visibility:hidden;overflow:hidden;width:0;height:0;position:absolute;}' ) );
+document.head.appendChild( style );
+document.currentScript?.remove();
+} )();
+
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/crystalball/*"},{"not":{"href_matches":["/crystalball/wp-*.php","/crystalball/wp-admin/*","/crystalball/wp-content/uploads/*","/crystalball/wp-content/*","/crystalball/wp-content/plugins/*","/crystalball/wp-content/themes/hub/*","/crystalball/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+
+{"@context":"http:\/\/schema.org","@type":"Article","headline":"THE FINAL 2026 RATINGS: Democrats Favored to Capture House, Senate, and Gubernatorial Majorities","datePublished":"2026-11-02T11:27:09-05:00","dateModified":"2026-11-02T13:06:41-05:00","text":"FINAL RATINGS TOTALS:HOUSE: 239 at least Leans Democratic, 196 at least Leans Republican (D+24)SENATE: 53 at least Leans Democratic, 47 at least Leans Republican (D+6) GOVERNORS: 28 at least Leans Democratic, 22 at least Leans Republican (D+4)Table 1: Final Crystal Ball House ratingsMap 1: Final Crystal Ball Senate ratingsMap 2: Final Crystal Ball gubernatorial ratingsTable 2: House rating changesTable 3: Senate rating changesSenatorOld RatingNew RatingIA Open (Ernst, R)Toss-upLeans RepublicanRoger Marshall (R-KS)Toss-upLeans DemocraticLA Open (Cassidy, R)Likely RepublicanLeans RepublicanSusan Collins (R-ME)Toss-upLeans DemocraticJon Husted (R-OH)Toss-upLeans DemocraticTX Open (Cornyn, R)Toss-upLeans DemocraticTable 4: Gubernatorial rating changesGovernorOld RatingNew RatingAK Open (Dunleavy, R)Leans DemocraticLikely DemocraticGA Open (Kemp, R)Toss-upLeans DemocraticKelly Ayotte (R-NH)Likely RepublicanLeans RepublicanJoe Lombardo (R-NV)Toss-upLeans DemocraticOur final 2026 ratingsDonald Trump took command of the Republican Party by, at least in part, repudiating the legacy of the last Republican president, George W. Bush.Yet now on the eve of his second midterm as president, Trump finds himself in Bushs shoes. Trump, like Bush in 2006, is an unpopular president presiding over an unpopular war who is staring down the barrel of losing control of both chambers of Congress just two years after his greatest electoral triumph.The political environment this year always seemed challenging for Republicans, and theres been no real signs of recovery at the end of the cycle. The Crystal Ball has reflected this sour environment in our ratings: Since Oct. 1, and not counting our final moves, we moved 66 ratings across House, Senate, and gubernatorial races toward Democrats, with just two toward Republicans (one of which, moving the Minnesota Senate race from Likely Democratic to Leans Democratic, we later reversed).Our final ratings of the 2026 midterm show Democrats favored to easily win the House of Representatives.The more interesting fight is in the Senate. After exiling Senate Democrats from red states in 2024, capturing all 50 Senate seats in the 25 states that voted for Trump all three times he was on the ballot, Republicans appear to be in serious jeopardy of squandering the Senate edge they just so recently secured.At the start of the cycle, we wrote that Democrats netting two Senate seats in 2026 would be a good result for them, narrowing the Senate to a 51-49 Republican edge and teeing up a competitive race for the majority in 2028. Such a result now would be a success not for Democrats, but for Republicans, who now appear to be underdogs in the lions share of key races at the center of the Senate map.The conversation following Tuesday may be more about Democrats rather than Republicans holding a longer-term edge in the Senate, although this very election cycle should caution any of us about making long-term predictions (just trying to forecast tomorrow is challenging enough).In addition to going into the election favored to win the Senate and House, Democrats also have the inside track toward taking a majority of the state governorships, as states that seemed likelier than not to stick with Republicans just a couple of months (or even a couple of weeks) ago now appear likelier to flip to Democrats, such as Georgia, Nevada, and Ohio.Lets go through the final ratings, starting in the Senate.The SenateSuggesting that Democrats enter Election Day as narrow favorites to flip Senate seats in Kansas, which has the longest streak of electing Republican senators in the country, and Texas, which has the longest streak of electing Republicans in all statewide races, just seems, on a gut level, insane. And perhaps it is.But the horrible electoral environment for Republicans paired with the astoundingly weak candidacies of Sen. Roger Marshall (R-KS) and state Attorney General Ken Paxton (R-TX), plus the impressive showings from pastor Adam Hamilton (D) and state Rep. James Talarico (D), makes this a possibility. We have been stunned at how many people we respect think Democrats will win both of these races (this is both from our own discussions and also what we have gleaned from others reporting).Democrats also appear to have an edge in Ohio. Thats also the case in Maine, where Sen. Susan Collins (R-ME) faces an imperfect challenger, former state Senate Democratic leader Troy Jackson (D), but is hurt by a horrible political environment in a bluish state. This will be difficult for her to overcome.We previously moved Alaska and Michigan to Leans Democratic earlier this fall. In recent days, both races have seen late-breaking developments: a New York Times report suggesting that former Rep. Mary Peltolas (D, AK-AL) campaign was involved in the effort to get the fake Dan Sullivan on the states ballot, and Rep. Haley Stevenss (D, MI-11) Sunday endorsement of former Rep. Mike Rogers (R) against former Detroit-area health director Abdul El-Sayed (D), who narrowly defeated Stevens in the August primary. Could these developments matter on the margins? Sure. But both seem like the kind of things that plugged-in politicos are more apt to care about than voters. If late polling is to be believed, the Michigan Senate race no longer seems all that close, but Alaska does seem close.The one Toss-up race where we feel the best about Republicans is Iowa, where Rep. Ashley Hinson (R, IA-2) has proved to be a more nimble candidate than many of her fellow Republicans. Yet polls show that race extremely close even as we give Hinson an edge in our ratings. We continue to favor Sen. Darline Graham (R-SC) to defend her brothers seat, but that is a shaky Leans Republican, much like Iowa is. So 53 is not necessarily the ceiling for Democrats in the Senate. We are also flagging the open seat in Louisiana as just Leans Republican, as we have heard rumblings of real concern about Republican turnout there following a strong showing for Black voters in the early vote.While we had moved toward favoring Democrats in the Senate over the past several weeks, we have more Leans Democratic races than we expected we would (as recently as six days ago, we wrote that we thought we would land at a more modest 51 or 52). It wouldnt take muchsome understatement of Republicans in polls combined with strong GOP Election Day turnoutfor Republicans to save some of these races, and even their majority. But the bulk of the evidence we have points to the Democrats in the Senate, and not just by a single seat.The HouseThe main thing we want to convey with our final House ratings is that Democrats appear likelier than not to finish ahead of the 235 seats they won in 2018. We ended up with 239 seats at least leaning to the Democrats.For the most part, the seats we have leaning to Democrats are ones that seemed like battlegrounds the whole cycle and are thus highly vulnerable for Republicans in this political climate, and we leaned a number of those races in advance of this final update. We have leaned the bulk of the final Toss-ups to Democrats, with our last batch of Toss-ups breaking 14-3 in favor of Leans Democratic in our final update. As is always the case with individual House races, many of the final Leaners just represent our best educated guesses, with the overall political environment the main explanation for these choices. But local or regional factors are playing a role in certain places.Todays changes also add some additional Republican-held sleepers to watch, including a couple of additional seats in North Carolina, where Republicans appear to be in danger of letting go of the rope in that states usual tug of war.The GovernorsThe last time Democrats held a majority of the nations governorships was during a stretch in the late aughts, beginning with the blue wave of 2006, when they captured 28 states, and ending with the red wave of 2010, which left them with just 20. Our ratings suggest they could get to a majority once again, and then some.Since late October, the Crystal Balls only two gubernatorial Toss-ups have been Georgia and Nevada, and both go to Leans Democratic. In Georgia, Black voters have made up close to 32% of the early electorate, up from 26% in 2024 and 29% in 2022, one of many places on the map where early voting suggests GOP turnout challenges in advance of Tuesday. While Republican businessman Rick Jackson has remained very competitive, for all the millions he has pumped into the race from his own pocket, he has not been able to establish a consistent lead over former Atlanta Mayor Keisha Lance Bottoms (D). State Navigate recently showed Jackson gaining several points from their July poll of the race, though Bottoms still held a 50%-47% advantage. We are moving Nevada to Leans Democratic for a similar reason: according to state political guru Jon Ralstons early vote blog, the electorate might just be too blue for Gov. Joe Lombardo (R) to hold on.As is typically the case, the party changes in the gubernatorial races appear to be concentrated in open seats, with Nevada the only place where an incumbent is an underdog, and thats probably the shakiest Leans Democratic-rated race on our board. If any incumbent Democrat loses in the general electionoutgoing Gov. Dan McKee (D) already lost a primary in Rhode Islandit would be likeliest to be Gov. Tina Kotek (D-OR).If theres a place in our ratings where we might end up being light for Democrats, it might be in this gubernatorial column. Despite leaning several races to Democrats down the stretch, still more Republican incumbents seem very shaky based on late polls, specifically Govs. Greg Abbott (R-TX) and Phil Scott (R-VT) as well as the open seat in Florida, and the Republicans best pickup opportunity, Kansas, is no sure thing. We also are adding Gov. Kelly Ayotte (R-NH) to the Leans Republican list; she has been consistently leading but a UNH Survey Center poll had her tied last night. Finally, we are moving the open seat in Alaska from Leans Democratic to Likely Democratic, as Democrats appear to be clearer favorites to win there than in the Senate race.P.S. Election night viewingThe Center for Politics will be hosting an Election Night stream from 7-11 p.m., hosted by Katie Couric, Jim Acosta, and Tara Setmayer, with appearances by the Crystal Ball team and special guests. Kyle Kondik and J. Miles Coleman will be with the CBS News Data Desk in New York City and will be part of the new results-focused Nerd Show, starting at 5 p.m. on Election Night.Thanks to everyone who has sent us information or helped us make sense of this cycle, and to our readers for following along with us.","author":{"@type":"Person","name":"Kyle Kondik and J. Miles Coleman","url":"https:\/\/centerforpolitics.org\/crystalball\/author\/kyle-kondik-and-j-miles-coleman\/"},"image":["https:\/\/centerforpolitics.org\/crystalball\/wp-content\/uploads\/2026\/11\/110226housefix.png","https:\/\/mcusercontent.com\/2200b472b9c45e64202754247\/images\/530c52ba-e379-f5df-d20a-7e6b851cc2ba.png","https:\/\/mcusercontent.com\/2200b472b9c45e64202754247\/images\/efe0ddd4-4ab6-8722-9788-3cc040f4064f.png","https:\/\/mcusercontent.com\/2200b472b9c45e64202754247\/images\/2e25c99b-84e2-8ea3-c649-f4f24029c78f.png"]}
+
+( () => {
+const lazyloadRunObserver = () => {
+const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+entries.forEach( ( entry ) => {
+if ( entry.isIntersecting ) {
+let lazyloadBackground = entry.target;
+if( lazyloadBackground ) {
+lazyloadBackground.classList.add( 'e-lazyloaded' );
+}
+lazyloadBackgroundObserver.unobserve( entry.target );
+}
+});
+}, { rootMargin: '200px 0px 200px 0px' } );
+lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+lazyloadBackgroundObserver.observe( lazyloadBackground );
+} );
+};
+const events = [
+'DOMContentLoaded',
+'elementor/lazyload/observe',
+];
+events.forEach( ( event ) => {
+document.addEventListener( event, lazyloadRunObserver );
+} );
+} )();
+
+
+
+ -->
+
+
+ -->
+ -->
+ -->
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var liquidTheme = {"uris":{"ajax":"/crystalball/wp-admin/admin-ajax.php","nonce":"6c3d6d2d25"},"options":{"blogInfiniteScroll":{"enabled":false,"history":false,"ga":false}}};
+//# sourceURL=liquid-theme-js-extra
+
+
+
+
+
+
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnX":"Share on X","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"4.2.2","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"container":true,"e_panel_promotions":true,"theme_builder_v2":true,"nested-elements":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"e_opt_in_v4_page":true,"e_components":true,"e_interactions":true,"e_widget_creation":true,"import-export-customization":true,"e_pro_variables":true},"urls":{"assets":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/centerforpolitics.org\/crystalball\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"946c6bcdc0","atomicFormsSendForm":"3a94b432e8"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":29053,"title":"THE%20FINAL%202026%20RATINGS%3A%20Democrats%20Favored%20to%20Capture%20House%2C%20Senate%2C%20and%20Gubernatorial%20Majorities%20-%20Sabato%27s%20Crystal%20Ball","excerpt":"Donald Trump finds himself in George W. Bush's shoes","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+
+
+
+var frm_js = {"ajax_url":"https://centerforpolitics.org/crystalball/wp-admin/admin-ajax.php","images_url":"https://centerforpolitics.org/crystalball/wp-content/plugins/formidable/images","loading":"Loading\u2026","remove":"Remove","offset":"4","nonce":"3140ef9adb","id":"ID","no_results":"No results match","file_spam":"That file looks like Spam.","calc_error":"There is an error in the calculation in the field with key","empty_fields":"Please complete the preceding required fields before uploading a file.","focus_first_error":"1","include_alert_role":"1","include_resend_email":""};
+var frm_password_checks = {"eight-char":{"label":"Eight characters minimum","regex":"/^.{8,}$/","message":"Passwords require at least 8 characters"},"lowercase":{"label":"One lowercase letter","regex":"#[a-z]+#","message":"Passwords must include at least one lowercase letter"},"uppercase":{"label":"One uppercase letter","regex":"#[A-Z]+#","message":"Passwords must include at least one uppercase letter"},"number":{"label":"One number","regex":"#[0-9]+#","message":"Passwords must include at least one number"},"special-char":{"label":"One special character","regex":"/(?=.*[^a-zA-Z0-9])/","message":"Password is invalid"}};
+var frmCheckboxI18n = {"errorMsg":{"min_selections":"This field requires a minimum of %1$d selected options but only %2$d were submitted."}};
+//# sourceURL=formidable-js-extra
+
+
+
+window.frm_js.repeaterRowDeleteConfirmation = "Are you sure you want to delete this row?";
+window.frm_js.datepickerLibrary = "default";
+//# sourceURL=formidable-js-after
+
+
+
+
+
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+
+
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/centerforpolitics.org\/crystalball\/wp-admin\/admin-ajax.php","nonce":"6745dae398","urls":{"assets":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/centerforpolitics.org\/crystalball\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/centerforpolitics.org\/crystalball\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+//# sourceURL=elementor-pro-frontend-js-before
+
+
+
+
+/**/
+
+
+
+
+
+Adding {{itemName}} to cart
+Added {{itemName}} to cart
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loading...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a54b22349b284240',t:'MTc5MzcwNjMzNQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a54b22349b284240',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();

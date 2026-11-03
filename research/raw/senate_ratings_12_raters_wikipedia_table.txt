@@ -1,0 +1,36 @@
+State|Cook|DDHQ|Econ|FPO|Fox|IE|MSNOW|NBC|RCP|Sabato|Silver|ST
+Alabama|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R
+Alaska|Tossup|Lean D*|Tossup|Lean D*|Tossup|Tossup|Tossup|Tossup|Tossup|Lean D*|Tossup|Lean D*
+Arkansas|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R
+Colorado|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+Delaware|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+Florida(special)|Likely R|Likely R|Likely R|Likely R|Solid R|Likely R|Likely R|Likely R|Lean R|Likely R|Likely R|Likely R
+Georgia|Likely D|Likely D|Likely D|Safe D|Likely D|Likely D|Lean D|Likely D|Likely D|Likely D|Solid D|Safe D
+Idaho|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R
+Illinois|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+Iowa|Tossup|Tossup|Lean R|Tossup|Tossup|Tossup|Lean R|Tossup|Tossup|Lean R|Tossup|Tossup
+Kansas|Tossup|Tossup|Tossup|Lean D*|Tossup|Tossup|Lean R|Tossup|Tossup|Lean D*|Lean D*|Lean D*
+Kentucky|Solid R|Likely R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R
+Louisiana|Solid R|Likely R|Likely R|Likely R|Solid R|Likely R|Safe R|Solid R|Solid R|Lean R|Likely R|Likely R
+Maine|Tossup|Lean D*|Lean D*|Likely D*|Tossup|Tossup|Tossup|Lean D*|Tossup|Lean D*|Likely D*|Lean D*
+Massachusetts|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+Michigan|Lean D|Likely D|Lean D|Likely D|Tossup|Tilt D|Tossup|Lean D|Tossup|Lean D|Likely D|Likely D
+Minnesota|Lean D|Likely D|Lean D|Likely D|Lean D|Lean D|Lean D|Likely D|Lean D|Likely D|Likely D|Likely D
+Mississippi|Likely R|Likely R|Likely R|Safe R|Likely R|Likely R|Likely R|Likely R|Likely R|Likely R|Solid R|Likely R
+Montana|Solid R|Likely R|Likely R|Likely R|Solid R|Solid R|Safe R|Likely R|Likely R|Safe R|Likely R|Safe R
+Nebraska|Lean R|Lean R|Likely R|Likely R|Lean R|Tilt R|Likely R|Lean R|Tossup|Lean R|Lean R|Lean R
+New Hampshire|Lean D|Likely D|Likely D|Safe D|Lean D|Tilt D|Lean D|Lean D|Lean D|Likely D|Solid D|Safe D
+New Jersey|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+New Mexico|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Likely D|Safe D|Solid D|Safe D
+North Carolina|Likely D*|Likely D*|Likely D*|Likely D*|Likely D*|Lean D*|Lean D*|Likely D*|Likely D*|Likely D*|Solid D*|Safe D*
+Ohio(special)|Tossup|Tossup|Tossup|Lean D*|Lean D*|Tilt D*|Tossup|Tossup|Tossup|Lean D*|Lean D*|Lean D*
+Oklahoma|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R
+Oregon|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+Rhode Island|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+South Carolina|Lean R|Lean R|Lean R|Lean R|Tossup|Tilt R|Lean R|Lean R|Tossup|Lean R|Lean R|Lean R
+South Dakota|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Likely R
+Tennessee|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R
+Texas|Tossup|Lean D*|Tossup|Lean D*|Tossup|Tilt D*|Tossup|Tossup|Tossup|Lean D*|Likely D*|Likely D*
+Virginia|Solid D|Safe D|Safe D|Safe D|Solid D|Solid D|Safe D|Solid D|Solid D|Safe D|Solid D|Safe D
+West Virginia|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R
+Wyoming|Solid R|Safe R|Safe R|Safe R|Solid R|Solid R|Safe R|Solid R|Solid R|Safe R|Solid R|Safe R

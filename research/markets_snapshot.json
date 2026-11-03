@@ -1,0 +1,72 @@
+{
+  "captured": "2026-11-03 (Election Day, before polls close), Polymarket via Gamma API read live; Kalshi via news.kalshi.com final-odds post dated 2 Nov 2026 noon ET",
+  "control": {
+    "polymarket": {
+      "house_D": 0.945, "house_R": 0.055, "house_vol_usd": 18021375, "house_liq_usd": 3924589, "house_bid_ask_R": [0.05, 0.06],
+      "senate_D": 0.775, "senate_R": 0.225, "senate_vol_usd": 9371535, "senate_liq_usd": 880459, "senate_bid_ask_R": [0.22, 0.23]
+    },
+    "kalshi": {
+      "house_D": 0.94, "house_R": 0.06, "senate_D": 0.74, "senate_R": 0.26,
+      "sweep_D": 0.70, "split_DHouse_RSenate": 0.27, "sweep_R": 0.06,
+      "senate_D_on_oct2": 0.63, "house_D_on_oct2": 0.92,
+      "midterm_volume_total_usd": "1.2B+ (Fox, 27 Oct)"
+    },
+    "ddhq_oct29": {"house_D": 0.80, "senate_D": 0.60, "both_D": 0.58},
+    "silver_generic_ballot": "D+9.1 (52.4-43.3), per NewsCord 2 Nov"
+  },
+  "house_gop_seat_buckets_polymarket": {
+    "<170": "not listed", "170-174": 0.0355, "175-179": 0.0975, "180-184": 0.14, "185-189": 0.185,
+    "190-194": 0.155, "195-199": 0.145, "200-204": 0.117, "205-209": 0.077, "210-214": 0.0485,
+    "215-219": 0.014, "220-224": 0.023, "225-229": 0.005, "230+": 0.0035,
+    "190_or_more": 0.555,
+    "note": "upper-bracket legs $24K-83K volume, ~$55K liquidity each; lower brackets thin ($1-3K)"
+  },
+  "house_popular_vote_margin_polymarket": {
+    "D+14-16": 0.0825, "D+12-14": 0.1525, "D+10-12": 0.24, "D+8-10": 0.265, "D+6-8": 0.15, "D+4-6": 0.06, "D+2-4": 0.028, "D+0-2": 0.0175,
+    "R+0-2": 0.019, "R+2-4": 0.0055, "R+4-6": 0.003, "R+6+": 0.002,
+    "note": "legs $6K-32K volume"
+  },
+  "senate_races_polymarket_D_win": {
+    "TX": {"D": 0.745, "R": 0.255, "vol": 13337338, "cands": "Talarico (D) v Paxton (R) per Kalshi"},
+    "MI": {"D": 0.805, "R": 0.195, "vol": 8703170, "cands": "El-Sayed (D) v Rogers (R)"},
+    "ME": {"D": 0.735, "R": 0.265, "vol": 3745737, "cands": "Jackson (D) v Collins (R)"},
+    "MN": {"D": 0.915, "R": 0.085, "vol": 1128447, "cands": "Flanagan (D)"},
+    "OH_special": {"D": 0.715, "R": 0.285, "vol": 2870628, "cands": "Brown (D) v Husted (R)"},
+    "AK": {"D_Peltola": 0.715, "R_Sullivan": 0.285, "vol": 2671249},
+    "KS": {"D": 0.625, "R": 0.375, "vol": 2453888, "cands": "Hamilton (D) v Marshall (R)"},
+    "NE": {"R_Ricketts": 0.665, "I_Osborn": 0.325, "D": 0.0005, "vol": 2585415},
+    "IA": {"D": 0.545, "R": 0.465, "vol": 2243486, "cands": "Turek (D) v Hinson (R)"},
+    "SC": {"D": 0.305, "R": 0.695, "vol": 2127180, "cands": "Andrews (D) v ? (R) - verify"},
+    "MS": {"D": 0.14, "R": 0.865, "vol": 909099},
+    "MT": {"R": 0.905, "I": 0.0895, "D": 0.0045, "vol": 540139},
+    "GA": {"D": 0.9675, "R": 0.033, "vol": 617647},
+    "FL_special": {"D": 0.145, "R": 0.855, "vol": 902800},
+    "NH": {"D": 0.945, "R": 0.055, "vol": 711443},
+    "NC": {"D": 0.978, "R": 0.0225, "vol": 422642},
+    "LA": {"D": 0.125, "R": 0.875, "vol": 174241},
+    "AR": {"D": 0.021, "R": 0.9775}, "TN": {"D": 0.017, "R": 0.984}, "SD": {"R": 0.944, "I_Bengs": 0.057},
+    "NJ": {"D": 0.9875}, "IL": {"D": 0.994}, "CO": {"D": 0.9875}, "AL": {"R": 0.9835}, "WY": {"R": 0.9865},
+    "ID": {"R": 0.969, "I_Achilles": 0.0295}, "KY": {"R": 0.9685}, "MA": {"D": 0.9925}, "VA": {"D": 0.99},
+    "WV": {"R": 0.989}, "OK": {"R": 0.9885}, "NM": {"D": 0.9945}, "OR": {"D": 0.9895}, "DE": {"D": 0.989}, "RI": {"D": 0.9925}
+  },
+  "kalshi_senate_nov2_noon": {
+    "IA": "Turek 52 / Hinson 48", "KS": "Hamilton 63 / Marshall 37", "SC": "Andrews 33 / R 67", "OH": "Brown 71 / Husted 29",
+    "ME": "Jackson 73 / Collins 27", "MI": "El-Sayed 78 / Rogers 22", "TX": "Talarico 75", "MN": "Flanagan 90",
+    "movers": "KS Hamilton 39->63 since 26 Oct; ME Jackson +13; MI El-Sayed +14 in final week (dipped 1 Nov on Haley Stevens endorsing Rogers, rebounded)"
+  },
+  "within_5_pct_polymarket": {"TX": 0.625, "ME": 0.535, "MI": 0.445, "IA": 0.755, "AK": 0.755, "OH": 0.525, "NH": 0.16, "NE": 0.605, "FL": 0.495, "NC": 0.075, "GA": 0.105, "MN": 0.32, "SC": 0.715, "KS": 0.615, "MS": 0.555},
+  "closest_race_polymarket": {"IA": 0.2495, "SC": 0.1765, "KS": 0.1105, "AK": 0.1025, "TX": 0.074, "OH": 0.0645, "NE": 0.062, "MI": 0.049, "ME": 0.0485, "FL": 0.04},
+  "ap_call_timing_polymarket": {
+    "house_called_by_Nov4_0359ET": 0.625, "house_called_by_Nov4_2359ET": 0.775, "house_called_by_Nov6": 0.8445,
+    "senate_called_by_Nov3_2359ET": 0.56, "senate_called_by_Nov4_2359ET": 0.565, "senate_called_by_Nov6": 0.77, "senate_called_by_Nov13": 0.92,
+    "note": "AP-call legs are thin ($0.5K-14K)"
+  },
+  "governors_kalshi_nov2": {"FL": "Donalds (R) 62 / Jolly (D) 38", "TX": "Abbott (R) 60 / Hinojosa (D) 40", "GA": "Lance Bottoms (D) 68 / Rick Jackson (R) 32", "OH": "Ramaswamy (R) odds hit 19% low vs Acton (D)", "NV": "Lombardo (R) v Ford (D)", "WI": "Crowley (D) v Tiffany (R)"},
+  "poll_close_ET": {"18:00": "IN/KY (eastern parts)", "19:00": "GA, (VA, SC, VT, FL-east)", "19:30": "NC, OH, WV", "20:00": "ME, (PA, NJ, MA, NH, DE, MD, IL, MO, MS, AL, TN, OK, TX? no-TX is 9pm ET for CT part)", "21:00": "IA, MI, KS, TX, WI, (MN, NE, CO, NM, NY, AZ, WY, SD, LA, ND)", "22:00": "NV, (MT, UT, ID-south)", "23:00": "CA, WA, OR, ID-north, HI", "00:00+1": "AK"},
+  "caveats": [
+    "NYT 30 Oct: Polymarket/Kalshi had Flavio Bolsonaro ~80% to win Brazil; Lula won — markets can herd badly on thin information",
+    "CNBC: 'Odds and gambling platforms... are not substitutes for political polls'; CNBC/Kalshi have a commercial relationship",
+    "Reuters 3 Nov: >$431M wagered on congressional midterms across Kalshi/Polymarket/Polymarket US vs $92M in 2022",
+    "Senate control market moved from R 60% (Jul 2026) to D 77% (3 Nov) — a swing that large in 4 months is itself a sign markets are following news/polls rather than possessing independent information"
+  ]
+}
