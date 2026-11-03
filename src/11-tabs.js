@@ -36,4 +36,23 @@ try{const s=localStorage.getItem("md-theme");if(s==="dark"||s==="light")root.set
 if(btn){label();btn.addEventListener("click",()=>{const n=curT()==="dark"?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("md-theme",n);}catch(e){}label();});
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change",label);}
 })();
+// ---- wrapping: keep values with their labels (no "244-250 / D", "Osborn / 33%"), widen long table cells on phones
+(function(){
+  const main=document.querySelector("main.page");if(!main)return;const NB="\u00a0";
+  const rules=[
+    [/(\d[\d.,]*[%+]?(?:[–-]\d[\d.,]*%?)?) (?=[DRI]\b)/g,"$1"+NB],                 // 56 D, 244–250 D, 250+ D
+    [/(\S) (?=[+−-]?\d[\d.,]*(?:[–-]\d[\d.,]*)?%?(?![\w]))/g,"$1"+NB],             // Osborn 33%, Trump +14, AJC 48–40
+    [/(\d) (?=(?:points?|pts|seats?|pp|percent|million|billion|bn|m)\b)/g,"$1"+NB],    // 4.1 points, 51.6 seats
+    [/ v\. /g,NB+"v."+NB],                                                              // Louisiana v. Callais
+    [/(\d)([–-])(?=\d)/g,"$1$2⁠"]];                                                // 244–250 never breaks at the dash
+  function pass(root){
+    const tw=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement&&!n.parentElement.closest("svg,script,style,select,option,textarea")&&/\d| v\. /.test(n.data)?1:3});
+    const nodes=[];while(tw.nextNode())nodes.push(tw.currentNode);
+    nodes.forEach(n=>{let d=n.data;rules.forEach(([re,to])=>{d=d.replace(re,to);});if(d!==n.data)n.data=d;});
+    root.querySelectorAll(".tbl-wrap td:not(.long)").forEach(td=>{if(td.textContent.trim().length>40)td.classList.add("long");});
+    root.querySelectorAll("a").forEach(a=>{if(!a.children.length&&a.textContent.length<=24&&/ /.test(a.textContent))a.textContent=a.textContent.replace(/ /g,NB);});
+  }
+  pass(main);let q=false;
+  new MutationObserver(()=>{if(q)return;q=true;requestAnimationFrame(()=>{q=false;pass(main);});}).observe(main,{childList:true,subtree:true});
+})();
 </script>
