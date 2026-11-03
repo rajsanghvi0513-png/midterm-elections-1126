@@ -1,6 +1,6 @@
 # Night update plan (agreed with the owner, 3 Nov 2026 19:30 IST)
 
-Each wakeup is a one-shot `send_later` into this session. Every run: work out the phase FIRST (clock + conditions below), then schedule the next wakeup for that phase, then do the update. Scheduling early means a failed run does not end the chain.
+Cadence revised by the owner at 3 Nov evening to save usage: hourly in every phase until the tail; no 5 or 15 minute runs. Each wakeup is a one-shot `send_later` into this session. Every run: work out the phase FIRST (clock + conditions below), then schedule the next wakeup for that phase, then do the update. Scheduling early means a failed run does not end the chain.
 
 ## Clock
 The container runs on UTC. Get IST with `TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M'` and use that exact zero-padded form for every `at`. IST = UTC + 5:30; the IST date changes at 18:30 UTC. Poll closings and calls reported in ET: IST = ET + 10:30 (ET is UTC-5 after 1 Nov).
@@ -10,12 +10,18 @@ The container runs on UTC. Get IST with `TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M'`
 
 | Phase | Starts | Ends when | Interval |
 |---|---|---|---|
-| A, pre-close | now | 04:30 Wed 4 Nov (first polls close) | 30 min |
-| B, counting | 04:30 Wed | AP (or the outlet of record) has called control of both chambers AND every callable Senate race is called. Hard cap: 18 h after B began | 5 min |
-| C, settling | end of B | every callable Senate race called AND at least 90% of `HSE` districts called; or 48 h after C began (the fallback also counts as finalization) | 30 min |
-| C2 | finalization | 12 h after finalization | 30 min |
+| A, pre-close | now | 04:30 Wed 4 Nov (first polls close) | 60 min |
+| B, counting | 04:30 Wed | AP (or the outlet of record) has called control of both chambers AND every callable Senate race is called. Hard cap: 18 h after B began | 60 min |
+| C, settling | end of B | every callable Senate race called AND at least 90% of `HSE` districts called; or 48 h after C began (the fallback also counts as finalization) | 60 min |
+| C2 | finalization | 12 h after finalization | 60 min |
 | D, tail | end of C2 | 3 days after D began | twice a day, 09:10 and 21:10 IST |
 | End | after D | | no further wakeups |
+
+## Ad hoc updates
+The owner can ask for an update at any time by messaging this session (in the Claude app), e.g. "update now" or "check Pennsylvania". Run the same steps below, scoped to what was asked, but do NOT schedule another wakeup: the hourly chain already has one pending. Keep ad hoc runs lean: one search round, and skip build/publish/push if nothing new turned up.
+
+## Keeping runs cheap
+No review agents during the night. If a run finds nothing new, stop after step 2: no build, no publish, no push.
 
 ## Each run
 1. Read the `state` line at the bottom; decide the phase; schedule the next wakeup.

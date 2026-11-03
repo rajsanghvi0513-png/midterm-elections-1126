@@ -40,6 +40,7 @@ python tools/senate_mc.py     # optional: re-run the Senate model after changing
 Then republish `index.html` to the artifact URL above.
 
 ## On the night
+Scheduled updates run hourly per `tools/night-plan.md` (twice a day in the 3-day tail). The owner can also ask for an ad hoc update any time by messaging the session; that does not add another wakeup.
 - A call: add a line to `RES_SEN` / `RES_HSE` (`{w:"D", m:"+2.1", by:"AP", at:"2026-11-04 09:10"}`, IST). It shows in the tables, tiles, map, board, hit rates and the live log at once.
 - Anything else worth logging: add an entry to `LIVE` with its IST time and source; `by:"Desk"` marks it as opinion. Only sourced facts or labelled Desk opinion.
 - Then `node build.js`, republish, commit and push. Post-election notes go in `research/results.md`.
