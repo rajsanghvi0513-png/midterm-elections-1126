@@ -28,7 +28,7 @@ No review agents during the night. If a run finds nothing new, stop after step 2
 2. Look for new calls (Senate races in `SEN`, districts in `HSE`, chamber control, the House tally) and notable sourced developments. Search with Nimble (Tavily if it is not rate-limited). No Firecrawl. Enter a call only when it names its caller: AP first; DDHQ or NBC if AP has not called, with `by` saying so.
 3. Before adding a race, grep `src/07-data.js` for its key. One line per race. The only allowed overwrite is upgrading a DDHQ/NBC call to AP: edit that line in place, keep the original time in `n` (e.g. `n:"DDHQ called 06:50; AP 07:20"`). A retracted call: delete the line and add a `LIVE` entry saying who retracted it and when; never silently remove.
 4. Add `RES_SEN` / `RES_HSE` / `RES_HOUSE_TOTAL` / `RES_CONTROL` / `LIVE` entries in `src/07-data.js`, plus one row per call in `research/results.md`.
-5. Run `node build.js`. If it exits non-zero, nothing was written: fix the entry it names; never publish, commit or push a failed build.
+5. Run `node build.js` on its own (never piped into `tail` or `head`, which hides the exit code) and chain the commit with `&&` only after it. If it exits non-zero, nothing was written: fix the entry it names; never publish, commit or push a failed build.
 6. On success: republish `index.html` to the artifact, commit and push (this redeploys `docs/` on GitHub Pages). If nothing changed, do not push.
 7. Update the `state` line if the phase changed.
 
