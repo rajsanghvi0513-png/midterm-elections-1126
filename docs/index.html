@@ -123,6 +123,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .opinion.prose{font-size:var(--fs-md)}
 .opinion p{max-width:66ch}
 .opinion .lead-oval{display:inline-block;vertical-align:0;margin-right:10px}
+/* wide screens: long reading text in cards flows into two columns instead of leaving the right half empty */
+@media (min-width:1100px){
+  .opinion,details .prose:not(:has(table,.fig,h3)){columns:2;column-gap:clamp(40px,4vw,64px);column-rule:1px solid var(--hair)}
+  details .prose:not(:has(table,.fig,h3)){max-width:none}
+  .opinion p,details .prose:not(:has(table,.fig,h3)) p{max-width:none}
+  .opinion p,details .prose p{orphans:3;widows:3}
+}
 
 /* Candidate rows and the oval */
 .cands{display:flex;flex-direction:column}
