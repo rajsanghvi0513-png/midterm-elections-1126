@@ -10,3 +10,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-03 23:00 | (no calls) | logged Chester County PA hours extension, Fulton County GA scam texts, FL relocations at 23, and the DCCC watch list | CNN live |
 | 2026-11-04 00:00 | (no calls) | logged Westchester cause (programming error), Detroit turnout and reporting schedule, NC extension request and Tarrant County waits; completed the DCCC list to eight; Desk note | CNN live; ABC News live |
 | 2026-11-04 01:00 | (no calls) | logged Florida turnout vs 2022 by county lean, Byrd on hours, Black early vote in SC and LA; Desk note on Florida | NBC News live |
+| 2026-11-04 02:00 | (no calls) | logged NC extensions (results held to 06:45 IST), Westchester 250k bagged ballots and escort plan, Democratic 230-235 House range; Desk note vs 236 | CNN live; NYT live |
