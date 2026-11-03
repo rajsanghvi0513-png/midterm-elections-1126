@@ -5,11 +5,13 @@
     <symbol id="ov1" viewBox="0 0 24 14"><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="currentColor" clip-path="url(#ovhalf)"/><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="ov2" viewBox="0 0 24 14"><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="currentColor"/><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="chev" viewBox="0 0 10 10"><path d="M1.5 3.5 L5 7 L8.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="chk" viewBox="0 0 12 12"><path d="M2.2 6.4 L4.9 9 L9.8 3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="ovx" viewBox="0 0 24 14"><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5 2.5"/></symbol>
   </defs>
 </svg>
 <nav class="rail" aria-label="Sections">
   <a href="#control"><span class="mark"></span><span class="lbl">Control</span></a>
+  <a href="#results"><span class="mark"></span><span class="lbl">Results</span></a>
   <a href="#call"><span class="mark"></span><span class="lbl">The call</span></a>
   <a href="#evidence"><span class="mark"></span><span class="lbl">Evidence</span></a>
   <a href="#senate"><span class="mark"></span><span class="lbl">Senate</span></a>
@@ -26,10 +28,10 @@
     <h1>Midterm Desk 2026</h1>
     <p class="small" style="margin-top:6px">United States Senate and House of Representatives · Election Day, Tuesday 3 November 2026</p>
   </div>
-  <p class="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
+  <p class="stamp" id="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
 </header>
 <nav class="toc" aria-label="Contents">
-  <a href="#control">Control</a><a href="#call">The call</a><a href="#evidence">Evidence and the polls</a><a href="#senate">Senate, seat by seat</a><a href="#house">House, state by state</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a>
+  <a href="#control">Control</a><a href="#results">Results</a><a href="#call">The call</a><a href="#evidence">Evidence and the polls</a><a href="#senate">Senate, seat by seat</a><a href="#house">House, state by state</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a>
 </nav>
 
 <!-- ================= CONTROL ================= -->
@@ -69,6 +71,22 @@
         <div class="read"><h4>Markets</h4><div class="big">94.5%<span>D control · Polymarket</span></div><p>Kalshi 94%. $18M traded. Polymarket's seat buckets put the modal Republican total at 185–194 seats and the House popular vote at D+8 to D+12.</p></div>
         <div class="read"><h4>Desk</h4><div class="big">92%<span>D control</span></div><p>236 D / 199 R. Slightly under the forecasters because the Republican maps hold a floor and because a 2024-style three-point poll miss is a live scenario, not a tail.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS (filled from RES_* in 07-data.js) ================= -->
+<section class="contest" id="results">
+  <div class="contest-head"><h2>Results as they are called</h2><span class="sub" id="res-sub">Every result carries the outlet that called it and the IST time it was entered. The pre-election calls above and below are kept as they were, so hits and misses stay visible.</span></div>
+  <div class="contest-body">
+    <div class="board">
+      <div id="res-senate"></div>
+      <div id="res-house"></div>
+    </div>
+    <div class="fig" style="margin-top:32px">
+      <h3>Who called it right</h3>
+      <p class="cap">Called races only, counted against each source's final pre-election rating. Toss-ups count as no call. House rows cover only the competitive districts listed on this page.</p>
+      <div class="tbl-wrap hits"><table id="hit-table"><thead></thead><tbody></tbody></table></div>
     </div>
   </div>
 </section>

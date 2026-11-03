@@ -120,4 +120,18 @@ const SLOT = {AR:"07:00",IN:"04:30",KY:"04:30",GA:"05:30",SC:"05:30",VA:"05:30",
  ME:"06:30",PA:"06:30",NJ:"06:30",MA:"06:30",DE:"06:30",MD:"06:30",IL:"06:30",MO:"06:30",MS:"06:30",AL:"06:30",TN:"06:30",OK:"06:30",MI:"06:30",TX:"06:30",KS:"06:30",CT:"06:30",RI:"06:30",DC:"06:30",
  AR:"07:00",IA:"07:30",NE:"07:30",MN:"07:30",CO:"07:30",NM:"07:30",NY:"07:30",WI:"07:30",AZ:"07:30",LA:"07:30",WY:"07:30",SD:"07:30",ND:"07:30",
  NV:"08:30",MT:"08:30",UT:"08:30",ID:"08:30",CA:"09:30",WA:"09:30",OR:"09:30",HI:"09:30",AK:"10:30"};
+// ---------- RESULTS, election night. Add calls here; never edit the pre-election rows above.
+// One line per called race. w: winner "D" | "R" | "I" (Osborn); m: margin as reported, e.g. "+9.8" or "nf";
+// by: the outlet that called it (AP, DDHQ, NBC ...); at: IST date and time entered, "2026-11-04 06:42"; n: optional note.
+const RES_SEN = {
+  // NC: {w:"D", m:"+9.8", by:"AP", at:"2026-11-04 06:42"},
+};
+// House: keyed by district as written in HSE, e.g. "PA-7".
+const RES_HSE = {
+  // "PA-7": {w:"D", m:"+2.1", by:"AP", at:"2026-11-04 09:10"},
+};
+// Overall House tally across all 435 seats, from one outlet; null until the first entry.
+const RES_HOUSE_TOTAL = null; // e.g. {d:120, r:98, by:"AP", at:"2026-11-04 08:15"}
+// Chamber control calls; null until an outlet calls control.
+const RES_CONTROL = {senate:null, house:null}; // e.g. house:{w:"D", by:"AP", at:"2026-11-04 13:05"}
 </script>

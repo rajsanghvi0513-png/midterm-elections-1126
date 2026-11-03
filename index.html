@@ -1,194 +1,260 @@
 <title>Midterm Desk 2026</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: an optical-scan ballot. Reversed contest-header bands, heavy rules between contests,
-   the fill-in oval as the only status glyph, a timing-mark rail on the left as navigation.
-   Reading column (serif) sits inside the ballot frame (sans). Dark mode is the tabulator's screen. */
+/* Layout: a calm evening read of a ballot. Mist ground, slate ink, one reading column of serif prose,
+   civic sans for figures; soft white surfaces only for the things you check again (control, results, tables).
+   The fill-in oval stays the only status glyph; party colour stays the only hue encoding. */
 :root{
-  --paper:#F4F3EE; --ink:#141414; --ink-2:#4A4A47; --ink-3:#686763; --hair:#CFCEC7; --rule:#141414;
-  --band:#141414; --band-ink:#F4F3EE; --well:#EBEAE4; --well-2:#E2E1DA;
-  --d:#2E64B8; --r:#C2362C; --i:#2F9E6E; --toss:#8A8984; --civic:#2B4C7E; --focus:#2B4C7E;
-  --d-soft:#DCE6F6; --r-soft:#F6DCD9; --i-soft:#D9F0E5; --toss-soft:#E6E5E1;
+  --paper:#F1F3F6;      /* page ground: cool mist */
+  --surface:#FFFFFF;    /* cards you return to */
+  --well:#F6F7F9;       /* quiet fills inside surfaces */
+  --well-2:#EBEEF2;
+  --ink:#1C2331; --ink-2:#465061; --ink-3:#5E687A;
+  --hair:#E2E6EC; --line:#CDD3DC;
+  --accent:#1D6973;     /* links and focus: deep teal, outside the party hues */
+  --d:#2E64B8; --r:#C2362C; --i:#2F9E6E; --toss:#7D8594;
+  --d-soft:#E2EAF7; --r-soft:#F7E3E0; --i-soft:#DCF0E6; --toss-soft:#E8EBF0;
+  --shadow:0 1px 2px rgba(28,35,49,.04),0 6px 24px rgba(28,35,49,.06);
+  --display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
   --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --shadow:0 2px 6px rgba(20,20,20,.08),0 8px 24px rgba(20,20,20,.06);
+  --radius:16px; --radius-sm:10px;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#15181D; --ink:#E8E6E1; --ink-2:#B8B5AD; --ink-3:#938F87; --hair:#343841; --rule:#E8E6E1;
-  --band:#E8E6E1; --band-ink:#15181D; --well:#1D2128; --well-2:#242933;
-  --d:#5B8EDC; --r:#E0614F; --i:#45B98A; --toss:#8E8B84; --civic:#9DBBF0; --focus:#9DBBF0;
-  --d-soft:#1F2E4A; --r-soft:#4A2320; --i-soft:#1B3A2D; --toss-soft:#2A2E36;
-  --shadow:0 2px 6px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35); color-scheme:dark;}}
+  --paper:#12171F; --surface:#19202A; --well:#1E2531; --well-2:#252D3A;
+  --ink:#E5E8EE; --ink-2:#B4BBC7; --ink-3:#919AA9;
+  --hair:#28303D; --line:#364051;
+  --accent:#74C5CE;
+  --d:#5B8EDC; --r:#E0614F; --i:#45B98A; --toss:#8C94A3;
+  --d-soft:#1D2B44; --r-soft:#402426; --i-soft:#183729; --toss-soft:#252C38;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.28); color-scheme:dark;}}
 :root[data-theme="dark"]{
-  --paper:#15181D; --ink:#E8E6E1; --ink-2:#B8B5AD; --ink-3:#938F87; --hair:#343841; --rule:#E8E6E1;
-  --band:#E8E6E1; --band-ink:#15181D; --well:#1D2128; --well-2:#242933;
-  --d:#5B8EDC; --r:#E0614F; --i:#45B98A; --toss:#8E8B84; --civic:#9DBBF0; --focus:#9DBBF0;
-  --d-soft:#1F2E4A; --r-soft:#4A2320; --i-soft:#1B3A2D; --toss-soft:#2A2E36;
-  --shadow:0 2px 6px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35); color-scheme:dark;}
+  --paper:#12171F; --surface:#19202A; --well:#1E2531; --well-2:#252D3A;
+  --ink:#E5E8EE; --ink-2:#B4BBC7; --ink-3:#919AA9;
+  --hair:#28303D; --line:#364051;
+  --accent:#74C5CE;
+  --d:#5B8EDC; --r:#E0614F; --i:#45B98A; --toss:#8C94A3;
+  --d-soft:#1D2B44; --r-soft:#402426; --i-soft:#183729; --toss-soft:#252C38;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.28); color-scheme:dark;}
 
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;
-  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums lining-nums}
-::selection{background:var(--civic);color:var(--paper)}
-a{color:var(--civic);text-underline-offset:.16em;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
-:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
-*{scrollbar-color:var(--ink-3) var(--well)}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-variant-numeric:tabular-nums lining-nums}
+::selection{background:var(--d-soft);color:var(--ink)}
+a{color:var(--accent);text-underline-offset:.18em;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+a:hover{text-decoration-color:currentColor}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+*{scrollbar-color:var(--line) transparent}
 h1,h2,h3,h4{text-wrap:balance;margin:0}
 p{margin:0}
+b,strong{font-weight:600}
 
-.page{max-width:1180px;margin:0 auto;padding-block:0 96px;
+.page{max-width:1160px;margin:0 auto;padding-block:0 112px;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-@media (min-width:1000px){.page{padding-left:max(72px,env(safe-area-inset-left,0px))}}
+@media (min-width:640px){.page{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}}
+@media (min-width:1100px){.page{padding-left:max(84px,env(safe-area-inset-left,0px))}}
 
-/* Timing-mark rail (desktop): the scanner marks double as section navigation */
-.rail{position:fixed;left:max(14px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);display:none;flex-direction:column;gap:14px;z-index:5}
-@media (min-width:1000px){.rail{display:flex}}
-.rail a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink-3);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.rail .mark{display:block;width:18px;height:7px;background:var(--ink-3);transition:width .18s cubic-bezier(.16,1,.3,1),background .18s}
-.rail a:hover .mark,.rail a.on .mark{background:var(--ink);width:28px}
-.rail .lbl{opacity:0;transform:translateX(-4px);transition:opacity .18s,transform .18s cubic-bezier(.16,1,.3,1);white-space:nowrap}
+/* Section rail (wide screens): soft pills, the current section widens */
+.rail{position:fixed;left:max(20px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);display:none;flex-direction:column;gap:12px;z-index:5}
+@media (min-width:1100px){.rail{display:flex}}
+.rail a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink-3);font-size:13px;font-weight:500}
+.rail .mark{display:block;width:14px;height:4px;border-radius:4px;background:var(--line);transition:width .25s cubic-bezier(.16,1,.3,1),background .25s}
+.rail a:hover .mark,.rail a.on .mark{background:var(--ink-2);width:26px}
+.rail .lbl{opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s cubic-bezier(.16,1,.3,1);white-space:nowrap;background:var(--paper);padding:0 6px;border-radius:6px}
 .rail a:hover .lbl,.rail a.on .lbl{opacity:1;transform:none;color:var(--ink)}
 
 /* Masthead */
-.mast{border-bottom:3px solid var(--rule);padding:22px 0 14px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:end;justify-content:space-between}
-.mast h1{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.015em;line-height:1.05}
-.mast .stamp{font-size:13px;color:var(--ink-2);line-height:1.45;max-width:46ch}
+.mast{padding:44px 0 20px;display:grid;grid-template-columns:minmax(0,1fr);gap:18px 48px;align-items:end}
+@media (min-width:900px){.mast{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.mast h1{font-family:var(--display);font-size:clamp(36px,5.2vw,58px);font-weight:500;letter-spacing:-.02em;line-height:1.02;font-optical-sizing:auto}
+.mast .small{font-size:15px}
+.mast .stamp{font-size:14.5px;color:var(--ink-2);line-height:1.55;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius-sm);padding:14px 16px}
 .mast .stamp b{color:var(--ink)}
-.toc{display:flex;flex-wrap:wrap;gap:4px 18px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:13px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
-.toc a{color:var(--ink-2);text-decoration:none}
-.toc a:hover{color:var(--ink);text-decoration:underline}
+.toc{display:flex;flex-wrap:wrap;gap:6px;padding:14px 0 6px;border-top:1px solid var(--hair);font-size:14px;font-weight:500}
+.toc a{color:var(--ink-2);text-decoration:none;padding:5px 12px;border-radius:999px;border:1px solid var(--hair);background:var(--surface);transition:border-color .15s,color .15s}
+.toc a:hover{color:var(--ink);border-color:var(--line)}
 
-/* Contest = section */
-.contest{margin-top:40px;border-top:3px solid var(--rule)}
-.contest-head{background:var(--band);color:var(--band-ink);padding:9px 14px;display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;justify-content:space-between}
-.contest-head h2{font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.contest-head .sub{font-size:12.5px;font-weight:600;letter-spacing:.02em;opacity:.85}
-.contest-body{padding:18px 0 8px}
-.lede{font-family:var(--serif);font-size:19px;line-height:1.5;max-width:68ch;color:var(--ink)}
-.prose{font-family:var(--serif);font-size:17px;line-height:1.55;max-width:68ch}
-.prose p+p{margin-top:.8em}
-.prose h3{font-family:var(--sans);font-size:14px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:1.6em 0 .5em}
-.prose ul{padding-left:1.2em;margin:.5em 0}
-.prose li+li{margin-top:.35em}
-.small{font-size:13px;color:var(--ink-2);line-height:1.45}
+/* Sections */
+.contest{margin-top:72px;scroll-margin-top:24px}
+.contest-head{display:flex;flex-direction:column;gap:6px;padding-bottom:16px;border-bottom:1px solid var(--hair)}
+.contest-head h2{font-family:var(--display);font-size:clamp(26px,3vw,34px);font-weight:500;letter-spacing:-.012em;line-height:1.15}
+.contest-head .sub{font-size:15px;color:var(--ink-2);max-width:80ch;line-height:1.5}
+.contest-body{padding:24px 0 0;display:block}
+.contest-body>*+*{margin-top:0}
+/* The two Control contests and the results board sit on surfaces: they are what you check again */
+#control,#control+.contest,#results{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px clamp(16px,3vw,32px) 28px}
+#control+.contest,#results{margin-top:20px}
+#control{margin-top:40px}
+.lede{font-family:var(--serif);font-size:21px;line-height:1.6;max-width:66ch;color:var(--ink)}
+.prose{font-family:var(--serif);font-size:18.5px;line-height:1.7;max-width:66ch;color:var(--ink)}
+.prose p+p{margin-top:1em}
+.prose h3,.sec-h3{font-family:var(--sans);font-size:19px;font-weight:600;letter-spacing:-.005em;margin:1.8em 0 .6em;color:var(--ink)}
+.sec-h3{margin:56px 0 4px}
+.prose h3:first-child{margin-top:0}
+.prose ul{padding-left:1.15em;margin:.6em 0}
+.prose li{padding-left:.2em}
+.prose li+li{margin-top:.55em}
+.prose li::marker{color:var(--ink-3)}
+.small{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.prose .small{font-family:var(--sans);margin-top:14px}
 .muted{color:var(--ink-3)}
-.src{font-size:12.5px;color:var(--ink-3);line-height:1.45;margin-top:8px;max-width:80ch}
-.opinion{border:1px solid var(--hair);background:var(--well);padding:16px 18px;margin-top:18px;max-width:72ch}
-.opinion .lead-oval{display:inline-block;vertical-align:-2px;margin-right:8px}
+.src{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin-top:12px;max-width:84ch;font-family:var(--sans)}
+.opinion{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px clamp(18px,3.4vw,40px);margin-top:4px;max-width:none}
+.opinion.prose{font-size:19px}
+.opinion p{max-width:66ch}
+.opinion .lead-oval{display:inline-block;vertical-align:0;margin-right:10px}
 
-/* Ballot candidate rows and the oval */
-.cands{border-top:2px solid var(--rule)}
-.cand{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:12px 6px;border-bottom:1px solid var(--hair)}
-.cand:last-child{border-bottom:2px solid var(--rule)}
-.cand .who{font-weight:700;font-size:17px;line-height:1.3}
-.cand .who small{display:block;font-weight:400;font-size:13px;color:var(--ink-2);margin-top:2px}
-.cand .who .pr{font-weight:800;margin-left:8px} .cand .who .pr span{font-weight:600;font-size:13px;color:var(--ink-2);margin-left:6px}
-.oval{width:30px;height:18px;display:block;margin-top:3px;flex:none}
-.oval .o{fill:none;stroke:currentColor;stroke-width:1.8}
-.oval .f{fill:currentColor}
+/* Candidate rows and the oval */
+.cands{display:flex;flex-direction:column}
+.cand{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:start;padding:16px 4px;border-bottom:1px solid var(--hair)}
+.cand:first-child{padding-top:4px}
+.cand:last-child{border-bottom:0}
+.cand .who{font-weight:600;font-size:18px;line-height:1.35}
+.cand .who small{display:block;font-weight:400;font-size:15px;color:var(--ink-2);margin-top:4px;line-height:1.55}
+.cand .who .pr{font-weight:700;margin-left:10px} .cand .who .pr span{font-weight:500;font-size:14px;color:var(--ink-2);margin-left:8px}
+.oval{width:30px;height:18px;display:block;margin-top:4px;flex:none}
 .oval.sm{width:22px;height:13px;margin-top:0}
 .oval.xs{width:18px;height:11px;margin-top:0}
 .col-d{color:var(--d)} .col-r{color:var(--r)} .col-i{color:var(--i)} .col-t{color:var(--toss)}
+.check{width:12px;height:12px;flex:none}
 
 /* Three reads */
-.reads{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:0 24px;margin-top:14px}
-@media (min-width:1000px){.reads{grid-template-columns:repeat(3,1fr);gap:0 16px}}
-.read{padding:10px 0;border-top:1px solid var(--hair)}
-.read h4{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
-.read .big{font-size:26px;font-weight:800;letter-spacing:-.01em;line-height:1.1;margin-top:4px}
-.read .big span{font-size:14px;font-weight:600;color:var(--ink-2);letter-spacing:0;margin-left:6px}
-.read p{font-size:13px;color:var(--ink-2);margin-top:4px;line-height:1.45}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:28px 40px;align-items:start}
+.reads{display:flex;flex-direction:column;align-content:start}
+.read{padding:14px 0 16px;border-top:1px solid var(--hair);display:grid;grid-template-columns:minmax(0,1fr);column-gap:22px}
+.read:last-child{padding-bottom:0}
+@media (min-width:480px){.read{grid-template-columns:150px minmax(0,1fr)}.read h4{grid-column:1}.read .big{grid-column:1}.read p{grid-column:2;grid-row:1 / span 2;margin-top:2px}}
+.read h4{font-size:13.5px;font-weight:600;color:var(--ink-3)}
+.read .big{font-family:var(--display);font-size:34px;font-weight:500;letter-spacing:-.015em;line-height:1.1;margin-top:4px}
+.read .big span{display:block;font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--ink-2);letter-spacing:0;margin-top:4px}
+.read p{font-size:14.5px;color:var(--ink-2);margin-top:8px;line-height:1.55}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:32px 56px;align-items:start}
 .two>*,.reads>*,.scen>*,.contest-body>*{min-width:0}
 
-/* Tables */
-.tbl-wrap{overflow-x:auto;margin-top:14px;border-top:2px solid var(--rule)}
-table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.35}
-th{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;text-align:left;padding:8px 8px;border-bottom:2px solid var(--rule);color:var(--ink-2);white-space:nowrap;background:var(--paper);position:sticky;top:0;z-index:1}
-td{padding:7px 7px;border-bottom:1px solid var(--hair);vertical-align:top}
+/* Tables: a soft card that scrolls inside itself */
+.tbl-wrap{overflow-x:auto;margin-top:18px;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius-sm)}
+.prose .tbl-wrap{font-family:var(--sans)}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:14.5px;line-height:1.5}
+th{font-size:13px;font-weight:600;text-align:left;padding:12px 12px;border-bottom:1px solid var(--line);color:var(--ink-2);white-space:nowrap;background:var(--surface);position:sticky;top:0;z-index:1}
+td{padding:12px 12px;border-bottom:1px solid var(--hair);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
 tbody tr:hover td{background:var(--well)}
+tr.hl td{background:var(--well)}
 td.num,th.num{text-align:right}
-td.st{font-weight:700;white-space:nowrap}
-tr.group td{background:var(--band);color:var(--band-ink);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:11.5px;padding:5px 8px;border-bottom:0}
-.chip{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 6px;border:1px solid var(--hair);white-space:nowrap;line-height:1.4}
-.chip.d{background:var(--d-soft);border-color:transparent} .chip.r{background:var(--r-soft);border-color:transparent}
-.chip.t{background:var(--toss-soft);border-color:transparent} .chip.i{background:var(--i-soft);border-color:transparent}
-.call{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-weight:600}
-.sortable th button{all:unset;cursor:pointer;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit}
-.sortable th button:hover{color:var(--ink);text-decoration:underline}
-.sortable th button .sort{width:9px;height:9px;margin-left:4px;vertical-align:-1px;opacity:.45;transition:transform .15s} .sortable th button[aria-sort="ascending"] .sort{opacity:1;transform:rotate(180deg)} .sortable th button[aria-sort="descending"] .sort{opacity:1}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center;font-size:13px}
-.filters label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--hair);padding:4px 10px;cursor:pointer;background:var(--paper)}
-.filters label:has(input:checked){background:var(--band);color:var(--band-ink);border-color:var(--band)}
+td.st{font-weight:600;white-space:nowrap}
+td .sub2{display:block;font-weight:400;font-size:13px;color:var(--ink-3);margin-top:2px;line-height:1.45}
+tr.group td{background:var(--well-2);color:var(--ink);font-weight:600;font-size:13.5px;padding:9px 12px;border-bottom:1px solid var(--hair)}
+.chip{display:inline-block;font-size:12.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--well-2);color:var(--ink);white-space:nowrap;line-height:1.5}
+.chip.d{background:var(--d-soft)} .chip.r{background:var(--r-soft)} .chip.t{background:var(--toss-soft)} .chip.i{background:var(--i-soft)}
+.call{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-weight:600}
+.sortable th button{all:unset;cursor:pointer;font:inherit;color:inherit;display:inline-flex;align-items:center;gap:4px;border-radius:4px}
+.sortable th button:hover{color:var(--ink)}
+.sortable th button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sortable th button .sort{width:9px;height:9px;opacity:.35;transition:transform .15s} .sortable th button[aria-sort="ascending"] .sort{opacity:1;transform:rotate(180deg)} .sortable th button[aria-sort="descending"] .sort{opacity:1}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;align-items:center;font-size:14px}
+.filters label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--hair);padding:6px 14px;border-radius:999px;cursor:pointer;background:var(--surface);color:var(--ink-2);transition:background .15s,color .15s,border-color .15s}
+.filters label:hover{border-color:var(--line);color:var(--ink)}
+.filters label:has(input:checked){background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.filters label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
 .filters input{position:absolute;opacity:0;width:1px;height:1px}
 .filters .count{color:var(--ink-3);margin-left:auto}
 
+/* Results: winner oval + check, desk call kept beside it */
+.res{display:inline-flex;align-items:center;gap:7px;font-weight:600;white-space:nowrap}
+.res-line{display:block;font-weight:400;font-size:13px;color:var(--ink-3);margin-top:2px;white-space:normal;line-height:1.45}
+.res.wait{font-weight:500;color:var(--ink-3)}
+.verdict{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);margin-top:4px}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:28px 48px;align-items:start}
+.board>*{min-width:0}
+.tally{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
+.tally .n{font-family:var(--display);font-size:44px;font-weight:500;line-height:1;letter-spacing:-.02em}
+.tally .of{font-size:15px;color:var(--ink-2)}
+.seatbar{display:flex;height:14px;border-radius:999px;overflow:hidden;background:var(--well-2);margin-top:14px}
+.seatbar i{display:block;height:100%}
+.seatbar .bd{background:var(--d)} .seatbar .bi{background:var(--i)} .seatbar .br{background:var(--r)}
+.seatkey{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;color:var(--ink-2);margin-top:10px;line-height:1.4}
+.seatkey>span{display:flex;flex-direction:column;min-width:0}
+.seatkey>span:last-child{text-align:right}
+.seatkey>span.mid{text-align:center}
+.seatkey b{color:var(--ink);font-size:15px}
+.seatkey small{font-size:12.5px;color:var(--ink-3)}
+.empty-note{font-size:15px;color:var(--ink-2);background:var(--well);border-radius:var(--radius-sm);padding:14px 16px;margin-top:14px;line-height:1.55}
+.hits td.num{font-variant-numeric:tabular-nums}
+.board h3{font-size:17px;font-weight:600}
+.board .cap{font-size:14px;color:var(--ink-2);margin-top:4px}
+
 /* Charts */
-.fig{margin-top:18px}
-.fig h3{font-size:15px;font-weight:700;letter-spacing:0}
-.fig .cap{font-size:13px;color:var(--ink-2);margin-top:2px;max-width:80ch}
-.fig>svg,.fig>div>svg{display:block;width:100%;height:auto;max-width:100%;margin-top:10px;font-family:var(--sans)}
-#fig-fc>svg,#fig-hist>svg{max-width:820px}#fig-bias>svg,#fig-dist>svg,#fig-redist>svg{max-width:600px}
-.fig svg text{fill:var(--ink-2);font-size:12px}
-.fig svg .axis{stroke:var(--hair)} .fig svg .zero{stroke:var(--ink-2)} .fig svg .t1{fill:var(--ink);font-weight:700} .fig svg .t2{fill:var(--ink-3);font-size:11px}
-.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink-2);margin-top:8px}
-.legend span{display:inline-flex;align-items:center;gap:6px}
-.tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--paper);font-size:12.5px;line-height:1.4;padding:8px 10px;max-width:280px;box-shadow:var(--shadow);opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s cubic-bezier(.16,1,.3,1)}
+.fig{margin-top:24px}
+.fig h3{font-size:18px;font-weight:600;letter-spacing:-.005em;font-family:var(--sans)}
+.fig .cap{font-size:15px;color:var(--ink-2);margin-top:4px;max-width:78ch;line-height:1.55;font-family:var(--sans)}
+.fig>svg,.fig>div>svg{display:block;width:100%;height:auto;max-width:100%;margin-top:14px;font-family:var(--sans)}
+#fig-fc>svg,#fig-hist>svg{max-width:840px}#fig-bias>svg,#fig-dist>svg,#fig-redist>svg{max-width:600px}
+.fig svg text{fill:var(--ink-2);font-size:12.5px}
+.fig svg .axis{stroke:var(--hair)} .fig svg .zero{stroke:var(--ink-3)} .fig svg .t1{fill:var(--ink);font-weight:600} .fig svg .t2{fill:var(--ink-3);font-size:11.5px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;color:var(--ink-2);margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.tip{position:fixed;z-index:20;pointer-events:none;background:var(--surface);color:var(--ink);border:1px solid var(--hair);border-radius:12px;font-size:13.5px;line-height:1.5;padding:10px 12px;max-width:300px;box-shadow:var(--shadow);opacity:0;transform:translateY(4px);transition:opacity .14s,transform .14s cubic-bezier(.16,1,.3,1)}
 .tip.show{opacity:1;transform:none}
-.tip b{font-weight:700}
+.tip b{font-weight:600}
 
 /* Tile grid */
-.tiles{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin-top:12px;max-width:760px}
-.tile{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:700;border:1px solid var(--hair);color:var(--ink-3);background:transparent;position:relative;min-width:0}
-.tile.race{color:var(--ink);cursor:default;border-color:transparent}
-.tile.race.ds{background:var(--d);color:var(--paper)} .tile.race.dl{background:var(--d-soft)} .tile.race.tt{background:var(--toss-soft)} .tile.race.rl{background:var(--r-soft)} .tile.race.rs{background:var(--r);color:var(--paper)}
+.tiles{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:5px;margin-top:16px;max-width:760px}
+.tile{aspect-ratio:1;max-width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-weight:600;border:1px dashed var(--line);border-radius:8px;color:var(--ink-3);background:transparent;position:relative;min-width:0}
+.tile.race{color:var(--ink);cursor:default;border:0}
+.tile.race.ds{background:var(--d);color:var(--paper)} .tile.race.dl{background:var(--d-soft)} .tile.race.tt{background:var(--toss-soft)} .tile.race.rl{background:var(--r-soft)} .tile.race.rs{background:var(--r);color:var(--paper)} .tile.race.is{background:var(--i);color:var(--paper)}
 .tile.race .oval{width:16px;height:10px;margin-top:3px}
-.tile.race.ds .oval,.tile.race.rs .oval{color:var(--paper)}
+.tile.race.ds .oval,.tile.race.rs .oval,.tile.race.is .oval{color:var(--paper)}
+.tile .check{position:absolute;top:3px;right:3px;width:10px;height:10px;color:var(--paper)}
 .tile.empty{border:0}
-@media (max-width:640px){.tiles{gap:3px}.tile{font-size:10px}.tile.race .oval{width:12px;height:8px}.fig svg text{font-size:20px}.fig svg .t2{font-size:18px}#fig-time>svg{display:none}}
-.slotlist{display:none;border-top:2px solid var(--rule);margin-top:10px}
+@media (max-width:640px){.tiles{gap:3px}.tile{font-size:10px;border-radius:5px}.tile.race .oval{width:12px;height:8px}.tile .check{width:8px;height:8px;top:2px;right:2px}.fig svg text{font-size:20px}.fig svg .t2{font-size:18px}#fig-time>svg{display:none}}
+.slotlist{display:none;margin-top:12px;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius-sm);padding:4px 14px}
 @media (max-width:640px){.slotlist{display:block}}
-.slotlist div{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--hair);font-size:13px}
-.slotlist b{font-size:15px}
+.slotlist div{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid var(--hair);font-size:14px}
+.slotlist div:last-child{border-bottom:0}
+.slotlist b{font-size:16px}
 
 /* Night tracker */
-.night{border-top:2px solid var(--rule);margin-top:14px}
-.slot{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--hair)}
-.slot .when{font-weight:800;font-size:22px;letter-spacing:-.01em;line-height:1.05}
-.slot .when small{display:block;font-size:12px;font-weight:600;color:var(--ink-2);letter-spacing:.03em;margin-top:3px}
-.slot .what h4{font-size:14px;font-weight:700;margin-bottom:4px}
-.slot .what p{font-size:14px;line-height:1.45;color:var(--ink-2)}
-.slot .what ul{margin:6px 0 0;padding-left:1.1em;font-size:14px;line-height:1.45}
-.slot .what li+li{margin-top:3px}
-@media (max-width:560px){.slot{grid-template-columns:1fr;gap:6px}}
+.night{margin-top:20px;display:flex;flex-direction:column}
+.slot{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid var(--hair)}
+.slot:last-child{border-bottom:0}
+.slot .when{font-family:var(--display);font-weight:500;font-size:32px;letter-spacing:-.01em;line-height:1}
+.slot .when small{display:block;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-3);letter-spacing:0;margin-top:8px;line-height:1.45}
+.slot .what h4{font-size:18px;font-weight:600;margin-bottom:6px}
+.slot .what p{font-size:16px;line-height:1.65;color:var(--ink-2);max-width:72ch}
+.slot .what ul{margin:8px 0 0;padding-left:1.15em;font-size:16px;line-height:1.6;color:var(--ink-2);max-width:72ch}
+.slot .what li+li{margin-top:5px}
+@media (max-width:560px){.slot{grid-template-columns:minmax(0,1fr);gap:8px}.slot .when{font-size:28px}}
 
 /* Deep dives */
-details{border-top:1px solid var(--hair)}
-details:last-of-type{border-bottom:1px solid var(--hair)}
-summary{cursor:pointer;padding:12px 4px;display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;font-weight:700;list-style:none}
+.dives{margin-top:14px;background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden}
+details{border-bottom:1px solid var(--hair)}
+details:last-of-type{border-bottom:0}
+summary{cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:14px;align-items:center;font-weight:600;font-size:16.5px;list-style:none;transition:background .15s}
 summary::-webkit-details-marker{display:none}
-summary .meta{font-size:12.5px;font-weight:600;color:var(--ink-2);white-space:nowrap}
+summary .meta{font-size:13.5px;font-weight:500;color:var(--ink-3);white-space:nowrap}
 summary:hover{background:var(--well)}
-details .prose{padding:4px 4px 16px 46px;font-size:15.5px}
-summary>*{min-width:0}
-@media (max-width:760px){summary{grid-template-columns:30px 1fr}summary .meta{grid-column:2;white-space:normal}details .prose{padding-left:4px}}
+details[open] summary{background:var(--well)}
+details .prose{padding:18px 18px 24px 62px;font-size:17.5px}
+details .res-note{font-family:var(--sans);font-size:14.5px;color:var(--ink-2);margin:0 0 12px;padding:10px 14px;background:var(--well);border-radius:var(--radius-sm)}
+@media (max-width:760px){summary{grid-template-columns:30px minmax(0,1fr)}summary .meta{grid-column:2;white-space:normal}details .prose{padding-left:18px}}
 
-/* Scenario strip */
-.scen{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:14px}
-.scen div{background:var(--paper);padding:12px 12px}
-.scen h4{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-.scen .v{font-size:22px;font-weight:800;margin-top:6px;line-height:1.1}
-.scen .v small{font-size:12.5px;font-weight:600;color:var(--ink-2);display:block;margin-top:3px}
-.scen p{font-size:12.5px;color:var(--ink-2);margin-top:6px;line-height:1.4}
+/* Scenario strip (kept for any page that still uses it) */
+.scen{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:16px}
+.scen div{background:var(--surface);border:1px solid var(--hair);border-radius:var(--radius-sm);padding:14px}
+.scen h4{font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.scen .v{font-size:22px;font-weight:600;margin-top:6px;line-height:1.1}
+.scen .v small{font-size:13px;font-weight:500;color:var(--ink-2);display:block;margin-top:3px}
+.scen p{font-size:13.5px;color:var(--ink-2);margin-top:6px;line-height:1.45}
 .scen .hi{background:var(--well)}
 
-.foot{margin-top:48px;border-top:3px solid var(--rule);padding-top:14px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
-.srcs{columns:2;column-gap:36px;font-size:12.5px;line-height:1.5;margin-top:10px}
-.srcs li{break-inside:avoid;margin-bottom:4px}
+.foot{margin-top:56px;border-top:1px solid var(--hair);padding-top:20px;font-size:14px;color:var(--ink-3);line-height:1.6}
+.srcs{columns:2;column-gap:44px;font-size:14px;line-height:1.6;margin-top:6px;padding-left:1.3em;color:var(--ink-2)}
+.srcs li{break-inside:avoid;margin-bottom:8px}
 @media (max-width:700px){.srcs{columns:1}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{.rail,.tip{display:none}}
@@ -200,11 +266,13 @@ summary>*{min-width:0}
     <symbol id="ov1" viewBox="0 0 24 14"><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="currentColor" clip-path="url(#ovhalf)"/><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="ov2" viewBox="0 0 24 14"><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="currentColor"/><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="chev" viewBox="0 0 10 10"><path d="M1.5 3.5 L5 7 L8.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="chk" viewBox="0 0 12 12"><path d="M2.2 6.4 L4.9 9 L9.8 3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="ovx" viewBox="0 0 24 14"><ellipse cx="12" cy="7" rx="10.6" ry="5.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5 2.5"/></symbol>
   </defs>
 </svg>
 <nav class="rail" aria-label="Sections">
   <a href="#control"><span class="mark"></span><span class="lbl">Control</span></a>
+  <a href="#results"><span class="mark"></span><span class="lbl">Results</span></a>
   <a href="#call"><span class="mark"></span><span class="lbl">The call</span></a>
   <a href="#evidence"><span class="mark"></span><span class="lbl">Evidence</span></a>
   <a href="#senate"><span class="mark"></span><span class="lbl">Senate</span></a>
@@ -221,10 +289,10 @@ summary>*{min-width:0}
     <h1>Midterm Desk 2026</h1>
     <p class="small" style="margin-top:6px">United States Senate and House of Representatives · Election Day, Tuesday 3 November 2026</p>
   </div>
-  <p class="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
+  <p class="stamp" id="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
 </header>
 <nav class="toc" aria-label="Contents">
-  <a href="#control">Control</a><a href="#call">The call</a><a href="#evidence">Evidence and the polls</a><a href="#senate">Senate, seat by seat</a><a href="#house">House, state by state</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a>
+  <a href="#control">Control</a><a href="#results">Results</a><a href="#call">The call</a><a href="#evidence">Evidence and the polls</a><a href="#senate">Senate, seat by seat</a><a href="#house">House, state by state</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a>
 </nav>
 
 <!-- ================= CONTROL ================= -->
@@ -267,6 +335,22 @@ summary>*{min-width:0}
     </div>
   </div>
 </section>
+
+<!-- ================= RESULTS (filled from RES_* in 07-data.js) ================= -->
+<section class="contest" id="results">
+  <div class="contest-head"><h2>Results as they are called</h2><span class="sub" id="res-sub">Every result carries the outlet that called it and the IST time it was entered. The pre-election calls above and below are kept as they were, so hits and misses stay visible.</span></div>
+  <div class="contest-body">
+    <div class="board">
+      <div id="res-senate"></div>
+      <div id="res-house"></div>
+    </div>
+    <div class="fig" style="margin-top:32px">
+      <h3>Who called it right</h3>
+      <p class="cap">Called races only, counted against each source's final pre-election rating. Toss-ups count as no call. House rows cover only the competitive districts listed on this page.</p>
+      <div class="tbl-wrap hits"><table id="hit-table"><thead></thead><tbody></tbody></table></div>
+    </div>
+  </div>
+</section>
 <!-- ================= THE CALL ================= -->
 <section class="contest" id="call">
   <div class="contest-head"><h2>The call</h2><span class="sub">The desk's own opinion, labelled as such. The sourced data is in the sections below and does not depend on it.</span></div>
@@ -287,7 +371,7 @@ summary>*{min-width:0}
         <tbody>
           <tr><td class="st">Polls understate Dems by 6</td><td>56 D</td><td>≈100%</td><td>250+ D</td><td>The 2025 off-year miss. Kansas, Iowa, South Carolina and Nebraska all fall. Largest House majority since 2009.</td></tr>
           <tr><td class="st">Understate by 3</td><td>55 D</td><td>99%</td><td>244–250 D</td><td>Specials-level wave. Texas, Alaska, Kansas and Iowa all flip; Collins loses by mid single digits.</td></tr>
-          <tr style="background:var(--well)"><td class="st">Polls right (D+9 generic)</td><td><b>53 D</b></td><td><b>85%</b></td><td><b>238–242 D</b></td><td>The forecasters' world: NC, OH, ME, TX and AK flip; Kansas and Iowa split.</td></tr>
+          <tr class="hl"><td class="st">Polls right (D+9 generic)</td><td><b>53 D</b></td><td><b>85%</b></td><td><b>238–242 D</b></td><td>The forecasters' world: NC, OH, ME, TX and AK flip; Kansas and Iowa split.</td></tr>
           <tr><td class="st">Overstate Dems by 3</td><td>50 D</td><td>44%</td><td>228–234 D</td><td>The 2024 miss. Control turns on Texas, Maine and Alaska; a 50–50 Senate is the modal result. Democrats still take the House.</td></tr>
           <tr><td class="st">Overstate by 5</td><td>48 D</td><td>17%</td><td>220–226 D</td><td>The 2020 miss, never seen in a midterm. Republicans hold the Senate comfortably; the House is a narrow Democratic majority or a photo finish.</td></tr>
         </tbody></table></div>
@@ -413,36 +497,37 @@ summary>*{min-width:0}
       <label><input type="radio" name="senf" value="r"> R-held</label>
       <label><input type="radio" name="senf" value="d"> D-held</label>
       <label><input type="radio" name="senf" value="split"> Raters disagree</label>
+      <label><input type="radio" name="senf" value="called"> Called</label>
       <span class="count" id="sen-count"></span>
     </div>
     <div class="tbl-wrap"><table class="sortable" id="sen-table"><thead></thead><tbody></tbody></table></div>
     <p class="src">Ratings as compiled from Wikipedia's predictions table (sourced to each rater, 29 Oct–2 Nov), The Hill, Roll Call and 270toWin; the raters' own pages are paywalled. Polls: RCP = RealClearPolling average, SB = Silver Bulletin average (2–3 Nov via Newsweek), Siena = NYT/Siena final poll. Market: Polymarket Democratic-win price read live 3 Nov; Kalshi 2 Nov noon ET where shown. Close times are US Eastern (UTC−5; DST ended 1 Nov), converted to IST (+10:30). "Desk" is this page's opinion and its probability of a Democratic win.</p>
 
-    <h3 style="margin-top:34px;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase">The races that decide it</h3>
-    <div style="margin-top:8px">
-      <details open><summary><svg class="oval sm col-d"><use href="#ov2"/></svg><span>North Carolina · Cooper (D) v Whatley (R) · open, Tillis retired</span><span class="meta">Cook Likely D · Sabato Likely D · IE Lean D · Desk 95% D</span></summary><div class="prose"><p>The likeliest flip on the board. RCP has Cooper +10.7; WRAL/WSOC 54–40; AtlasIntel 56–42. Cooper had raised $47.2M to Whatley's $13.4M by 30 September and the Senate Leadership Fund paused its North Carolina spending on 2 October. Republicans run Whatley, the former RNC chair, as Trump's ally; Democrats run Cooper on two terms as governor. <b>Signal:</b> polls close 06:00 IST and the count is fast. A Cooper margin under 5 means the late Democratic surge is overstated; 10 or more and the reach seats are live.</p></div></details>
+    <h3 class="sec-h3">The races that decide it</h3>
+    <div class="dives">
+      <details data-st="NC" open><summary><svg class="oval sm col-d"><use href="#ov2"/></svg><span>North Carolina · Cooper (D) v Whatley (R) · open, Tillis retired</span><span class="meta">Cook Likely D · Sabato Likely D · IE Lean D · Desk 95% D</span></summary><div class="prose"><p>The likeliest flip on the board. RCP has Cooper +10.7; WRAL/WSOC 54–40; AtlasIntel 56–42. Cooper had raised $47.2M to Whatley's $13.4M by 30 September and the Senate Leadership Fund paused its North Carolina spending on 2 October. Republicans run Whatley, the former RNC chair, as Trump's ally; Democrats run Cooper on two terms as governor. <b>Signal:</b> polls close 06:00 IST and the count is fast. A Cooper margin under 5 means the late Democratic surge is overstated; 10 or more and the reach seats are live.</p></div></details>
 
-      <details><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Ohio special · Sherrod Brown (D) v Jon Husted (R, appointed)</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Tilt D · Desk 70% D</span></summary><div class="prose"><p>RCP Brown +2.6, Silver Bulletin +3.0. Times/Siena moved from R+3 in June to Brown 49–44 in its final poll; Suffolk 47–44; Rasmussen the outlier at Husted 49–47. The most expensive race in the country at $435M, with the Senate Leadership Fund alone past $80M. Brown lost in 2024 by running behind only Trump's coattails; this is a midterm against an appointee. Husted's close: Brown "is driving up the costs". Brown's: the cost of living. <b>Signal:</b> early and absentee votes report first and lean Democratic, so expect Brown ahead early and Husted closing. A call around 08:30–10:30 IST if the margin is about 3. A Brown win makes 51 likely; a Husted hold means Democrats probably need Kansas or Iowa.</p></div></details>
+      <details data-st="OH"><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Ohio special · Sherrod Brown (D) v Jon Husted (R, appointed)</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Tilt D · Desk 70% D</span></summary><div class="prose"><p>RCP Brown +2.6, Silver Bulletin +3.0. Times/Siena moved from R+3 in June to Brown 49–44 in its final poll; Suffolk 47–44; Rasmussen the outlier at Husted 49–47. The most expensive race in the country at $435M, with the Senate Leadership Fund alone past $80M. Brown lost in 2024 by running behind only Trump's coattails; this is a midterm against an appointee. Husted's close: Brown "is driving up the costs". Brown's: the cost of living. <b>Signal:</b> early and absentee votes report first and lean Democratic, so expect Brown ahead early and Husted closing. A call around 08:30–10:30 IST if the margin is about 3. A Brown win makes 51 likely; a Husted hold means Democrats probably need Kansas or Iowa.</p></div></details>
 
-      <details><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Maine · Susan Collins (R) v Troy Jackson (D)</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Toss-up · Desk 60% D</span></summary><div class="prose"><p>Jackson, a logger and former state Senate president, became the nominee by convention in July after Graham Platner won the primary with 72% and withdrew over sexual-assault allegations he denies (Janet Mills had suspended her campaign in April). RCP has Jackson +1.7, Silver Bulletin +4.0; Times/Siena's final poll 51–45 Jackson after showing Collins +3 in September; UNH 54–45 and AtlasIntel 53–44 for Jackson, Emerson 51–49 Collins, Fox and Trafalgar tied. Outside groups have spent $137M+, over half attacking Jackson. Joe Manchin endorsed Collins. <b>Why the desk is below the market:</b> Collins ran roughly eight points ahead of her 2020 polls. <b>Signal:</b> polls close 06:30 IST; the count is slow. Jackson by more than 5 means the Collins discount is gone and the night is strong for Democrats. A Collins win makes the Democratic path run through Texas, Kansas and Alaska.</p></div></details>
+      <details data-st="ME"><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Maine · Susan Collins (R) v Troy Jackson (D)</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Toss-up · Desk 60% D</span></summary><div class="prose"><p>Jackson, a logger and former state Senate president, became the nominee by convention in July after Graham Platner won the primary with 72% and withdrew over sexual-assault allegations he denies (Janet Mills had suspended her campaign in April). RCP has Jackson +1.7, Silver Bulletin +4.0; Times/Siena's final poll 51–45 Jackson after showing Collins +3 in September; UNH 54–45 and AtlasIntel 53–44 for Jackson, Emerson 51–49 Collins, Fox and Trafalgar tied. Outside groups have spent $137M+, over half attacking Jackson. Joe Manchin endorsed Collins. <b>Why the desk is below the market:</b> Collins ran roughly eight points ahead of her 2020 polls. <b>Signal:</b> polls close 06:30 IST; the count is slow. Jackson by more than 5 means the Collins discount is gone and the night is strong for Democrats. A Collins win makes the Democratic path run through Texas, Kansas and Alaska.</p></div></details>
 
-      <details><summary><svg class="oval sm col-t"><use href="#ov0"/></svg><span>Texas · James Talarico (D) v Ken Paxton (R) · open, Cornyn lost the runoff</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Tilt D · Desk 55% D</span></summary><div class="prose"><p>Paxton beat Cornyn "by a landslide" in the 26 May runoff after Trump endorsed him; Talarico beat Jasmine Crockett in the Democratic primary. RCP Talarico +1.8, Silver Bulletin +3.5; Times/Siena 50–43, CNN 49–43, AtlasIntel 52–46, Quantus Paxton +1, Rasmussen tied. Talarico has raised $158M+ to Paxton's $39M, but super PACs including Musk money carry Paxton. Early vote passed 7.7M by 30 October (40.7% of registered voters); total turnout may top 10M. Republicans close on "Talarico's Texas or our Texas" and tax cuts; Democrats on "the most corrupt politician in Texas". <b>Why the desk is below the market:</b> Texas polls overstated Democrats by about three points in both 2020 and 2024, and the state voted Trump +14 two years ago. <b>Signal:</b> polls close 06:30 IST (El Paso 07:30). The early-vote dump comes first and leans Democratic; rural Election Day votes come later. A call around 10:30–12:30 IST if the margin is 3 or more. Watch the Rio Grande Valley: a Talarico win would be the first Democratic Senate win in Texas since 1988 and would mean the Hispanic swing back is real.</p></div></details>
+      <details data-st="TX"><summary><svg class="oval sm col-t"><use href="#ov0"/></svg><span>Texas · James Talarico (D) v Ken Paxton (R) · open, Cornyn lost the runoff</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Tilt D · Desk 55% D</span></summary><div class="prose"><p>Paxton beat Cornyn "by a landslide" in the 26 May runoff after Trump endorsed him; Talarico beat Jasmine Crockett in the Democratic primary. RCP Talarico +1.8, Silver Bulletin +3.5; Times/Siena 50–43, CNN 49–43, AtlasIntel 52–46, Quantus Paxton +1, Rasmussen tied. Talarico has raised $158M+ to Paxton's $39M, but super PACs including Musk money carry Paxton. Early vote passed 7.7M by 30 October (40.7% of registered voters); total turnout may top 10M. Republicans close on "Talarico's Texas or our Texas" and tax cuts; Democrats on "the most corrupt politician in Texas". <b>Why the desk is below the market:</b> Texas polls overstated Democrats by about three points in both 2020 and 2024, and the state voted Trump +14 two years ago. <b>Signal:</b> polls close 06:30 IST (El Paso 07:30). The early-vote dump comes first and leans Democratic; rural Election Day votes come later. A call around 10:30–12:30 IST if the margin is 3 or more. Watch the Rio Grande Valley: a Talarico win would be the first Democratic Senate win in Texas since 1988 and would mean the Hispanic swing back is real.</p></div></details>
 
-      <details><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Alaska · Mary Peltola (D) v Dan S. Sullivan (R) · top-four ranked choice</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Toss-up · Desk 60% D</span></summary><div class="prose"><p>RCP Peltola +1.2, Silver Bulletin +2.6; Times/Siena 48–46 Peltola in its final poll after 50–43 in September. Two complications: the ballot also carries "Daniel J. Sullivan Jr.", a retired teacher with no party polling above 4%, whom Republicans call a sham candidate; and on 1 November Judge Sharon Gleason dismissed a Justice Department suit, filed on Trump's instruction, that sought to delay certification if Sullivan loses. DOJ appealed within the hour. <b>Signal:</b> first results after 11:15 IST on Wednesday; <b>no call on the night</b>. Ranked-choice tabulation is scheduled for 18 November, certification about 25 November. Alaska could decide control late, and in court.</p></div></details>
+      <details data-st="AK"><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Alaska · Mary Peltola (D) v Dan S. Sullivan (R) · top-four ranked choice</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Toss-up · Desk 60% D</span></summary><div class="prose"><p>RCP Peltola +1.2, Silver Bulletin +2.6; Times/Siena 48–46 Peltola in its final poll after 50–43 in September. Two complications: the ballot also carries "Daniel J. Sullivan Jr.", a retired teacher with no party polling above 4%, whom Republicans call a sham candidate; and on 1 November Judge Sharon Gleason dismissed a Justice Department suit, filed on Trump's instruction, that sought to delay certification if Sullivan loses. DOJ appealed within the hour. <b>Signal:</b> first results after 11:15 IST on Wednesday; <b>no call on the night</b>. Ranked-choice tabulation is scheduled for 18 November, certification about 25 November. Alaska could decide control late, and in court.</p></div></details>
 
-      <details><summary><svg class="oval sm col-t"><use href="#ov0"/></svg><span>Kansas · Adam Hamilton (D) v Roger Marshall (R)</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Toss-up · Desk 45% D</span></summary><div class="prose"><p>Kansas has not elected a Democratic senator since 1932. Hamilton, founding pastor of the country's largest United Methodist church and a former Trump voter, leads RCP by 2.6 and Silver Bulletin by 3.3; Times/Siena 49–44, Emerson 50–47, CNN +4, Washington Post +9 to +10 (the Post itself warned its sample over-represented Democrats), InsiderAdvantage Marshall +1. $85M spent, the most in Kansas history. Marshall calls Hamilton's Epstein-files attack a stunt; Hamilton runs on prices, Marshall's vote to table the Epstein amendment and an ethics complaint. Kalshi's Hamilton price went from 39% to 63% in a week. <b>Why the desk tilts R:</b> Trump +16 state, a Libertarian taking 3–4%, and the Post poll's own caveat. <b>Signal:</b> polls close 06:30 IST (west 07:30). Johnson County, the Kansas City suburbs, decides it. A Hamilton win is a wave-level result; a Marshall hold is the Republican firewall story.</p></div></details>
+      <details data-st="KS"><summary><svg class="oval sm col-t"><use href="#ov0"/></svg><span>Kansas · Adam Hamilton (D) v Roger Marshall (R)</span><span class="meta">Cook Toss-up · Sabato Lean D · IE Toss-up · Desk 45% D</span></summary><div class="prose"><p>Kansas has not elected a Democratic senator since 1932. Hamilton, founding pastor of the country's largest United Methodist church and a former Trump voter, leads RCP by 2.6 and Silver Bulletin by 3.3; Times/Siena 49–44, Emerson 50–47, CNN +4, Washington Post +9 to +10 (the Post itself warned its sample over-represented Democrats), InsiderAdvantage Marshall +1. $85M spent, the most in Kansas history. Marshall calls Hamilton's Epstein-files attack a stunt; Hamilton runs on prices, Marshall's vote to table the Epstein amendment and an ethics complaint. Kalshi's Hamilton price went from 39% to 63% in a week. <b>Why the desk tilts R:</b> Trump +16 state, a Libertarian taking 3–4%, and the Post poll's own caveat. <b>Signal:</b> polls close 06:30 IST (west 07:30). Johnson County, the Kansas City suburbs, decides it. A Hamilton win is a wave-level result; a Marshall hold is the Republican firewall story.</p></div></details>
 
-      <details><summary><svg class="oval sm col-t"><use href="#ov0"/></svg><span>Iowa · Josh Turek (D) v Ashley Hinson (R) · open, Ernst retired</span><span class="meta">Cook Toss-up · Sabato Lean R · IE Toss-up · Desk 42% D</span></summary><div class="prose"><p>The closest race on the map: RCP Hinson +0.2, Silver Bulletin Turek +0.7, so the two averages point opposite ways. Times/Siena 48–47 Turek; Rasmussen, co/efficient and InsiderAdvantage Hinson +1 to +2; Cook's own poll Turek +2; Suffolk Turek +4; Marist Turek +3. Iowa voted Trump +13 and Republicans hold a 180,000 registration edge, but independents break for Turek, a Paralympic gold medallist with the Farmers Union endorsement, by double digits. Trump rallied in Dubuque on 1 November. <b>Signal:</b> polls close 07:30 IST; Iowa votes mostly on the day, so the count favours Republicans late. A call may not come until Wednesday evening IST. Watch the eastern river counties (Dubuque, Scott, Linn). A Turek win is the clearest wave marker and points to 53+ Democratic seats.</p></div></details>
+      <details data-st="IA"><summary><svg class="oval sm col-t"><use href="#ov0"/></svg><span>Iowa · Josh Turek (D) v Ashley Hinson (R) · open, Ernst retired</span><span class="meta">Cook Toss-up · Sabato Lean R · IE Toss-up · Desk 42% D</span></summary><div class="prose"><p>The closest race on the map: RCP Hinson +0.2, Silver Bulletin Turek +0.7, so the two averages point opposite ways. Times/Siena 48–47 Turek; Rasmussen, co/efficient and InsiderAdvantage Hinson +1 to +2; Cook's own poll Turek +2; Suffolk Turek +4; Marist Turek +3. Iowa voted Trump +13 and Republicans hold a 180,000 registration edge, but independents break for Turek, a Paralympic gold medallist with the Farmers Union endorsement, by double digits. Trump rallied in Dubuque on 1 November. <b>Signal:</b> polls close 07:30 IST; Iowa votes mostly on the day, so the count favours Republicans late. A call may not come until Wednesday evening IST. Watch the eastern river counties (Dubuque, Scott, Linn). A Turek win is the clearest wave marker and points to 53+ Democratic seats.</p></div></details>
 
-      <details><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Michigan · Abdul El-Sayed (D) v Mike Rogers (R) · open, Peters retired</span><span class="meta">Cook Lean D (from Toss-up, 2 Nov) · Sabato Lean D · IE Tilt D · Desk 78% D</span></summary><div class="prose"><p>The one realistic Republican pickup. Rogers, a former FBI agent and House Intelligence chair, lost here by 0.3 in 2024. Times/Siena has El-Sayed 53–42, CNN 49–42, Silver Bulletin +4.7. On Sunday 1 November Rep. Haley Stevens, who lost the primary to El-Sayed, endorsed Rogers and appeared with him in Detroit; El-Sayed raised $1.2M off it and his Kalshi price dipped then set a new high near 78%. Cook moved the race to Lean D the next day citing new public and private polling. <b>Signal:</b> polls close 06:30 IST; Detroit, Wayne and Oakland absentee processing is slow and a call may slip to Wednesday if the margin is under 4. A Rogers win cuts the Democratic net and could cost them the chamber.</p></div></details>
+      <details data-st="MI"><summary><svg class="oval sm col-d"><use href="#ov1"/></svg><span>Michigan · Abdul El-Sayed (D) v Mike Rogers (R) · open, Peters retired</span><span class="meta">Cook Lean D (from Toss-up, 2 Nov) · Sabato Lean D · IE Tilt D · Desk 78% D</span></summary><div class="prose"><p>The one realistic Republican pickup. Rogers, a former FBI agent and House Intelligence chair, lost here by 0.3 in 2024. Times/Siena has El-Sayed 53–42, CNN 49–42, Silver Bulletin +4.7. On Sunday 1 November Rep. Haley Stevens, who lost the primary to El-Sayed, endorsed Rogers and appeared with him in Detroit; El-Sayed raised $1.2M off it and his Kalshi price dipped then set a new high near 78%. Cook moved the race to Lean D the next day citing new public and private polling. <b>Signal:</b> polls close 06:30 IST; Detroit, Wayne and Oakland absentee processing is slow and a call may slip to Wednesday if the margin is under 4. A Rogers win cuts the Democratic net and could cost them the chamber.</p></div></details>
 
-      <details><summary><svg class="oval sm col-r"><use href="#ov1"/></svg><span>South Carolina · Darline Graham (R, appointed) v Annie Andrews (D)</span><span class="meta">Cook Lean R · Sabato Lean R · IE Tilt R · Desk 25% D</span></summary><div class="prose"><p>Lindsey Graham won his primary with 57% and died in office on 11 July; Governor McMaster appointed his sister, Darline Graham Nordone, who then beat Rep. Ralph Norman 52–48 in the August special runoff. Norman has refused to campaign for her. RCP Graham +2.7, Silver Bulletin +1.3; Times/Siena tied 48–48; East Carolina 51–47 Graham; Trafalgar +3. She runs nearly double digits behind the Republican governor nominee. Andrews, a paediatrician, runs on petrol and grocery prices and on a seat "handed" by Washington. <b>Signal:</b> polls close 05:30 IST, the first real contest of the night. A quick Republican call means a normal night; "too close to call" past about 07:30 IST is the first wave alarm.</p></div></details>
+      <details data-st="SC"><summary><svg class="oval sm col-r"><use href="#ov1"/></svg><span>South Carolina · Darline Graham (R, appointed) v Annie Andrews (D)</span><span class="meta">Cook Lean R · Sabato Lean R · IE Tilt R · Desk 25% D</span></summary><div class="prose"><p>Lindsey Graham won his primary with 57% and died in office on 11 July; Governor McMaster appointed his sister, Darline Graham Nordone, who then beat Rep. Ralph Norman 52–48 in the August special runoff. Norman has refused to campaign for her. RCP Graham +2.7, Silver Bulletin +1.3; Times/Siena tied 48–48; East Carolina 51–47 Graham; Trafalgar +3. She runs nearly double digits behind the Republican governor nominee. Andrews, a paediatrician, runs on petrol and grocery prices and on a seat "handed" by Washington. <b>Signal:</b> polls close 05:30 IST, the first real contest of the night. A quick Republican call means a normal night; "too close to call" past about 07:30 IST is the first wave alarm.</p></div></details>
 
-      <details><summary><svg class="oval sm col-r"><use href="#ov1"/></svg><span>Nebraska · Pete Ricketts (R) v Dan Osborn (independent) · no Democrat on the ballot</span><span class="meta">Cook Lean R · Sabato Lean R · IE Tilt R · Desk: Osborn 30%</span></summary><div class="prose"><p>The Democratic nominee withdrew in July. Osborn led YouGov 48–47 and SurveyUSA 46–42 in September, but Times/Siena's final poll has Ricketts 49–43 and co/efficient 48–43; the trend is toward Ricketts. A Republican super PAC committed $15M and Senate Republicans $8M more. Osborn's caucus intentions are not confirmed, so an Osborn win is a seat lost by Republicans, not a clean Democratic gain. <b>Signal:</b> polls close 07:30 IST; Osborn needs big margins in Omaha (Douglas) and Lincoln (Lancaster). A call is likely around 10:30 IST.</p></div></details>
+      <details data-st="NE"><summary><svg class="oval sm col-r"><use href="#ov1"/></svg><span>Nebraska · Pete Ricketts (R) v Dan Osborn (independent) · no Democrat on the ballot</span><span class="meta">Cook Lean R · Sabato Lean R · IE Tilt R · Desk: Osborn 30%</span></summary><div class="prose"><p>The Democratic nominee withdrew in July. Osborn led YouGov 48–47 and SurveyUSA 46–42 in September, but Times/Siena's final poll has Ricketts 49–43 and co/efficient 48–43; the trend is toward Ricketts. A Republican super PAC committed $15M and Senate Republicans $8M more. Osborn's caucus intentions are not confirmed, so an Osborn win is a seat lost by Republicans, not a clean Democratic gain. <b>Signal:</b> polls close 07:30 IST; Osborn needs big margins in Omaha (Douglas) and Lincoln (Lancaster). A call is likely around 10:30 IST.</p></div></details>
 
-      <details><summary><svg class="oval sm col-d"><use href="#ov2"/></svg><span>Georgia, New Hampshire, Minnesota · the Democratic holds</span><span class="meta">GA Likely D · NH Lean/Likely D · MN Lean/Likely D</span></summary><div class="prose"><p><b>Georgia:</b> Jon Ossoff leads Rep. Mike Collins by 8.2 in RCP (AJC 48–40, InsiderAdvantage 53–46). The risk is a 1 December runoff if he finishes under 50%; he polls at or near it. <b>New Hampshire:</b> Chris Pappas leads John E. Sununu 48–41 (UMass Lowell/YouGov) and UNH's final poll says he "continues to lead"; fast town-by-town count, call likely by 09:30 IST. <b>Minnesota:</b> Peggy Flanagan leads Michele Tafoya 54–40 in Times/Siena but only 45–42 in an earlier KSTP/SurveyUSA poll; Republicans see "a tide within the state" after fraud scandals (Kornacki). A Republican over-performance in any of these would be the Sun Belt or Upper Midwest warning the GOP case needs.</p></div></details>
+      <details data-st="GA NH MN"><summary><svg class="oval sm col-d"><use href="#ov2"/></svg><span>Georgia, New Hampshire, Minnesota · the Democratic holds</span><span class="meta">GA Likely D · NH Lean/Likely D · MN Lean/Likely D</span></summary><div class="prose"><p><b>Georgia:</b> Jon Ossoff leads Rep. Mike Collins by 8.2 in RCP (AJC 48–40, InsiderAdvantage 53–46). The risk is a 1 December runoff if he finishes under 50%; he polls at or near it. <b>New Hampshire:</b> Chris Pappas leads John E. Sununu 48–41 (UMass Lowell/YouGov) and UNH's final poll says he "continues to lead"; fast town-by-town count, call likely by 09:30 IST. <b>Minnesota:</b> Peggy Flanagan leads Michele Tafoya 54–40 in Times/Siena but only 45–42 in an earlier KSTP/SurveyUSA poll; Republicans see "a tide within the state" after fraud scandals (Kornacki). A Republican over-performance in any of these would be the Sun Belt or Upper Midwest warning the GOP case needs.</p></div></details>
 
-      <details><summary><svg class="oval sm col-r"><use href="#ov2"/></svg><span>Florida special, Mississippi, Louisiana, Montana · the Republican holds to measure</span><span class="meta">All Likely/Solid R · wave gauges only</span></summary><div class="prose"><p><b>Florida special:</b> appointee Ashley Moody leads Angie Nixon (who beat Alex Vindman for the nomination) 50–44 in Siena; polls close 05:30 IST and Florida counts fastest in the country, so her margin against Siena's +6 is the night's first polling-error barometer. <b>Mississippi:</b> Cindy Hyde-Smith v Scott Colom. The only public poll is a Democratic firm's (Hyde-Smith 43–40); a Wedgewood poll showing 52–48 was admitted to be fabricated, so any average still carrying it is contaminated. Espy was within 1 in the 2020 polls and lost by 10. <b>Louisiana:</b> Julia Letlow (R) after Cassidy finished third in his primary; Sabato has it Lean R, Cook Solid R, no public polling. <b>Montana:</b> Kurt Alme (R) leads a four-way field with independent Seth Bodnar second (MSU-Billings Alme +4); the split anti-Alme vote favours the Republican.</p></div></details>
+      <details data-st="FL MS LA MT"><summary><svg class="oval sm col-r"><use href="#ov2"/></svg><span>Florida special, Mississippi, Louisiana, Montana · the Republican holds to measure</span><span class="meta">All Likely/Solid R · wave gauges only</span></summary><div class="prose"><p><b>Florida special:</b> appointee Ashley Moody leads Angie Nixon (who beat Alex Vindman for the nomination) 50–44 in Siena; polls close 05:30 IST and Florida counts fastest in the country, so her margin against Siena's +6 is the night's first polling-error barometer. <b>Mississippi:</b> Cindy Hyde-Smith v Scott Colom. The only public poll is a Democratic firm's (Hyde-Smith 43–40); a Wedgewood poll showing 52–48 was admitted to be fabricated, so any average still carrying it is contaminated. Espy was within 1 in the 2020 polls and lost by 10. <b>Louisiana:</b> Julia Letlow (R) after Cassidy finished third in his primary; Sabato has it Lean R, Cook Solid R, no public polling. <b>Montana:</b> Kurt Alme (R) leads a four-way field with independent Seth Bodnar second (MSU-Billings Alme +4); the split anti-Alme vote favours the Republican.</p></div></details>
     </div>
   </div>
 </section>
@@ -489,7 +574,7 @@ summary>*{min-width:0}
         <tr><td class="st">Maryland, Indiana, Kansas, South Carolina, New York</td><td>various</td><td>Not enacted / failed / blocked</td><td class="num">0</td><td>MD-1 (Harris) untouched; IN-1 and IN-7 safe after the Indiana Senate rejected the map 11 Dec 2025; SC-6 (Clyburn) failed in the SC Senate; SCOTUS blocked the NY-11 redraw 2 Mar 2026.</td></tr>
       </tbody></table></div>
 
-    <h3 style="margin-top:34px;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase">Every competitive district, grouped by state</h3>
+    <h3 class="sec-h3">Every competitive district, grouped by state</h3>
     <p class="small" style="margin-top:6px;max-width:80ch">Every seat rated Toss-up or Lean by Cook, Sabato or Inside Elections in their final publications, plus the Likely-rated seats that one of them has closer. Ratings: Cook reconstructed through 30 Oct (its 2 Nov moves are paywalled), Sabato final 2 Nov (it rates no seat a toss-up and moved 14 of 17 toss-ups to Lean D), Inside Elections through 31 Oct. "nf" = not found in a live source.</p>
     <div class="filters" id="hse-filters" role="group" aria-label="Filter House table">
       <label><input type="radio" name="hsef" value="all" checked> All competitive</label>
@@ -498,6 +583,7 @@ summary>*{min-width:0}
       <label><input type="radio" name="hsef" value="dheld"> D-held</label>
       <label><input type="radio" name="hsef" value="split"> Raters disagree</label>
       <label><input type="radio" name="hsef" value="redraw"> Redrawn seats</label>
+      <label><input type="radio" name="hsef" value="called"> Called</label>
       <span class="count" id="hse-count"></span>
     </div>
     <div class="tbl-wrap"><table id="hse-table"><thead></thead><tbody></tbody></table></div>
@@ -752,6 +838,20 @@ const SLOT = {AR:"07:00",IN:"04:30",KY:"04:30",GA:"05:30",SC:"05:30",VA:"05:30",
  ME:"06:30",PA:"06:30",NJ:"06:30",MA:"06:30",DE:"06:30",MD:"06:30",IL:"06:30",MO:"06:30",MS:"06:30",AL:"06:30",TN:"06:30",OK:"06:30",MI:"06:30",TX:"06:30",KS:"06:30",CT:"06:30",RI:"06:30",DC:"06:30",
  AR:"07:00",IA:"07:30",NE:"07:30",MN:"07:30",CO:"07:30",NM:"07:30",NY:"07:30",WI:"07:30",AZ:"07:30",LA:"07:30",WY:"07:30",SD:"07:30",ND:"07:30",
  NV:"08:30",MT:"08:30",UT:"08:30",ID:"08:30",CA:"09:30",WA:"09:30",OR:"09:30",HI:"09:30",AK:"10:30"};
+// ---------- RESULTS, election night. Add calls here; never edit the pre-election rows above.
+// One line per called race. w: winner "D" | "R" | "I" (Osborn); m: margin as reported, e.g. "+9.8" or "nf";
+// by: the outlet that called it (AP, DDHQ, NBC ...); at: IST date and time entered, "2026-11-04 06:42"; n: optional note.
+const RES_SEN = {
+  // NC: {w:"D", m:"+9.8", by:"AP", at:"2026-11-04 06:42"},
+};
+// House: keyed by district as written in HSE, e.g. "PA-7".
+const RES_HSE = {
+  // "PA-7": {w:"D", m:"+2.1", by:"AP", at:"2026-11-04 09:10"},
+};
+// Overall House tally across all 435 seats, from one outlet; null until the first entry.
+const RES_HOUSE_TOTAL = null; // e.g. {d:120, r:98, by:"AP", at:"2026-11-04 08:15"}
+// Chamber control calls; null until an outlet calls control.
+const RES_CONTROL = {senate:null, house:null}; // e.g. house:{w:"D", by:"AP", at:"2026-11-04 13:05"}
 </script>
 <script>
 (function(){
@@ -778,6 +878,24 @@ const chip=t=>t&&t!=="nf"?`<span class="chip ${rateCls(t)}">${esc(t)}</span>`:`<
 const nm=s=>s==="nf"?`<span class="muted">not found</span>`:esc(s);
 const RATE_FULL={TU:"Toss-up",LnD:"Lean D",LnR:"Lean R",LkD:"Likely D",LkR:"Likely R",TD:"Tilt D",TR:"Tilt R",SD:"Solid D",SR:"Solid R",nf:"nf"};
 
+// ---- results helpers (data in RES_* at the end of 07-data.js)
+const RS=(typeof RES_SEN!=="undefined"&&RES_SEN)||{}, RH=(typeof RES_HSE!=="undefined"&&RES_HSE)||{};
+const RHT=(typeof RES_HOUSE_TOTAL!=="undefined")?RES_HOUSE_TOTAL:null, RC=(typeof RES_CONTROL!=="undefined"&&RES_CONTROL)||{};
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmtAt=a=>{const m=/^(\d{4})-(\d\d)-(\d\d)\s+(\d\d:\d\d)/.exec(a||"");return m?`${+m[3]} ${MON[+m[2]-1]} ${m[4]} IST`:esc(a||"time nf");};
+const PARTY={D:"Democrat",R:"Republican",I:"Independent"};
+const wcls=w=>w==="D"?"d":w==="R"?"r":"i";
+const chk=`<svg class="check" viewBox="0 0 12 12" aria-hidden="true"><use href="#chk"/></svg>`;
+function resCell(res,winnerName){
+  if(!res)return`<span class="res wait">Not called</span>`;
+  const c=wcls(res.w);
+  return`<span class="res col-${c}">${ovalSvg(2,c,"xs")}${chk}<span style="color:var(--ink)">${esc(winnerName||PARTY[res.w]||res.w)}</span></span><span class="res-line">${res.m&&res.m!=="nf"?esc(res.m)+" · ":""}called by ${esc(res.by||"nf")}, ${fmtAt(res.at)}${res.n?" · "+esc(res.n):""}</span>`;
+}
+// What each source predicted: "D", "R", "I" or null (toss-up / no rating).
+const ratePick=t=>{const c=rateCls(t);return c==="d"?"D":c==="r"?"R":null;};
+const probPick=(p,isI)=>p===0.5?null:(p>0.5?(isI?"I":"D"):"R");
+const verdict=(pick,res)=>pick==null?`<span class="verdict">Desk: toss-up</span>`:`<span class="verdict">Desk ${pick===res.w?"right":"wrong"}</span>`;
+
 // ---- tooltip
 const tip=$("#tip");
 function showTip(html,x,y){tip.innerHTML=html;tip.classList.add("show");const w=tip.offsetWidth,h=tip.offsetHeight;let L=x+14,T=y+14;if(L+w>innerWidth-8)L=x-w-14;if(T+h>innerHeight-8)T=y-h-14;tip.style.left=Math.max(8,L)+"px";tip.style.top=Math.max(8,T)+"px";}
@@ -794,12 +912,13 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
     if(!st)return`<div class="tile empty" aria-hidden="true"></div>`;
     const s=senBy[st];
     if(!s)return`<div class="tile" role="listitem" aria-label="${st}, no Senate race">${st}<svg class="oval col-t" viewBox="0 0 24 14" aria-hidden="true"><use href="#ovx"/></svg></div>`;
-    const isI=st==="NE";const d=deskInfo(s.desk,isI);
-    const cls=isI?"rl":(d.cls==="d"?(d.fill===2?"ds":"dl"):d.cls==="r"?(d.fill===2?"rs":"rl"):"tt");
+    const isI=st==="NE";const d=deskInfo(s.desk,isI);const res=RS[st];
     const ring=`box-shadow:inset 0 0 0 2px var(--${s.held==="D"?"d":"r"})`;
+    if(res){const c=wcls(res.w);return`<div class="tile race ${c}s called" role="listitem" tabindex="0" data-st="${st}" style="${ring}" aria-label="${esc(s.name)}: called for ${PARTY[res.w]||res.w}; desk had ${d.label}">${chk}${st}${ovalSvg(2,c,"")}</div>`;}
+    const cls=isI?"rl":(d.cls==="d"?(d.fill===2?"ds":"dl"):d.cls==="r"?(d.fill===2?"rs":"rl"):"tt");
     return`<div class="tile race ${cls}" role="listitem" tabindex="0" data-st="${st}" style="${ring}" aria-label="${esc(s.name)}: ${d.label}">${st}${ovalSvg(d.fill,cls==="tt"?"t":(cls[0]==="d"?"d":"r"),"")}</div>`;
   }).join("");
-  const html=s=>{const isI=s.st==="NE";const d=deskInfo(s.desk,isI);return`<b>${esc(s.name)}</b> · ${esc(s.inc)}<br>${esc(s.d)} (D) v ${esc(s.r)} (R)${s.o?" · "+esc(s.o):""}<br>Cook ${esc(s.cook)} · Sabato ${esc(s.sab)} · IE ${esc(s.ie)}<br>Polls: ${esc(s.poll)}<br>Polymarket ${isI?"Osborn":"D"} ${pct(s.pm)}${s.k?" · Kalshi "+esc(s.k):""}<br>Desk: ${d.label}${isI?"":" ("+pct(s.desk)+" D)"} · closes ${s.ist} IST`;};
+  const html=s=>{const isI=s.st==="NE";const d=deskInfo(s.desk,isI);return`<b>${esc(s.name)}</b> · ${esc(s.inc)}<br>${esc(s.d)} (D) v ${esc(s.r)} (R)${s.o?" · "+esc(s.o):""}<br>Cook ${esc(s.cook)} · Sabato ${esc(s.sab)} · IE ${esc(s.ie)}<br>Polls: ${esc(s.poll)}<br>Polymarket ${isI?"Osborn":"D"} ${pct(s.pm)}${s.k?" · Kalshi "+esc(s.k):""}<br>Desk: ${d.label}${isI?"":" ("+pct(s.desk)+" D)"} · closes ${s.ist} IST${RS[s.st]?`<br><b>Called: ${esc(PARTY[RS[s.st].w]||RS[s.st].w)}${RS[s.st].m&&RS[s.st].m!=="nf"?" "+esc(RS[s.st].m):""}</b> · ${esc(RS[s.st].by||"nf")}, ${fmtAt(RS[s.st].at)}`:""}`;};
   box.addEventListener("pointermove",e=>{const t=e.target.closest(".tile.race");if(!t)return hideTip();showTip(html(senBy[t.dataset.st]),e.clientX,e.clientY);});
   box.addEventListener("pointerleave",hideTip);
   box.addEventListener("focusin",e=>{const t=e.target.closest(".tile.race");if(!t)return;const b=t.getBoundingClientRect();showTip(html(senBy[t.dataset.st]),b.left+b.width/2,b.top+b.height/2);});
@@ -809,7 +928,7 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
 // ---- Senate table
 (function senTable(){
   const thead=$("#sen-table thead"),tbody=$("#sen-table tbody"),count=$("#sen-count");
-  const cols=[["name","State / seat"],["d","Matchup"],["cook","Cook"],["sab","Sabato"],["ie","Inside"],["poll","Final polls"],["pm","Market (D)"],["desk","Desk call"],["ist","Closes IST"]];
+  const cols=[["name","State / seat"],["d","Matchup"],["desk","Desk call"],["res","Result"],["cook","Cook"],["sab","Sabato"],["ie","Inside"],["poll","Final polls"],["pm","Market (D)"],["ist","Closes IST"]];
   let sortKey="ist",dir=1,filter="all";
   thead.innerHTML="<tr>"+cols.map(([k,l])=>`<th${k==="pm"?' class="num"':""}><button type="button" data-k="${k}" ${k===sortKey?'aria-sort="ascending"':'aria-sort="none"'}>${l}<svg class="sort" viewBox="0 0 10 10" aria-hidden="true"><use href="#chev"/></svg></button></th>`).join("")+"</tr>";
   const comp=/Toss|Lean|Tilt|Likely/;
@@ -818,15 +937,16 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
     if(filter==="comp")r=r.filter(s=>comp.test(s.cook)||comp.test(s.sab)||comp.test(s.ie));
     if(filter==="r")r=r.filter(s=>s.held==="R");if(filter==="d")r=r.filter(s=>s.held==="D");
     if(filter==="split")r=r.filter(s=>new Set([rateCls(s.cook),rateCls(s.sab),rateCls(s.ie)]).size>1);
-    r.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(sortKey==="desk"&&a.st==="NE")x=1-a.desk;if(sortKey==="desk"&&b.st==="NE")y=1-b.desk;if(sortKey==="pm"&&a.st==="NE")x=1-a.pm;if(sortKey==="pm"&&b.st==="NE")y=1-b.pm;if(typeof x==="number")return (x-y)*dir;return String(x).localeCompare(String(y))*dir;});
+    if(filter==="called")r=r.filter(s=>RS[s.st]);
+    r.sort((a,b)=>{let x=a[sortKey],y=b[sortKey];if(sortKey==="res"){x=RS[a.st]?(RS[a.st].at||"0"):"";y=RS[b.st]?(RS[b.st].at||"0"):"";}if(sortKey==="desk"&&a.st==="NE")x=1-a.desk;if(sortKey==="desk"&&b.st==="NE")y=1-b.desk;if(sortKey==="pm"&&a.st==="NE")x=1-a.pm;if(sortKey==="pm"&&b.st==="NE")y=1-b.pm;if(typeof x==="number")return (x-y)*dir;return String(x).localeCompare(String(y))*dir;});
     return r;
   }
   function render(){
-    const r=rows();count.textContent=r.length+" seats";
+    const r=rows();count.textContent=r.length+(r.length===1?" seat":" seats");if(!r.length){tbody.innerHTML=`<tr><td colspan="${cols.length}" class="muted">${filter==="called"?"No Senate race has been called yet.":"No seats match this filter."}</td></tr>`;return;}
     tbody.innerHTML=r.map(s=>{const isI=s.st==="NE";const d=deskInfo(s.desk,isI);
-      return`<tr><td class="st" style="max-width:210px;white-space:normal">${esc(s.name)}<br><span class="muted" style="font-weight:400;font-size:12px">${s.held}-held${s.open?" · open":""} · ${esc(s.inc)}</span></td><td style="min-width:180px"><b>${esc(s.d)}</b> <span class="muted">(D)</span> v <b>${esc(s.r)}</b> <span class="muted">(R)</span>${s.o?`<br><span class="muted" style="font-size:12px">${esc(s.o)}</span>`:""}${s.note?`<br><span class="muted" style="font-size:12px">${esc(s.note)}</span>`:""}</td><td>${chip(s.cook)}</td><td>${chip(s.sab)}</td><td>${chip(s.ie)}</td><td style="min-width:160px">${esc(s.poll)}</td><td class="num">${isI?"Osborn "+pct(s.pm):pct(s.pm)}${s.k?`<br><span class="muted" style="font-size:12px">K: ${esc(s.k)}</span>`:""}</td><td><span class="call col-${d.cls}">${ovalSvg(d.fill,d.cls,"xs")}<span style="color:var(--ink)">${d.label}</span></span>${isI?"":`<br><span class="muted" style="font-size:12px">${pct(s.desk)} D</span>`}</td><td>${esc(s.ist)}<br><span class="muted" style="font-size:12px">${esc(s.et)} ET</span></td></tr>`;}).join("");
+      return`<tr><td class="st" style="max-width:210px;white-space:normal">${esc(s.name)}<br><span class="muted" style="font-weight:400;font-size:12px">${s.held}-held${s.open?" · open":""} · ${esc(s.inc)}</span></td><td style="min-width:180px"><b>${esc(s.d)}</b> <span class="muted">(D)</span> v <b>${esc(s.r)}</b> <span class="muted">(R)</span>${s.o?`<br><span class="muted" style="font-size:12px">${esc(s.o)}</span>`:""}${s.note?`<br><span class="muted" style="font-size:12px">${esc(s.note)}</span>`:""}</td><td><span class="call col-${d.cls}">${ovalSvg(d.fill,d.cls,"xs")}<span style="color:var(--ink)">${d.label}</span></span>${isI?"":`<br><span class="muted" style="font-size:12px">${pct(s.desk)} D</span>`}</td><td>${(()=>{const res=RS[s.st];if(!res)return resCell(null);const nmw=res.w==="D"?s.d:res.w==="R"?s.r:(isI?"Dan Osborn":"");return resCell(res,nmw)+verdict(probPick(s.desk,isI),res);})()}</td><td>${chip(s.cook)}</td><td>${chip(s.sab)}</td><td>${chip(s.ie)}</td><td style="min-width:160px">${esc(s.poll)}</td><td class="num">${isI?"Osborn "+pct(s.pm):pct(s.pm)}${s.k?`<br><span class="muted" style="font-size:12px">K: ${esc(s.k)}</span>`:""}</td><td>${esc(s.ist)}<br><span class="muted" style="font-size:12px">${esc(s.et)} ET</span></td></tr>`;}).join("");
   }
-  thead.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;if(k===sortKey)dir=-dir;else{sortKey=k;dir=k==="pm"||k==="desk"?-1:1;}thead.querySelectorAll("button").forEach(x=>x.setAttribute("aria-sort",x.dataset.k===sortKey?(dir>0?"ascending":"descending"):"none"));render();});
+  thead.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;if(k===sortKey)dir=-dir;else{sortKey=k;dir=k==="pm"||k==="desk"||k==="res"?-1:1;}thead.querySelectorAll("button").forEach(x=>x.setAttribute("aria-sort",x.dataset.k===sortKey?(dir>0?"ascending":"descending"):"none"));render();});
   $("#sen-filters").addEventListener("change",e=>{filter=e.target.value;render();});
   render();
 })();
@@ -834,7 +954,7 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
 // ---- House table
 (function hseTable(){
   const thead=$("#hse-table thead"),tbody=$("#hse-table tbody"),count=$("#hse-count");
-  thead.innerHTML=`<tr><th>District</th><th>Incumbent / status</th><th>Democrat</th><th>Republican</th><th>Cook</th><th>Sabato</th><th>Inside</th><th>Notes</th></tr>`;
+  thead.innerHTML=`<tr><th>District</th><th>Incumbent / status</th><th>Democrat</th><th>Republican</th><th>Cook</th><th>Sabato</th><th>Inside</th><th>Result</th><th>Notes</th></tr>`;
   let filter="all";
   const NAMES={AL:"Alabama",AK:"Alaska",AZ:"Arizona",CA:"California",CO:"Colorado",FL:"Florida",IN:"Indiana",IA:"Iowa",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MI:"Michigan",MN:"Minnesota",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",OH:"Ohio",PA:"Pennsylvania",SC:"South Carolina",TN:"Tennessee",TX:"Texas",UT:"Utah",VA:"Virginia",WA:"Washington",WI:"Wisconsin"};
   const sym=t=>RATE_FULL[t]||t;
@@ -844,19 +964,75 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
     if(filter==="rheld")r=r.filter(x=>x[3]==="R");if(filter==="dheld")r=r.filter(x=>x[3]==="D");
     if(filter==="split")r=r.filter(x=>new Set([x[6],x[7],x[8]].filter(v=>v!=="nf").map(v=>rateCls(sym(v)))).size>1);
     if(filter==="redraw")r=r.filter(x=>x[10]===1);
+    if(filter==="called")r=r.filter(x=>RH[x[1]]);
     const dn=x=>parseInt(x[1].split("-")[1])||0;
     r.sort((a,b)=>(NAMES[a[0]]||a[0]).localeCompare(NAMES[b[0]]||b[0])||dn(a)-dn(b));
-    count.textContent=r.length+" districts";
+    count.textContent=r.length+(r.length===1?" district":" districts");
+    if(!r.length){tbody.innerHTML=`<tr><td colspan="9" class="muted">${filter==="called"?"No listed district has been called yet.":"No districts match this filter."}</td></tr>`;return;}
     let html="",last="";
     for(const x of r){
-      if(x[0]!==last){last=x[0];const n=r.filter(y=>y[0]===x[0]).length;html+=`<tr class="group"><td colspan="8">${NAMES[x[0]]||x[0]} · ${n} seat${n>1?"s":""} · polls close ${SLOT[x[0]]} IST</td></tr>`;}
+      if(x[0]!==last){last=x[0];const n=r.filter(y=>y[0]===x[0]).length;html+=`<tr class="group"><td colspan="9">${NAMES[x[0]]||x[0]} · ${n} seat${n>1?"s":""} · polls close ${SLOT[x[0]]} IST</td></tr>`;}
       const heldTxt={R:"R-held",D:"D-held",I:"Ind.-held",V:"Vacant",N:"New seat"}[x[3]];
-      html+=`<tr><td class="st">${esc(x[1])}<br><span class="muted" style="font-weight:400;font-size:12px">${heldTxt}${x[10]?" · redrawn":""}</span></td><td>${esc(x[2])}</td><td>${nm(x[4])}</td><td>${nm(x[5])}</td><td>${chip(sym(x[6]))}</td><td>${chip(sym(x[7]))}</td><td>${chip(sym(x[8]))}</td><td class="muted" style="min-width:180px">${esc(x[9])||"—"}</td></tr>`;
+      html+=`<tr><td class="st">${esc(x[1])}<br><span class="muted" style="font-weight:400;font-size:12px">${heldTxt}${x[10]?" · redrawn":""}</span></td><td>${esc(x[2])}</td><td>${nm(x[4])}</td><td>${nm(x[5])}</td><td>${chip(sym(x[6]))}</td><td>${chip(sym(x[7]))}</td><td>${chip(sym(x[8]))}</td><td style="min-width:150px">${(()=>{const res=RH[x[1]];if(!res)return resCell(null);const nmw=res.w==="D"?x[4]:res.w==="R"?x[5]:"";return resCell(res,nmw&&nmw!=="nf"?nmw:"");})()}</td><td class="muted" style="min-width:180px">${esc(x[9])||"—"}</td></tr>`;
     }
     tbody.innerHTML=html;
   }
   $("#hse-filters").addEventListener("change",e=>{filter=e.target.value;render();});
   render();
+})();
+
+// ---- results board, hit rates, deep-dive notes, masthead stamp
+(function results(){
+  const senCalled=SEN.filter(s=>RS[s.st]);
+  const dWin=senCalled.filter(s=>RS[s.st].w==="D").length, rWin=senCalled.filter(s=>RS[s.st].w==="R").length, iWin=senCalled.filter(s=>RS[s.st].w==="I").length;
+  // Seats not on the ballot: 47 D caucus today minus 13 D-held seats up; 53 R minus 22 R-held seats up.
+  const D0=47-SEN.filter(s=>s.held==="D").length, R0=53-SEN.filter(s=>s.held==="R").length;
+  const left=SEN.length-senCalled.length;
+  const bar=(segs,total)=>`<div class="seatbar" role="img" aria-label="${segs.map(([n,v])=>n+" "+v).join(", ")}">${segs.map(([n,v,c])=>v?`<i class="${c}" style="width:${(v/total*100).toFixed(2)}%"></i>`:"").join("")}</div>`;
+  const ctl=(c,label)=>c?`<p class="small" style="margin-top:12px"><span class="res col-${wcls(c.w)}">${ovalSvg(2,wcls(c.w),"xs")}${chk}<span style="color:var(--ink)">${label} control called for the ${c.w==="D"?"Democrats":"Republicans"}</span></span><span class="res-line">by ${esc(c.by||"nf")}, ${fmtAt(c.at)}</span></p>`:"";
+  $("#res-senate").innerHTML=`<h3>Senate</h3><p class="cap">Democrats need 51 seats; at 50 Vice-President Vance breaks ties for the Republicans.</p>
+    <div class="tally" style="margin-top:14px"><span class="n">${senCalled.length}</span><span class="of">of ${SEN.length} races called · ${left} still open</span></div>
+    ${bar([["Democratic caucus",D0+dWin,"bd"],["Osborn",iWin,"bi"],["Not yet called",left,""],["Republican",R0+rWin,"br"]],100)}
+    <div class="seatkey"><span><b>${D0+dWin} Democratic caucus</b><small>${D0} not up${dWin?` + ${dWin} won`:""}</small></span>${iWin?`<span class="mid"><b>${iWin} Osborn (I)</b><small>caucus unconfirmed</small></span>`:""}<span><b>${R0+rWin} Republican</b><small>${R0} not up${rWin?` + ${rWin} won`:""}</small></span></div>
+    ${ctl(RC.senate,"Senate")}
+    ${senCalled.length?"":`<p class="empty-note">No Senate race has been called yet. The first polls close at 04:30 IST on Wednesday 4 November (Indiana and eastern Kentucky).</p>`}`;
+  const hCalled=HSE.filter(x=>RH[x[1]]);
+  const hD=hCalled.filter(x=>RH[x[1]].w==="D").length, hR=hCalled.filter(x=>RH[x[1]].w==="R").length;
+  const flips=hCalled.filter(x=>(x[3]==="D"||x[3]==="R")&&RH[x[1]].w!==x[3]).length;
+  $("#res-house").innerHTML=`<h3>House</h3><p class="cap">218 seats for a majority. The overall count is entered from one outlet; the district count covers the competitive seats listed on this page.</p>
+    ${RHT?`<div class="tally" style="margin-top:14px"><span class="n">${RHT.d+RHT.r}</span><span class="of">of 435 seats called · ${esc(RHT.by||"nf")}, ${fmtAt(RHT.at)}</span></div>
+    ${bar([["Democrats",RHT.d,"bd"],["Not yet called",435-RHT.d-RHT.r,""],["Republicans",RHT.r,"br"]],435)}
+    <div class="seatkey"><span><b>${RHT.d} Democrats</b></span><span class="mid"><small>218 to win</small></span><span><b>${RHT.r} Republicans</b></span></div>`:""}
+    <div class="tally" style="margin-top:${RHT?22:14}px"><span class="n">${hCalled.length}</span><span class="of">of ${HSE.length} competitive districts called${hCalled.length?` · ${hD} D, ${hR} R · ${flips} changed party`:""}</span></div>
+    ${ctl(RC.house,"House")}
+    ${RHT||hCalled.length?"":`<p class="empty-note">Nothing called yet. Competitive House districts start closing at 04:30 IST (Indiana's IN-5).</p>`}`;
+
+  // Hit rates: each source's final pre-election pick against called results.
+  const srcs=[
+    ["Desk (this page)", s=>probPick(s.desk,s.st==="NE"), null],
+    ["Polymarket", s=>probPick(s.pm,s.st==="NE"), null],
+    ["Cook Political Report", s=>ratePick(s.cook), x=>ratePick(RATE_FULL[x[6]])],
+    ["Sabato's Crystal Ball", s=>ratePick(s.sab), x=>ratePick(RATE_FULL[x[7]])],
+    ["Inside Elections", s=>ratePick(s.ie), x=>ratePick(RATE_FULL[x[8]])]
+  ];
+  const score=(rows,res,fn)=>{let hit=0,n=0,skip=0;for(const r of rows){const p=fn(r);if(p==null){skip++;continue;}n++;if(p===res(r).w)hit++;}return{hit,n,skip};};
+  const cell=o=>o==null?`<span class="muted">no district calls</span>`:(o.n?`<b>${o.hit}</b> of ${o.n}`:`<span class="muted">none yet</span>`)+(o.skip?`<span class="res-line">${o.skip} toss-up or unrated</span>`:"");
+  $("#hit-table thead").innerHTML=`<tr><th>Source</th><th class="num">Senate</th><th class="num">House districts</th><th class="num">Hit rate</th></tr>`;
+  const total=senCalled.length+hCalled.length;
+  $("#hit-table tbody").innerHTML=total?srcs.map(([name,fs,fh])=>{const a=score(senCalled,s=>RS[s.st],fs);const b=fh?score(hCalled,x=>RH[x[1]],fh):null;const hit=a.hit+(b?b.hit:0),n=a.n+(b?b.n:0);
+    return`<tr${name.startsWith("Desk")?' class="hl"':""}><td class="st">${name}</td><td class="num">${cell(a)}</td><td class="num">${cell(b)}</td><td class="num"><b>${n?Math.round(hit/n*100)+"%":"–"}</b></td></tr>`;}).join("")
+    :`<tr><td colspan="4" class="muted">Hit rates appear here once the first race is called. Five sources will be scored: the desk, Polymarket, Cook, Sabato and Inside Elections.</td></tr>`;
+
+  // Deep dives: a dated result line above the analysis, which stays as written.
+  document.querySelectorAll("details[data-st]").forEach(dt=>{
+    const lines=dt.dataset.st.split(" ").filter(st=>RS[st]).map(st=>{const s=senBy[st],res=RS[st],isI=st==="NE";const who=res.w==="D"?s.d:res.w==="R"?s.r:(isI?"Dan Osborn":"");
+      return`<b>${esc(s.name)}:</b> ${esc(who)} (${res.w}) won${res.m&&res.m!=="nf"?", "+esc(res.m):""}. Called by ${esc(res.by||"nf")}, ${fmtAt(res.at)}. Desk had ${deskInfo(s.desk,isI).label}${isI?"":" ("+pct(s.desk)+" D)"}.`;});
+    if(lines.length){const p=dt.querySelector(".prose");if(p)p.insertAdjacentHTML("afterbegin",`<p class="res-note">${lines.join("<br>")}</p>`);}
+  });
+
+  // Masthead: say when the page last took a result, without touching the pre-election wording.
+  const ats=[...Object.values(RS),...Object.values(RH),RHT,RC.senate,RC.house].filter(Boolean).map(r=>r.at||"").filter(Boolean).sort();
+  if(ats.length){$("#stamp").insertAdjacentHTML("beforeend",` <b>Results are being added below the Control section; last entry ${fmtAt(ats[ats.length-1])}.</b>`);$("#res-sub").insertAdjacentHTML("beforeend",` Last entry ${fmtAt(ats[ats.length-1])}.`);}
 })();
 
 // ---- SVG helpers
