@@ -39,3 +39,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 09:22 | SC note: Fox projects, Graham concedes; TX Likely D at CBS; NBC counts; Desk note |
 | 2026-11-04 09:40 | TX D (ABC/CNN/CBS), OH D (CNN), OR D, AR R (CNN); OH-15 D flip (CNN); Desk note |
 | 2026-11-04 09:56 | KS D (NBC); TX, OR, AR re-credited to AP on exact times; AP times on OH, AL, TX-34, PA-10; IA Lean D (CBS); Desk note |
+| 2026-11-04 10:12 | Senate control D (NBC, CNN, ABC); IA D (AP 11:35 p.m. ET, Desk miss), TN R (CNN), SD R (ABC); House IN-5 D flip and UT-1 D (CNN). Desk Senate record 23 of 26 |
