@@ -32,3 +32,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 07:30 | NC-11 Ager (D) first House flip (CNN, NBC). OH Lean D (NBC). SC Andrews 53.6 at 65%. Desk note on SC. |
 | 2026-11-04 07:45 | CO, NM (D) and WY (R) called by AP at 9 p.m. ET; CBS adds NC-11; CBS has SC lean D; 9 p.m. counts; Desk note on KS/IA |
 | 2026-11-04 08:00 | TX-34 (D, NBC); AP times added for KY, FL-22, NC-11; NBC has SC lean D; counts |
+| 2026-11-04 08:15 | OK (R, AP); NBC has TX and KS lean D; CBS TX lean D; Desk note on the 51-52 path |
