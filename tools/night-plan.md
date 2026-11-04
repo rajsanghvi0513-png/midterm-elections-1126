@@ -1,6 +1,6 @@
 # Night update plan (agreed with the owner, 3 Nov 2026 19:30 IST)
 
-Cadence revised by the owner at 3 Nov evening to save usage: hourly in every phase until the tail; no 5 or 15 minute runs. Exception (owner, 06:10 IST 4 Nov): every 15 minutes until 12:10 IST 4 Nov (06:40 UTC), then back to the phase cadence. Check AP first: apnews.com/live/midterm-election-2026 and apnews.com/projects/elections-2026/us-senate-results/. Each wakeup is a one-shot `send_later` into this session. Every run: work out the phase FIRST (clock + conditions below), then schedule the next wakeup for that phase, then do the update. Scheduling early means a failed run does not end the chain.
+Cadence revised by the owner at 3 Nov evening to save usage: hourly in every phase until the tail; no 5 or 15 minute runs. Exception (owner, 06:10 IST 4 Nov): every 15 minutes until 12:10 IST 4 Nov (06:40 UTC), then back to the phase cadence. Check AP first: apnews.com/live/midterm-election-2026 and apnews.com/projects/elections-2026/us-senate-results/. Also check NBC (owner, 06:20 IST): nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763, nbcnews.com/politics/2026-elections/senate-results and /house-results. Enter NBC Decision Desk projections in RES with by:"NBC"; when AP later calls the same race, keep the earlier entry and add AP in n. Each wakeup is a one-shot `send_later` into this session. Every run: work out the phase FIRST (clock + conditions below), then schedule the next wakeup for that phase, then do the update. Scheduling early means a failed run does not end the chain.
 
 ## Clock
 The container runs on UTC. Get IST with `TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M'` and use that exact zero-padded form for every `at`. IST = UTC + 5:30; the IST date changes at 18:30 UTC. Poll closings and calls reported in ET: IST = ET + 10:30 (ET is UTC-5 after 1 Nov).
@@ -40,4 +40,4 @@ Do not hold back on analysis during the results phase. Alongside the sourced fac
 - after the night: where the polls, markets and the desk were right or wrong.
 Rules still hold: opinion only in `by:"Desk"` entries, every number in them must come from a sourced entry or the pre-election record, never pre-empt an outlet's call, and never edit or overwrite the pre-election calls.
 
-state: phase=B since=2026-11-04 04:30 (15-min until 12:10 IST, then hourly; last run 2026-11-04 06:15)
+state: phase=B since=2026-11-04 04:30 (15-min until 12:10 IST, then hourly; last run 2026-11-04 06:25)
