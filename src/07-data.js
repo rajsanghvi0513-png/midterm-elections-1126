@@ -125,8 +125,8 @@ const SLOT = {AR:"07:00",IN:"04:30",KY:"04:30",GA:"05:30",SC:"05:30",VA:"05:30",
 // by: the outlet that called it (AP, DDHQ, NBC ...); at: IST date and time entered, "2026-11-04 06:42"; n: optional note.
 const RES_SEN = {
   // NC: {w:"D", m:"+9.8", by:"AP", at:"2026-11-04 06:42"},
-  VA: {w:"D", m:"nf", by:"AP", at:"2026-11-04 05:30", n:"AP declared Warner the winner at 7:00 p.m. ET, at poll close"},
-  GA: {w:"D", m:"nf", by:"NBC", at:"2026-11-04 06:16", n:"NBC News Decision Desk projection over Mike Collins; AP had not called it at the desk's check"},
+  VA: {w:"D", m:"nf", by:"AP", at:"2026-11-04 05:30", n:"AP declared Warner the winner at 7:00 p.m. ET, at poll close; NBC and Fox News also projected Warner"},
+  GA: {w:"D", m:"nf", by:"NBC", at:"2026-11-04 06:16", n:"NBC News Decision Desk projection over Mike Collins; AP had not called it, and Fox News still rated it too early to call as of 7:46 p.m. ET"},
 };
 // House: keyed by district as written in HSE, e.g. "PA-7".
 const RES_HSE = {
@@ -180,5 +180,9 @@ const LIVE = [
   {at:"2026-11-04 06:16", tag:"house", st:"FL", h:"FL-25: Moskowitz (D) 53%, Singer (R) 45% with 81% in", t:"The redrawn seat Republicans expected to gain. Partial count, not a call.", by:"NBC News House results, 7:46 p.m. ET"},
   {at:"2026-11-04 06:16", tag:"senate", st:"SC", h:"South Carolina: Andrews (D) 50.3%, Graham (R) 48.5%, too early to call", t:"Early count only; South Carolina's governor race showed about 8% in at the same check. New Hampshire: Pappas (D) 61.8% with 11% in. Virginia's VA-2: Kiggans (R) 54.4% with 5% in.", by:"NBC News results, 7:46 p.m. ET"},
   {at:"2026-11-04 06:25", tag:"desk", h:"Desk: Georgia is the first real data point, and South Carolina is the one to watch", t:"NBC projecting Ossoff at 7:46 p.m. ET, under an hour after polls closed, says the margin is not close; the desk had Georgia at 0.93 D. South Carolina is the opposite: the desk gave Andrews only 0.25, so an early Andrews lead is the first number tonight that runs against the desk, but with under a tenth counted it is a watch, not a signal. The FL-25 count, if it holds, is the first sign Florida's new map is not delivering Republican gains.", by:"Desk"},
+  {at:"2026-11-04 06:16", tag:"senate", h:"Fox Decision Desk: South Carolina close, Ohio and Kentucky too early, Capito leads in West Virginia", t:"Fox says Andrews (D) and Graham (R) are locked in a close battle. Ohio (Brown v. Husted) and Kentucky (Barr v. Booker) are too early to call. North Carolina: Cooper leads Whatley. Georgia: Ossoff leads, not yet called by Fox.", by:"Fox News live blog, 7:46 p.m. ET"},
+  {at:"2026-11-04 06:16", tag:"night", st:"FL", h:"Fox Insight: Miami-Dade swings about 9 points toward Democrats from 2024", t:"With 81% reporting in Miami-Dade, Jolly (D) leads Donalds (R) 53.4% to 45.4% in the governor race, a 9.07-point gain in Democratic vote share against the same stage in the 2024 presidential count.", by:"Fox News live blog"},
+  {at:"2026-11-04 06:16", tag:"night", h:"Fox panel: what would signal a historic Democratic night", t:"Will Cain named KY-6 (Trump +15) as the early test, saying even a narrow Republican hold there could be a good sign for Democrats, and flagged VA-1, VA-5 and the South Carolina Senate race as Republican warning signs. Guy Benson expects Texas to stay Republican but said El-Sayed could win Michigan in a 'really tough environment' for the GOP.", by:"Fox News live blog"},
+  {at:"2026-11-04 06:30", tag:"desk", h:"Desk: Fox, NBC and AP agree on the shape", t:"Three desks with different audiences are reading the same early picture: Warner safe, Ossoff ahead (NBC has called it, Fox and AP not yet), South Carolina close, and big Democratic swings in South Florida's early vote (NBC's Osceola, Fox's Miami-Dade). The Fox panel's own bar for Republicans, KY-6 and South Carolina, is the same pair the desk is watching. Early votes in Florida lean Democratic, so the swing figures will shrink as Election Day ballots land.", by:"Desk"},
 ];
 </script>

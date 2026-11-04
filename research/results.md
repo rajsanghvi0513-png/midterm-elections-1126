@@ -22,3 +22,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | VA Senate | Warner (D) | nf | AP | 2026-11-04 05:30 | D, 0.99 (hit) |
 | 2026-11-04 06:25 | NBC added as a source (owner). NBC projects GA Sen Ossoff (D). NBC exit poll economy D+5; Osceola; FL-25, SC, NH partials; Desk note. |
 | GA Senate | Ossoff (D) | nf | NBC | 2026-11-04 06:16 | D, 0.93 (hit) |
+| 2026-11-04 06:30 | Fox News added as a source (owner). Fox: SC close, Capito leads WV, Miami-Dade D +9 swing, panel tests (KY-6, SC); Desk note. |
