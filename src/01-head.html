@@ -202,6 +202,20 @@ tr.group td{background:var(--well-2);color:var(--ink);font-weight:600;font-size:
 .seatkey small{font-size:var(--fs-xs);color:var(--ink-3)}
 .empty-note{font-size:var(--fs-base);color:var(--ink-2);background:var(--well);border-radius:var(--radius-sm);padding:14px 16px;margin-top:14px;line-height:1.55}
 .hits td.num{font-variant-numeric:tabular-nums}
+.run-sum{font-size:var(--fs-sm);color:var(--ink-2);margin-top:14px;line-height:1.5}
+.run-sum b{color:var(--ink)}
+details.run{border:0;margin-top:10px}
+details.run summary{padding:8px 0;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;font-size:var(--fs-base)}
+details.run summary::before{content:"+";font-family:var(--mono,monospace);color:var(--ink-3)}
+details.run[open] summary::before{content:"\2212"}
+details.run summary:hover{background:none;text-decoration:underline}
+details.run .tbl-wrap{margin-top:6px;max-height:420px;overflow:auto}
+details.run td.st{white-space:nowrap}
+details.run .tbl-wrap td:first-child{min-width:0}
+details.run table{width:100%}
+details.run th,details.run td{padding-left:7px;padding-right:7px}
+details.run td{overflow-wrap:anywhere}
+details.run .res-line{margin-top:8px}
 .board h3{font-size:var(--fs-md);font-weight:600}
 .board .cap{font-size:var(--fs-sm);color:var(--ink-2);margin-top:4px}
 

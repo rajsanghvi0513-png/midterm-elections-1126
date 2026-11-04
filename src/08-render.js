@@ -161,12 +161,26 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
   // Seats not on the ballot: 47 D caucus today minus 13 D-held seats up; 53 R minus 22 R-held seats up.
   const D0=47-SEN.filter(s=>s.held==="D").length, R0=53-SEN.filter(s=>s.held==="R").length;
   const left=SEN.length-senCalled.length;
+  // Running tally: seats per party after each call, in call order, plus net change and what each side still needs.
+  const flipsD=senCalled.filter(s=>s.held==="R"&&RS[s.st].w==="D"), flipsR=senCalled.filter(s=>s.held==="D"&&RS[s.st].w==="R");
+  const dNow=D0+dWin, rNow=R0+rWin, net=flipsD.length-flipsR.length;
+  const needD=Math.max(0,51-dNow), needR=Math.max(0,50-rNow);
+  const needTxt=needD===0?"Democrats have reached 51":needR===0?"Republicans have reached 50 (Vance breaks ties)":`Democrats need ${needD} more for 51 · Republicans need ${needR} more for 50`;
+  let cd=D0,cr=R0;
+  const runRows=senCalled.slice().sort((a,b)=>(RS[a.st].at||"").localeCompare(RS[b.st].at||"")).map(s=>{const r=RS[s.st];if(r.w==="D")cd++;else if(r.w==="R")cr++;
+    const flip=(s.held==="D"||s.held==="R")&&r.w!==s.held;
+    return`<tr><td class="st">${fmtAt(r.at).replace(/^4 Nov /,"").replace(/ IST$/,"")}</td><td>${esc(s.name)}<span class="res-line">${esc(winnerName(s,r.w)||"nf")} (${esc(r.w)})${flip?", flip":""} · ${esc(r.by||"nf")}</span></td><td class="num"><b>${cd}</b></td><td class="num"><b>${cr}</b></td></tr>`;}).reverse().join("");
+  const runBlock=senCalled.length?`<p class="run-sum"><b>Net change: Democrats ${net>0?"+":net<0?"−":""}${Math.abs(net)}</b>${flipsD.length?` (gained ${flipsD.map(s=>s.st).join(", ")})`:""}${flipsR.length?`; Republicans gained ${flipsR.map(s=>s.st).join(", ")}`:""}.<br>${needTxt}.</p>
+    <details class="run"><summary>Running tally, call by call <span class="meta">${senCalled.length} calls, newest first</span></summary>
+    <div class="tbl-wrap hits"><table><thead><tr><th>IST</th><th>Race</th><th class="num">D</th><th class="num">R</th></tr></thead><tbody>${runRows}</tbody></table></div>
+    <p class="res-line">Each row is the chamber count after that call, starting from the ${D0} Democratic and ${R0} Republican seats not on the ballot. Times are when each call was entered on this page (IST, 4 Nov unless shown).</p></details>`:"";
   const bar=(segs,total)=>`<div class="seatbar" role="img" aria-label="${segs.map(([n,v])=>n+" "+v).join(", ")}">${segs.map(([n,v,c])=>v?`<i class="${c}" style="width:${(v/total*100).toFixed(2)}%"></i>`:"").join("")}</div>`;
   const ctl=(c,label)=>c?`<p class="small" style="margin-top:12px"><span class="res col-${wcls(c.w)}">${ovalSvg(2,wcls(c.w),"xs")}${chk}<span style="color:var(--ink)">${label} control called for the ${c.w==="D"?"Democrats":"Republicans"}</span></span><span class="res-line">by ${esc(c.by||"nf")}, ${fmtAt(c.at)}</span></p>`:"";
   $("#res-senate").innerHTML=`<h3>Senate</h3><p class="cap">Democrats need 51 seats; at 50 Vice-President Vance breaks ties for the Republicans.</p>
     <div class="tally" style="margin-top:14px"><span class="n">${senCalled.length}</span><span class="of">of ${SEN.length} races called · ${left} still open</span></div>
     ${bar([["Democratic caucus",D0+dWin,"bd"],["Independent",iWin,"bi"],["Not yet called",left,""],["Republican",R0+rWin,"br"]],100)}
     <div class="seatkey"><span><b>${D0+dWin} Democratic caucus</b><small>${D0} not up${dWin?` + ${dWin} won`:""}</small></span>${iWin?`<span class="mid"><b>${iWin} Independent</b><small>caucus unconfirmed</small></span>`:""}<span><b>${R0+rWin} Republican</b><small>${R0} not up${rWin?` + ${rWin} won`:""}</small></span></div>
+    ${runBlock}
     ${ctl(RC.senate,"Senate")}
     ${senCalled.length?"":`<p class="empty-note">No Senate race has been called yet. The first polls close at 04:30 IST on Wednesday 4 November (most of Indiana and Kentucky).</p>`}`;
   const hCalled=HSE.filter(x=>RH[x[1]]);
