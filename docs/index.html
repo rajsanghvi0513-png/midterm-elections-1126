@@ -387,7 +387,7 @@ details .res-note{font-family:var(--sans);font-size:var(--fs-sm);color:var(--ink
     <h1>Midterm Desk 2026</h1>
     <p class="small" style="margin-top:6px">United States Senate and House of Representatives · Election Day, Tuesday 3 November 2026</p>
   </div>
-  <p class="stamp" id="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
+  <p class="stamp" id="stamp"><b>Results are in.</b> Democrats win the Senate (NBC, CNN, ABC News and AP) and the House (NBC, CNN and CBS; AP had not called it). Live updates stopped at 10:30 IST, Wed 4 Nov, with nine Senate races still uncalled; see <a href="#results">Results</a> and <a href="#notes">Notes</a>. The pre-election calls, ratings and polls are a snapshot taken before any polls closed (ratings 29 Oct to 2 Nov, final polls to 1 Nov, Polymarket on the morning of 3 Nov, US time) and stand as written. All clock times are IST.</p>
 </header>
 <nav class="toc" id="tabs" role="tablist" aria-label="Sections">
   <a href="#control">Control</a><a href="#results">Results</a><a href="#live">Live</a><a href="#notes">Notes</a><a href="#map">Map</a><a href="#call">The call</a><a href="#evidence">Evidence</a><a href="#senate">Senate</a><a href="#house">House</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a><button type="button" class="theme-btn" id="theme-btn" aria-label="Switch colour theme">Dark mode</button>
@@ -1390,7 +1390,7 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
   // Masthead: say when the page last took a result, without touching the pre-election wording.
   const ats=[...Object.values(RS),...Object.values(RH),RHT,RC.senate,RC.house].filter(Boolean).map(r=>r.at||"").filter(Boolean).sort();
   document.documentElement.dataset.results=ats.length?"1":"";
-  if(ats.length){$("#stamp").insertAdjacentHTML("afterend",`<p class="stamp-live">The snapshot above stands as written. Results entered since are in the <a href="#results">Results</a> section; last entry ${fmtAt(ats[ats.length-1])}.</p>`);$("#res-sub").insertAdjacentHTML("beforeend",` Last entry ${fmtAt(ats[ats.length-1])}.`);}
+  if(ats.length){$("#stamp").insertAdjacentHTML("afterend",`<p class="stamp-live">Last result entered ${fmtAt(ats[ats.length-1])}.</p>`);$("#res-sub").insertAdjacentHTML("beforeend",` Last entry ${fmtAt(ats[ats.length-1])}.`);}
 })();
 
 // ---- SVG helpers

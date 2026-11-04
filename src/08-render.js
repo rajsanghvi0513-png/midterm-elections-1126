@@ -220,7 +220,7 @@ const senBy=Object.fromEntries(SEN.map(r=>[r.st,r]));
   // Masthead: say when the page last took a result, without touching the pre-election wording.
   const ats=[...Object.values(RS),...Object.values(RH),RHT,RC.senate,RC.house].filter(Boolean).map(r=>r.at||"").filter(Boolean).sort();
   document.documentElement.dataset.results=ats.length?"1":"";
-  if(ats.length){$("#stamp").insertAdjacentHTML("afterend",`<p class="stamp-live">The snapshot above stands as written. Results entered since are in the <a href="#results">Results</a> section; last entry ${fmtAt(ats[ats.length-1])}.</p>`);$("#res-sub").insertAdjacentHTML("beforeend",` Last entry ${fmtAt(ats[ats.length-1])}.`);}
+  if(ats.length){$("#stamp").insertAdjacentHTML("afterend",`<p class="stamp-live">Last result entered ${fmtAt(ats[ats.length-1])}.</p>`);$("#res-sub").insertAdjacentHTML("beforeend",` Last entry ${fmtAt(ats[ats.length-1])}.`);}
 })();
 
 // ---- SVG helpers
