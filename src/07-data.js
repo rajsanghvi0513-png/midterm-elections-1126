@@ -125,6 +125,7 @@ const SLOT = {AR:"07:00",IN:"04:30",KY:"04:30",GA:"05:30",SC:"05:30",VA:"05:30",
 // by: the outlet that called it (AP, DDHQ, NBC ...); at: IST date and time entered, "2026-11-04 06:42"; n: optional note.
 const RES_SEN = {
   // NC: {w:"D", m:"+9.8", by:"AP", at:"2026-11-04 06:42"},
+  VA: {w:"D", m:"nf", by:"AP", at:"2026-11-04 05:30", n:"AP declared Warner the winner at 7:00 p.m. ET, at poll close"},
 };
 // House: keyed by district as written in HSE, e.g. "PA-7".
 const RES_HSE = {
@@ -170,5 +171,8 @@ const LIVE = [
   {at:"2026-11-04 05:00", tag:"house", h:"DCCC chair DelBene does not expect control to be known tonight", t:"DelBene said she does not expect enough House races to be called overnight to settle control. Separately, Trump-aligned super PACs spent about $374M, led by Texas ($38M), Michigan ($36M) and Ohio ($29M).", by:"NYT"},
   {at:"2026-11-04 05:05", tag:"desk", h:"Desk: 1% to 31% counted is not a read", t:"Do not read the IN-5 lead as the Hamilton County tell yet: the first Indiana batches are early and mail votes, which lean Democratic, and Election Day ballots come later. The tell is the margin once Election Day precincts report, compared with Spartz's 2024 margin. Kentucky at 1% says nothing. DelBene's caution matches the slow counts the desk logged in Westchester, North Carolina and Florida: plan for House control to be a Wednesday-afternoon IST story, not a dawn one.", by:"Desk"},
   {at:"2026-11-04 06:00", tag:"night", h:"Georgia, Virginia, South Carolina and the rest of Indiana and Kentucky closed at 05:30 IST; no AP calls found yet", t:"The Voter Poll finds seven in 10 voters say Congress is not doing enough to check Trump. Results pages for Georgia's Senate race showed no votes at the desk's check.", by:"CNN live updates (Voter Poll); NYT results, 06:00 IST"},
+  {at:"2026-11-04 05:39", tag:"house", st:"FL", h:"AP calls FL-20 for Wasserman Schultz (D)", t:"A safe Democratic seat, not on the desk's competitive list. AP says several safe House seats have been called and none has changed hands so far.", by:"AP live updates"},
+  {at:"2026-11-04 05:44", tag:"senate", st:"GA", h:"AP Voter Poll: Georgia voters see Ossoff as less extreme than Collins", t:"Separately, AP Voter Poll finds South Carolina Senate voters have doubts about Darline Graham's experience.", by:"AP live updates"},
+  {at:"2026-11-04 06:15", tag:"desk", h:"Desk: first call is the safest one", t:"Warner at poll close was the desk's 0.99 seat, so it tests nothing. Watch the next three: Georgia's margin against the AJC's Ossoff +8, South Carolina against the desk's lean R, and whether Kentucky's KY-6 counts like a toss-up or like Trump +15. From now until 12:10 IST the desk checks AP every 15 minutes.", by:"Desk"},
 ];
 </script>

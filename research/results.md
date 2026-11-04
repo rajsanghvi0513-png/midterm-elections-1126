@@ -15,3 +15,8 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 04:00 | (no calls) | logged NBC exit poll (Trump 38/62) and Voter Poll issues; Desk read against 2018 | NBC News Exit Poll; BBC live |
 | 2026-11-04 05:00 | Phase B begins. IN/KY polls closed; partial returns (IN-5 D +27 at 31%, KY Sen Barr +34 at 1%); DelBene caution; Desk note. No AP calls. |
 | 2026-11-04 06:00 | 7 p.m. ET closings logged; Voter Poll: 7 in 10 say Congress not checking Trump enough. No AP calls confirmed. |
+| 2026-11-04 06:15 | First AP call: VA Sen Warner (D) at 05:30 IST; FL-20 Wasserman Schultz (D) logged; AP Voter Poll GA/SC; cadence to 15 min until 12:10 IST (owner). |
+
+| Race | Winner | Margin | Called by | Called (IST) | Desk call |
+|---|---|---|---|---|---|
+| VA Senate | Warner (D) | nf | AP | 2026-11-04 05:30 | D, 0.99 (hit) |
