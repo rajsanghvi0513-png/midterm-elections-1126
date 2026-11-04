@@ -40,4 +40,4 @@ Do not hold back on analysis during the results phase. Alongside the sourced fac
 - after the night: where the polls, markets and the desk were right or wrong.
 Rules still hold: opinion only in `by:"Desk"` entries, every number in them must come from a sourced entry or the pre-election record, never pre-empt an outlet's call, and never edit or overwrite the pre-election calls.
 
-state: phase=B since=2026-11-04 04:30 (15-min until 12:10 IST, then hourly; last run 2026-11-04 08:33)
+state: phase=B since=2026-11-04 04:30 (15-min until 12:10 IST, then hourly; last run 2026-11-04 08:50)
