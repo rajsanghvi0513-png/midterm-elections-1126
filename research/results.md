@@ -36,3 +36,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 08:33 | SC (D flip, NBC/CNN): first desk Senate miss; KY-6 (D flip, CNN): first House miss; counts; Desk note |
 | 2026-11-04 08:50 | HOUSE CONTROL: D (NBC 08:41; CNN, CBS); AL (R, NBC); PA-10, PA-7 D flips (NBC); counts; Desk note |
 | 2026-11-04 09:05 | NJ-7 D (AP 08:18); AP times added to KY-6, PA-7 notes |
+| 2026-11-04 09:22 | SC note: Fox projects, Graham concedes; TX Likely D at CBS; NBC counts; Desk note |
