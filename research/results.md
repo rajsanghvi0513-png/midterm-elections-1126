@@ -31,3 +31,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 07:15 | FL Moody (R, NBC first, AP 07:04), WV Capito (R, NBC), KY Barr (R, ABC). NC exit poll; TX/OH/MI early counts. |
 | 2026-11-04 07:30 | NC-11 Ager (D) first House flip (CNN, NBC). OH Lean D (NBC). SC Andrews 53.6 at 65%. Desk note on SC. |
 | 2026-11-04 07:45 | CO, NM (D) and WY (R) called by AP at 9 p.m. ET; CBS adds NC-11; CBS has SC lean D; 9 p.m. counts; Desk note on KS/IA |
+| 2026-11-04 08:00 | TX-34 (D, NBC); AP times added for KY, FL-22, NC-11; NBC has SC lean D; counts |
