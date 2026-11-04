@@ -963,8 +963,8 @@ const SLOT = {AR:"07:00",IN:"04:30",KY:"04:30",GA:"05:30",SC:"05:30",VA:"05:30",
 // by: the outlet that called it (AP, DDHQ, NBC ...); at: IST date and time entered, "2026-11-04 06:42"; n: optional note.
 const RES_SEN = {
   // NC: {w:"D", m:"+9.8", by:"AP", at:"2026-11-04 06:42"},
-  VA: {w:"D", m:"nf", by:"AP", at:"2026-11-04 05:30", n:"AP declared Warner the winner at 7:00 p.m. ET, at poll close; NBC and Fox News also projected Warner"},
-  GA: {w:"D", m:"nf", by:"NBC", at:"2026-11-04 06:16", n:"NBC News Decision Desk projection over Mike Collins; AP had not called it, and Fox News still rated it too early to call as of 7:46 p.m. ET; CBS News also projects Ossoff"},
+  VA: {w:"D", m:"nf", by:"AP", at:"2026-11-04 05:30", n:"AP declared Warner the winner at 7:00 p.m. ET, at poll close; NBC, Fox News and CBS also projected Warner"},
+  GA: {w:"D", m:"nf", by:"NBC", at:"2026-11-04 06:16", n:"NBC News Decision Desk projection over Mike Collins, about 06:16 IST; CBS also projects Ossoff; AP declared Ossoff the winner at 7:55 p.m. ET (06:25 IST); Fox had it too early to call at 7:46 p.m. ET"},
 };
 // House: keyed by district as written in HSE, e.g. "PA-7".
 const RES_HSE = {
@@ -1027,7 +1027,8 @@ const LIVE = [
   {at:"2026-11-04 06:35", tag:"desk", h:"Desk: four desks, one scorecard", t:"AP, NBC, Fox and CNN now feed this page. On CNN's ladder, tonight is so far at 'good' and testing 'very good': Ossoff is called by NBC, FL-25 leads at 81% counted, and IN-5's early lead is in the 'very good' tier but is mostly early votes. The 2022 to 2026 shift in the early-vote electorate (white share down five points) is the kind of composition change that does not shrink much as Election Day ballots arrive, unlike the county swings.", by:"Desk"},
   {at:"2026-11-04 06:20", tag:"night", h:"CBS exit poll: Trump's 38% approval is on pace for a midterm record low", t:"That is below his 2018 midterm figure and below George W. Bush in 2006, when his party lost both chambers. About three-quarters of voters are dissatisfied with the country's direction. CBS rates South Carolina's Senate race a toss-up after the first returns. Before the election, the CBS Battleground Tracker estimated 229 Democratic House seats (range 215 to 237); the desk's call is 236.", by:"CBS News live updates"},
   {at:"2026-11-04 06:06", tag:"night", h:"ABC Voter Poll: most Georgia voters say Trump's policies hurt the economy", t:"Corruption is a key issue for New Hampshire Senate voters, per ABC's preliminary Voter Poll findings. ABC had not projected Georgia at the desk's check.", by:"ABC News live updates, 7:28 and 7:36 p.m. ET"},
-  {at:"2026-11-04 06:40", tag:"desk", h:"Desk: six desks now feed this page", t:"AP, NBC, Fox, CNN, ABC and CBS. Two of them (NBC, CBS) have called Georgia; only AP's call is on Virginia's board line, the others are noted. Where the desk's 236 sits against CBS's own range: near the top of 215 to 237, which is the desk's bet that the wave beats the map.", by:"Desk"},
+  {at:"2026-11-04 06:40", tag:"desk", h:"Desk: six desks now feed this page", t:"AP, NBC, Fox, CNN, ABC and CBS. Virginia: AP called it at poll close, and NBC, Fox and CBS projected it too. Georgia: NBC called it first, then CBS, then AP at 06:25 IST. Where the desk's 236 sits against CBS's own range: near the top of 215 to 237, which is the desk's bet that the wave beats the map.", by:"Desk"},
+  {at:"2026-11-04 06:25", tag:"senate", st:"GA", h:"AP calls Georgia for Ossoff", t:"The Associated Press declared Ossoff the winner at 7:55 p.m. ET, confirming NBC's and CBS's earlier projections. AP Voter Poll also finds Ohio voters see Republican Sen. Husted as too loyal to Trump, and voters overall unhappy with Trump's health care policies. AP flags the 8 p.m. ET hour (06:30 IST) as prime time: Florida, Maine, New Hampshire and Pennsylvania close.", by:"AP live updates"},
 ];
 </script>
 <script>

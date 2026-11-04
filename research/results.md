@@ -25,3 +25,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 06:30 | Fox News added as a source (owner). Fox: SC close, Capito leads WV, Miami-Dade D +9 swing, panel tests (KY-6, SC); Desk note. |
 | 2026-11-04 06:35 | CNN added as a source (owner). Catalist early-vote composition; CNN tiered guide; Desk note. |
 | 2026-11-04 06:40 | ABC and CBS added as sources (owner). CBS also projects GA Ossoff; CBS exit poll Trump 38% record low; ABC Voter Poll GA/NH; Desk note. |
+| 2026-11-04 06:30 | AP calls GA Ossoff (06:25 IST), confirming NBC/CBS; AP Voter Poll OH/health care; VA note adds CBS. |
