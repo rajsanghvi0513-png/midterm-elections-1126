@@ -29,3 +29,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 06:45 | AP calls NJ, DE, IL, MA, RI Senate (D) and FL-25 Moskowitz (D, first HSE call); Desk note on FL-25. |
 | 2026-11-04 07:00 | AP calls NH Pappas, NC Cooper (first flip), FL-14 Castor; CNN projects FL-22 Dandiya. FL Senate toss-up (CBS). |
 | 2026-11-04 07:15 | FL Moody (R, NBC first, AP 07:04), WV Capito (R, NBC), KY Barr (R, ABC). NC exit poll; TX/OH/MI early counts. |
+| 2026-11-04 07:30 | NC-11 Ager (D) first House flip (CNN, NBC). OH Lean D (NBC). SC Andrews 53.6 at 65%. Desk note on SC. |
