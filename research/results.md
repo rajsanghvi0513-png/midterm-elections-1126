@@ -26,3 +26,4 @@ The pre-election record is everything else in `research/` and stays as written. 
 | 2026-11-04 06:35 | CNN added as a source (owner). Catalist early-vote composition; CNN tiered guide; Desk note. |
 | 2026-11-04 06:40 | ABC and CBS added as sources (owner). CBS also projects GA Ossoff; CBS exit poll Trump 38% record low; ABC Voter Poll GA/NH; Desk note. |
 | 2026-11-04 06:30 | AP calls GA Ossoff (06:25 IST), confirming NBC/CBS; AP Voter Poll OH/health care; VA note adds CBS. |
+| 2026-11-04 06:45 | AP calls NJ, DE, IL, MA, RI Senate (D) and FL-25 Moskowitz (D, first HSE call); Desk note on FL-25. |

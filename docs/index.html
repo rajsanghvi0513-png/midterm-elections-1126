@@ -965,10 +965,16 @@ const RES_SEN = {
   // NC: {w:"D", m:"+9.8", by:"AP", at:"2026-11-04 06:42"},
   VA: {w:"D", m:"nf", by:"AP", at:"2026-11-04 05:30", n:"AP declared Warner the winner at 7:00 p.m. ET, at poll close; NBC, Fox News and CBS also projected Warner"},
   GA: {w:"D", m:"nf", by:"NBC", at:"2026-11-04 06:16", n:"NBC News Decision Desk projection over Mike Collins, about 06:16 IST; CBS also projects Ossoff; AP declared Ossoff the winner at 7:55 p.m. ET (06:25 IST); Fox had it too early to call at 7:46 p.m. ET"},
+  NJ: {w:"D", m:"nf", by:"AP", at:"2026-11-04 06:30", n:"AP declared Booker the winner at 8:00 p.m. ET, at poll close"},
+  DE: {w:"D", m:"nf", by:"AP", at:"2026-11-04 06:30", n:"AP declared Coons the winner at 8:00 p.m. ET, at poll close"},
+  IL: {w:"D", m:"nf", by:"AP", at:"2026-11-04 06:30", n:"AP declared Stratton the winner at 8:00 p.m. ET, at poll close; Democratic hold of an open seat"},
+  MA: {w:"D", m:"nf", by:"AP", at:"2026-11-04 06:31", n:"AP declared Markey the winner at 8:01 p.m. ET"},
+  RI: {w:"D", m:"nf", by:"AP", at:"2026-11-04 06:31", n:"AP declared Reed the winner at 8:01 p.m. ET"},
 };
 // House: keyed by district as written in HSE, e.g. "PA-7".
 const RES_HSE = {
   // "PA-7": {w:"D", m:"+2.1", by:"AP", at:"2026-11-04 09:10"},
+  "FL-25": {w:"D", m:"nf", by:"AP", at:"2026-11-04 06:37", n:"AP declared Moskowitz the winner at 8:07 p.m. ET over Scott Singer in the redrawn district; NBC had him 53-45 at 81% counted at 06:16 IST"},
 };
 // Overall House tally across all 435 seats, from one outlet; null until the first entry.
 const RES_HOUSE_TOTAL = null; // e.g. {d:120, r:98, by:"AP", at:"2026-11-04 08:15"}
@@ -1029,6 +1035,8 @@ const LIVE = [
   {at:"2026-11-04 06:06", tag:"night", h:"ABC Voter Poll: most Georgia voters say Trump's policies hurt the economy", t:"Corruption is a key issue for New Hampshire Senate voters, per ABC's preliminary Voter Poll findings. ABC had not projected Georgia at the desk's check.", by:"ABC News live updates, 7:28 and 7:36 p.m. ET"},
   {at:"2026-11-04 06:40", tag:"desk", h:"Desk: six desks now feed this page", t:"AP, NBC, Fox, CNN, ABC and CBS. Virginia: AP called it at poll close, and NBC, Fox and CBS projected it too. Georgia: NBC called it first, then CBS, then AP at 06:25 IST. Where the desk's 236 sits against CBS's own range: near the top of 215 to 237, which is the desk's bet that the wave beats the map.", by:"Desk"},
   {at:"2026-11-04 06:25", tag:"senate", st:"GA", h:"AP calls Georgia for Ossoff", t:"The Associated Press declared Ossoff the winner at 7:55 p.m. ET, confirming NBC's and CBS's earlier projections. AP Voter Poll also finds Ohio voters see Republican Sen. Husted as too loyal to Trump, and voters overall unhappy with Trump's health care policies. AP flags the 8 p.m. ET hour (06:30 IST) as prime time: Florida, Maine, New Hampshire and Pennsylvania close.", by:"AP live updates"},
+  {at:"2026-11-04 06:32", tag:"night", h:"8 p.m. ET wave of safe calls; three Democratic governors", t:"AP called Senate seats in New Jersey, Delaware, Illinois, Massachusetts and Rhode Island for Democrats at or just after poll close, and declared Democratic governors Shapiro (Pennsylvania), Moore (Maryland), Healey (Massachusetts) and Pritzker (Illinois) reelected. AP Voter Poll: young voters appear to shift away from Republicans, and many voters said they voted to oppose Trump.", by:"AP live updates"},
+  {at:"2026-11-04 06:45", tag:"desk", h:"Desk: FL-25 is the first real House signal", t:"The Senate calls this hour are all seats the desk had at 0.99; they add up to nothing new. FL-25 is different: the seat was redrawn by Republicans to be harder for Moskowitz, Cook and Sabato both rated it Lean D, and AP called it seven minutes after Florida's main poll close. A redrawn target falling that fast is what the desk would expect if the Florida map is underperforming for Republicans, as AP's own preview flagged. One district, but the right direction for the desk's House call. Watch the 8 p.m. closings for New Hampshire and Maine next.", by:"Desk"},
 ];
 </script>
 <script>
