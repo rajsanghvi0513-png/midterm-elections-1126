@@ -17,7 +17,7 @@ Live updates stopped at the owner's request after the 10:27 IST run. Everything 
 
 ### Scorecard: Senate, the 26 called races
 
-A rating counts as a call when it leans one way; Toss-up counts as no call. Markets are the Polymarket price on the page (above 0.5 = Democratic).
+A rating counts as a call when it leans one way; Toss-up counts as no call. The desk row counts every desk number above or below 50% as a pick; on the page's own rule, where 40 to 60% is no call, the desk was 22 of 23 (missing only SC, with KS, IA and TX as toss-ups). Markets are the Polymarket price on the page (above 0.5 = Democratic).
 
 | Forecaster | Races with a call | Right | Wrong | Misses |
 |---|---|---|---|---|

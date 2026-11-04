@@ -20,7 +20,7 @@
   <p class="stamp" id="stamp"><b>Snapshot taken before any polls closed</b>, from ratings published 29 Oct to 2 Nov, final polls to 1 Nov, and Polymarket read live on the morning of 3 Nov (US time). Nothing here is a result. All clock times are IST; first polls close <b>04:30 IST, Wed 4 Nov</b>.</p>
 </header>
 <nav class="toc" id="tabs" role="tablist" aria-label="Sections">
-  <a href="#control">Control</a><a href="#results">Results</a><a href="#live">Live</a><a href="#map">Map</a><a href="#call">The call</a><a href="#evidence">Evidence</a><a href="#senate">Senate</a><a href="#house">House</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a><button type="button" class="theme-btn" id="theme-btn" aria-label="Switch colour theme">Dark mode</button>
+  <a href="#control">Control</a><a href="#results">Results</a><a href="#live">Live</a><a href="#notes">Notes</a><a href="#map">Map</a><a href="#call">The call</a><a href="#evidence">Evidence</a><a href="#senate">Senate</a><a href="#house">House</a><a href="#stakes">What it means</a><a href="#night">The night in IST</a><a href="#sources">Sources</a><button type="button" class="theme-btn" id="theme-btn" aria-label="Switch colour theme">Dark mode</button>
 </nav>
 
 <!-- ================= CONTROL ================= -->
@@ -93,6 +93,59 @@
       <span class="count" id="live-count"></span>
     </div>
     <ol class="live" id="live-list"></ol>
+  </div>
+</section>
+
+<!-- ================= POST-ELECTION NOTES (static, dated; mirrors research/results.md) ================= -->
+<section class="contest" id="notes">
+  <div class="contest-head"><h2>Post-election notes</h2><span class="sub">Written 4 Nov 2026 after live updates stopped at 10:30 IST, describing the page as it stood after the 10:27 IST run. Races uncalled then are left uncalled. Sourced facts first; the Desk review is opinion and is labelled.</span></div>
+  <div class="contest-body">
+    <div class="prose">
+      <h3>Where the night stood at 10:27 IST</h3>
+      <ul>
+        <li><b>Senate control: Democrats.</b> NBC News projected it (seen 10:08 IST); CNN and ABC News also projected it, and AP then declared it. AP's time is nf, but it came after AP's Iowa call at 10:05 IST.</li>
+        <li><b>House control: Democrats.</b> NBC News projected it at 10:11 p.m. ET (08:41 IST), with CNN and CBS also projecting it. NBC estimated about 252 Democratic seats. AP had not called the House.</li>
+        <li><b>Senate: 26 of 35 seats called.</b> 51 Democrats (34 not up plus 17 won) to 40 Republicans (31 not up plus 9 won), matching the NBC and ABC News boards. Six Democratic flips, all from Republicans: North Carolina, South Carolina, Texas, Ohio, Kansas and Iowa. No Democratic-held seat had been called for a Republican.</li>
+        <li><b>Nine Senate races uncalled:</b> Alaska, Idaho, Louisiana, Maine, Michigan, Minnesota, Mississippi, Montana and Nebraska. Last counts logged: Maine, Jackson 51.8% to Collins 48.2%; Michigan, El-Sayed 49.7% to Rogers 48.4% with about 43% counted (both NBC). Alaska's polls had not closed; its ranked-choice tabulation is on 18 November.</li>
+        <li><b>House: 13 competitive districts called, all Democratic.</b> Eight were Republican-held flips: NC-11, KY-6, PA-10, PA-7, NJ-7, OH-15, IN-5 and CO-8. Five were Democratic holds or a new seat: FL-14, FL-22, TX-34, FL-25 and UT-1.</li>
+      </ul>
+
+      <h3>The record</h3>
+      <p>The full scoring is in the <a href="#results">Who called it right</a> table. On that table's rule, where a desk probability of 40 to 60% is no call, the desk was 22 of 23 in the Senate, missing only South Carolina (0.25), with Kansas (0.45), Iowa (0.42) and Texas (0.55) counted as toss-ups. Counting every desk number above or below 50% as a pick, it was 23 of 26, with Kansas and Iowa as misses and Texas as a hit. Polymarket was 25 of 26, also missing only South Carolina. Cook was 21 of 22, Sabato 24 of 26 and Inside Elections 23 of 24; South Carolina was the race every one of them missed.</p>
+      <p>Brier score on the same 26 Senate races (lower is better): desk 0.059, Polymarket 0.039. Both leave out the nine uncalled races, which include the closest (Maine, Michigan, Alaska), so they will move.</p>
+      <p>In the House the desk made no district calls. Cook and Inside Elections were each 8 of 10 and Sabato 9 of 12. OH-15 and IN-5 were missed by all three raters. NBC's estimate of about 252 Democratic seats is above the desk's "polls understate Democrats by 3" band (244 to 250) and inside its "understate by 6" row (250 and up); the central "polls right" band was 238 to 242.</p>
+      <p>On control, the desk put Democrats at about 62% to reach 51 Senate seats, below Kalshi and Polymarket (74 to 78%) and Silver Bulletin (81%). Democrats reached 51.</p>
+    </div>
+
+    <div class="opinion prose" style="margin-top:28px">
+      <h3><svg class="oval sm col-t lead-oval" viewBox="0 0 24 14" role="img" aria-label="Opinion"><use href="#ov2"/></svg>Desk review (opinion)</h3>
+      <ul>
+        <li><b>Direction right, size wrong.</b> The desk called both chambers for Democrats and named the path: North Carolina, Ohio, Texas, Maine, Alaska. The result ran past the central scenario toward the desk's own "understate by 6" row, the 2025 off-year miss, in which Kansas, Iowa, South Carolina and Nebraska fall. Three of those four fell; Nebraska was uncalled.</li>
+        <li><b>All three misses have one shape.</b> South Carolina, Kansas and Iowa were Republican-held seats in states Trump won comfortably, where the desk marked the Republican down for past poll-beating and a late Republican turnout pattern. Neither showed up in a midterm without Trump on the ballot. The call itself said the big misses of 2016, 2020 and 2024 came when Trump was on the ballot, and then discounted it.</li>
+        <li><b>The hedge cost accuracy.</b> The desk sat below the markets on control and on Texas, Kansas and Iowa, and the markets were closer on every one. On this night, leaning against the consensus because of past Republican poll beats was the wrong adjustment.</li>
+        <li><b>What held.</b> Every desk number at 0.9 or above, or 0.1 or below, was right. Texas at 0.55 and Ohio at 0.70 were right. Georgia and New Hampshire held for Democrats as the call said; Michigan and Minnesota were still uncalled.</li>
+        <li><b>To check when counting ends:</b> Maine (desk 0.60), Michigan (0.78), Alaska (0.60), Nebraska (0.30, Osborn) and Minnesota (0.88).</li>
+      </ul>
+    </div>
+
+    <div class="prose" style="margin-top:28px">
+      <h3>How the night was sourced</h3>
+      <ul>
+        <li><b>Outlets checked every run:</b> AP (results pages and live blog), NBC News, Fox News, CNN, ABC News and CBS News.</li>
+        <li><b>Credit:</b> each call goes to the first outlet the desk could show called it. Senate: AP 17, NBC 6, ABC 2, CNN 1. House: CNN 6, AP 4, NBC 3.</li>
+        <li><b>Re-credits:</b> Texas, Oregon, Arkansas and Tennessee were first logged under another outlet and moved to AP once AP's declared time proved it was earlier. Each race's note says so.</li>
+        <li><b>Seen times:</b> where an outlet's call carried no time, the page uses the IST time the desk saw it, and the note says so. These are upper bounds, not call times.</li>
+        <li><b>Margins</b> are "nf" for every called race; certified margins will replace them.</li>
+        <li><b>Never overwritten:</b> the desk calls, the scenario strip and the pre-election ratings stand as published on 3 November.</li>
+      </ul>
+      <h3>Still open</h3>
+      <ul>
+        <li>Calls in the nine uncalled Senate races, AP's House control call and final House seat totals.</li>
+        <li>Certified margins in place of "nf".</li>
+        <li>Alaska's ranked-choice tabulation on 18 November.</li>
+        <li>A re-score of the record and the Brier scores once the Senate is complete.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
